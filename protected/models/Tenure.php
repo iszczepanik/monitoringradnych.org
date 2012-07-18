@@ -69,8 +69,8 @@ class Tenure extends CActiveRecord
 	{
 		return array(
 			'TNR_ID' => '#',
-			'TRN_NAME' => 'Kadencja',
-			'TRN_BEGINS' => 'Początek',
+			'TNR_NAME' => 'Kadencja',
+			'TNR_BEGINS' => 'Początek',
 			'TNR_ENDS' => 'Koniec',
 			'TNR_PRESENT' => 'Trwająca',
 		);
