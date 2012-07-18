@@ -98,7 +98,10 @@
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_TNR_ID') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_TNR_ID',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textField($model,'RDN_TNR_ID'); ?>
+		<?php echo $form->dropDownList($model, 'RDN_TNR_ID', CHtml::listData(
+			Tenure::model()->findAll(), 'TNR_ID', 'TNR_NAME')
+			//array('prompt' => '')
+			);?>
 		<?php echo $form->error($model,'RDN_TNR_ID',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
@@ -106,7 +109,10 @@
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_OKR_ID') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_OKR_ID',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textField($model,'RDN_OKR_ID'); ?>
+		<?php echo $form->dropDownList($model, 'RDN_OKR_ID', CHtml::listData(
+			Okreg::model()->findAll(), 'OKR_ID', 'OKR_NAME')
+			//array('prompt' => '')
+			);?>
 		<?php echo $form->error($model,'RDN_OKR_ID',array('class'=>'help-inline')); ?>
 		</div>
 	</div>

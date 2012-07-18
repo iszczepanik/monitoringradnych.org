@@ -4542,3 +4542,86 @@ Stack trace:
 #26 {main}
 REQUEST_URI=/monitoringradnych.org/index.php?r=dzielnica/admin
 ---
+2012/07/18 21:02:32 [error] [system.db.CDbCommand] Wywołanie CDbCommand::fetchAll() nie powiodło się: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'radni.trn' doesn't exist. Wykonywana instrukcja SQL to: SHOW COLUMNS FROM `trn`.
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/18 21:05:58 [error] [exception.CException] exception 'CException' with message 'Właściwość "Radny.DZL_OKR_ID" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('DZL_OKR_ID')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveFinder.php(672): CActiveRecord->__get('DZL_OKR_ID')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveFinder.php(522): CJoinElement->applyLazyCondition(Object(CJoinQuery), Object(Radny))
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Radny))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Radny))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(142): CActiveRecord->getRelated('Okreg')
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php(607) : eval()'d code(1): CActiveRecord->__get('Okreg')
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php(607): eval()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CDataColumn.php(139): CComponent->evaluateExpression('$data->Okreg->O...', Array)
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridColumn.php(138): CDataColumn->renderDataCellContent(0, Object(Radny))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridView.php(517): CGridColumn->renderDataCell(0)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridView.php(490): CGridView->renderTableRow(0)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridView.php(400): CGridView->renderTableBody()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#14 [internal function]: CBaseListView->renderSection(Array)
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(174): CBaseListView->run()
+#18 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\radny\admin.php(68): CBaseController->widget('bootstrap.widge...', Array)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#23 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php(148): CController->render('admin', Array)
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): RadnyController->actionAdmin()
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#27 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#28 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#29 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#30 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#31 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#32 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#33 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('admin')
+#34 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('radny/admin')
+#35 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#36 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#37 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=radny/admin
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=radny/admin
+---
+2012/07/18 21:07:03 [error] [exception.CException] exception 'CException' with message 'Właściwość "Tenure.TNR_NAME" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('TNR_NAME')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php(607) : eval()'d code(1): CActiveRecord->__get('TNR_NAME')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php(607): eval()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CDataColumn.php(139): CComponent->evaluateExpression('$data->Tenure->...', Array)
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridColumn.php(138): CDataColumn->renderDataCellContent(0, Object(Radny))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridView.php(517): CGridColumn->renderDataCell(0)
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridView.php(490): CGridView->renderTableRow(0)
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridView.php(400): CGridView->renderTableBody()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\CBaseListView.php(158): CGridView->renderItems()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(174): CBaseListView->run()
+#13 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\radny\admin.php(68): CBaseController->widget('bootstrap.widge...', Array)
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#18 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php(148): CController->render('admin', Array)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): RadnyController->actionAdmin()
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#27 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('admin')
+#29 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('radny/admin')
+#30 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=radny/admin
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=radny/admin
+---

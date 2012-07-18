@@ -17,7 +17,10 @@ $this->menu=array(
 	'attributes'=>array(
 		'DZL_ID',
 		'DZL_NAME',
-		'DZL_OKR_ID',
+		array(
+			'name'=>'DZL_OKR_ID',
+			'value'=>$model->Okreg->OKR_NAME,
+		),
 		'DZL_CITIZEN_COUNT',
 		'DZL_AREA',
 	),

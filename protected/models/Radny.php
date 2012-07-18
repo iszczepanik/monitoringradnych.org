@@ -77,8 +77,8 @@ class Radny extends CActiveRecord
 		return array(
 			'cmtUches' => array(self::HAS_MANY, 'CmtUch', 'CMT_RDN_ID'),
 			'ints' => array(self::HAS_MANY, 'Int', 'INT_RDN_ID'),
-			'rDNTNR' => array(self::BELONGS_TO, 'Tnr', 'RDN_TNR_ID'),
-			'rDNOKR' => array(self::BELONGS_TO, 'Okr', 'RDN_OKR_ID'),
+			'Tenure' => array(self::BELONGS_TO, 'Tenure', 'RDN_TNR_ID'),
+			'Okreg' => array(self::BELONGS_TO, 'Okreg', 'RDN_OKR_ID'),
 			'rdnInKms' => array(self::HAS_MANY, 'RdnInKms', 'RDN_IN_KMS_RND_ID'),
 			'rnk' => array(self::HAS_ONE, 'Rnk', 'RNK_RDN_ID'),
 		);
@@ -90,20 +90,20 @@ class Radny extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'RDN_ID' => 'Rdn',
-			'RDN_FIRSTNAME' => 'Rdn Firstname',
-			'RDN_LASTNAME' => 'Rdn Lastname',
-			'RDN_EMAIL' => 'Rdn Email',
-			'RDN_PHONE' => 'Rdn Phone',
-			'RDN_DUTY' => 'Rdn Duty',
-			'RDN_WEBSITE' => 'Rdn Website',
-			'RDN_PHOTO' => 'Rdn Photo',
-			'RDN_PROMISE' => 'Rdn Promise',
-			'RDN_INTERVIEW' => 'Rdn Interview',
-			'RDN_PROMISE_CMT' => 'Rdn Promise Cmt',
-			'RDN_INTERVIEW_CMT' => 'Rdn Interview Cmt',
-			'RDN_TNR_ID' => 'Rdn Tnr',
-			'RDN_OKR_ID' => 'Rdn Okr',
+			'RDN_ID' => '#',
+			'RDN_FIRSTNAME' => 'Imię',
+			'RDN_LASTNAME' => 'Nazwisko',
+			'RDN_EMAIL' => 'Email',
+			'RDN_PHONE' => 'Telefon',
+			'RDN_DUTY' => 'Dyżur',
+			'RDN_WEBSITE' => 'Strona internetowa',
+			'RDN_PHOTO' => 'Zdjęcie',
+			'RDN_PROMISE' => 'Obietnice',
+			'RDN_INTERVIEW' => 'Wywiad',
+			'RDN_PROMISE_CMT' => 'Komentarz do obietnicy',
+			'RDN_INTERVIEW_CMT' => 'Komentarz do wywiadu',
+			'RDN_TNR_ID' => 'Kadencja',
+			'RDN_OKR_ID' => 'Okręg',
 		);
 	}
 

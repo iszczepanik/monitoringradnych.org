@@ -27,7 +27,13 @@ $this->menu=array(
 		'RDN_INTERVIEW',
 		'RDN_PROMISE_CMT',
 		'RDN_INTERVIEW_CMT',
-		'RDN_TNR_ID',
-		'RDN_OKR_ID',
+		array(
+			'name'=>'RDN_OKR_ID',
+			'value'=>$model->Okreg->OKR_NAME,
+		),
+		array(
+			'name'=>'RDN_TNR_ID',
+			'value'=>$model->Tenure->TNR_NAME,
+		),
 	),
 )); ?>

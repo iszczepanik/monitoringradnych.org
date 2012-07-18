@@ -41,9 +41,17 @@ $('.search-form form').submit(function(){
 		'RDN_FIRSTNAME',
 		'RDN_LASTNAME',
 		'RDN_EMAIL',
+		array(
+			'name'=>'RDN_OKR_ID',
+			'value'=>'$data->Okreg->OKR_NAME',
+		),
+		array(
+			'name'=>'RDN_TNR_ID',
+			'value'=>'$data->Tenure->TNR_NAME',
+		),
+		/*
 		'RDN_PHONE',
 		'RDN_DUTY',
-		/*
 		'RDN_WEBSITE',
 		'RDN_PHOTO',
 		'RDN_PROMISE',
