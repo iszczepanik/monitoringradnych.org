@@ -4270,3 +4270,20 @@ REQUEST_URI=/radni/index.php?r=radny/admin
 in C:\Program Files\wamp\www\radni\protected\views\radny\admin.php (67)
 in C:\Program Files\wamp\www\radni\protected\controllers\RadnyController.php (148)
 in C:\Program Files\wamp\www\radni\index.php (13)
+2012/07/18 19:13:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('update')
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('user/update')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=user/update&id=13
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=user/admin
+---

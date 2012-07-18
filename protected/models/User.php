@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * This is the model class for table "usr".
@@ -17,12 +17,6 @@
  * @property Neg[] $negs1
  * @property Ofr[] $ofrs
  */
-class Roles
-{
-	const User = 1;
-	const Radny = 2;
-	const Admin = 3;
-}
  
 class User extends CActiveRecord
 {

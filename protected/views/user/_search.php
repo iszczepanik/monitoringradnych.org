@@ -1,44 +1,52 @@
-<div class="wide form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.BootActiveForm',array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'USR_ID'); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'USR_ID',array('class'=>'control-label')); ?>
+		<div class="controls">
 		<?php echo $form->textField($model,'USR_ID'); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'USR_NAME'); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'USR_NAME',array('class'=>'control-label')); ?>
+		<div class="controls">
 		<?php echo $form->textField($model,'USR_NAME',array('size'=>16,'maxlength'=>16)); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'USR_PASS'); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'USR_PASS',array('class'=>'control-label')); ?>
+		<div class="controls">
 		<?php echo $form->textField($model,'USR_PASS',array('size'=>16,'maxlength'=>16)); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'USR_FIRSTNAME'); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'USR_FIRSTNAME',array('class'=>'control-label')); ?>
+		<div class="controls">
 		<?php echo $form->textField($model,'USR_FIRSTNAME',array('size'=>60,'maxlength'=>100)); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'USR_LASTNAME'); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'USR_LASTNAME',array('class'=>'control-label')); ?>
+		<div class="controls">
 		<?php echo $form->textField($model,'USR_LASTNAME',array('size'=>60,'maxlength'=>100)); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->label($model,'USR_EMAIL'); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'USR_EMAIL',array('class'=>'control-label')); ?>
+		<div class="controls">
 		<?php echo $form->textField($model,'USR_EMAIL',array('size'=>60,'maxlength'=>100)); ?>
+		</div>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+	<div class="form-actions">
+		<?php echo CHtml::submitButton('Szukaj',array('class'=>'btn btn-primary')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- search-form -->

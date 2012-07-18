@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Radnys'=>array('index'),
+	'Radnies'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List Radny','url'=>array('index')),
-	array('label'=>'Manage Radny','url'=>array('admin')),
+	array('label'=>'Nowy', 'url'=>array('create')),
+	array('label'=>'Lista', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Radny</h1>
+<h2>Nowy Radny</h2>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

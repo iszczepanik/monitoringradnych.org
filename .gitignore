@@ -1,4 +1,7 @@
 *.7z
+.buildpath
+.project
 
 Thumbs.db
 assets/
+.settings/

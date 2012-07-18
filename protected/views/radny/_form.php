@@ -3,41 +3,119 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="help-block">Fields with <span class="required">*</span> are required.</p>
+	<div class="alert alert-warning">Pola oznaczone <span class="required">*</span> są wymagane</div>
 
-	<?php echo $form->errorSummary($model); ?>
+	<?php echo $form->errorSummary($model,null,null,array('class'=>'alert alert-error')); ?>
+	
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_FIRSTNAME') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_FIRSTNAME',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_FIRSTNAME',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->error($model,'RDN_FIRSTNAME',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_FIRSTNAME',array('class'=>'span5','maxlength'=>64)); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_LASTNAME') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_LASTNAME',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_LASTNAME',array('size'=>60,'maxlength'=>64)); ?>
+		<?php echo $form->error($model,'RDN_LASTNAME',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_LASTNAME',array('class'=>'span5','maxlength'=>64)); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_EMAIL') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_EMAIL',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_EMAIL',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'RDN_EMAIL',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_EMAIL',array('class'=>'span5','maxlength'=>128)); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_PHONE') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_PHONE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_PHONE',array('size'=>32,'maxlength'=>32)); ?>
+		<?php echo $form->error($model,'RDN_PHONE',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_PHONE',array('class'=>'span5','maxlength'=>32)); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_DUTY') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_DUTY',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_DUTY',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'RDN_DUTY',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_DUTY',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_WEBSITE') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_WEBSITE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_WEBSITE',array('size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'RDN_WEBSITE',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_WEBSITE',array('class'=>'span5','maxlength'=>128)); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_PHOTO') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_PHOTO',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_PHOTO',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'RDN_PHOTO',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_PHOTO',array('class'=>'span5','maxlength'=>256)); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_PROMISE') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_PROMISE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_PROMISE',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'RDN_PROMISE',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_PROMISE',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_INTERVIEW') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_INTERVIEW',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_INTERVIEW',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'RDN_INTERVIEW',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_INTERVIEW',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_PROMISE_CMT') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_PROMISE_CMT',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_PROMISE_CMT',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'RDN_PROMISE_CMT',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_PROMISE_CMT',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_INTERVIEW_CMT') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_INTERVIEW_CMT',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_INTERVIEW_CMT',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'RDN_INTERVIEW_CMT',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_INTERVIEW_CMT',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_TNR_ID') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_TNR_ID',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_TNR_ID'); ?>
+		<?php echo $form->error($model,'RDN_TNR_ID',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_TNR_ID',array('class'=>'span5')); ?>
-
-	<?php echo $form->textFieldRow($model,'RDN_OKR_ID',array('class'=>'span5')); ?>
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_OKR_ID') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_OKR_ID',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_OKR_ID'); ?>
+		<?php echo $form->error($model,'RDN_OKR_ID',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.BootButton', array(
 			'buttonType'=>'submit',
 			'type'=>'primary',
-			'label'=>$model->isNewRecord ? 'Create' : 'Save',
+			'label'=>$model->isNewRecord ? 'Zapisz' : 'Zapisz Zmiany',
 		)); ?>
 	</div>
 

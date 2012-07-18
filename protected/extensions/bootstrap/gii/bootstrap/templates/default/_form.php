@@ -9,17 +9,24 @@
 	'enableAjaxValidation'=>false,
 )); ?>\n"; ?>
 
-	<p class="help-block">Fields with <span class="required">*</span> are required.</p>
+	<div class="alert alert-warning">Pola oznaczone <span class="required">*</span> są wymagane</div>
 
-	<?php echo "<?php echo \$form->errorSummary(\$model); ?>\n"; ?>
-
+	<?php echo "<?php echo \$form->errorSummary(\$model,null,null,array('class'=>'alert alert-error')); ?>\n"; ?>
+	
 <?php
 foreach($this->tableSchema->columns as $column)
 {
 	if($column->autoIncrement)
 		continue;
+	$controlGroupClass = "control-group<?php echo (CHtml::error(\$model,'{$column->name}') == '' ? '' : ' error'); ?>";
 ?>
-	<?php echo "<?php echo ".$this->generateActiveRow($this->modelClass,$column)."; ?>\n"; ?>
+	<div class='<?php echo $controlGroupClass; ?>'>
+		<?php echo "<?php echo ".$this->generateActiveLabel($this->modelClass,$column,"array('class'=>'control-label')")."; ?>\n"; ?>
+		<div class="controls">
+		<?php echo "<?php echo ".$this->generateActiveField($this->modelClass,$column)."; ?>\n"; ?>
+		<?php echo "<?php echo \$form->error(\$model,'{$column->name}',array('class'=>'help-inline')); ?>\n"; ?>
+		</div>
+	</div>
 
 <?php
 }
@@ -28,7 +35,7 @@ foreach($this->tableSchema->columns as $column)
 		<?php echo "<?php \$this->widget('bootstrap.widgets.BootButton', array(
 			'buttonType'=>'submit',
 			'type'=>'primary',
-			'label'=>\$model->isNewRecord ? 'Create' : 'Save',
+			'label'=>\$model->isNewRecord ? 'Zapisz' : 'Zapisz Zmiany',
 		)); ?>\n"; ?>
 	</div>
 

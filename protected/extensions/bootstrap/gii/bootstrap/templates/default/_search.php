@@ -15,14 +15,16 @@
 	if(strpos($field,'password')!==false)
 		continue;
 ?>
-	<?php echo "<?php echo ".$this->generateActiveRow($this->modelClass,$column)."; ?>\n"; ?>
+	<div class="control-group">
+		<?php echo "<?php echo \$form->label(\$model,'{$column->name}',array('class'=>'control-label')); ?>\n"; ?>
+		<div class="controls">
+		<?php echo "<?php echo ".$this->generateActiveField($this->modelClass,$column)."; ?>\n"; ?>
+		</div>
+	</div>
 
 <?php endforeach; ?>
 	<div class="form-actions">
-		<?php echo "<?php \$this->widget('bootstrap.widgets.BootButton', array(
-			'type'=>'primary',
-			'label'=>'Search',
-		)); ?>\n"; ?>
+		<?php echo "<?php echo CHtml::submitButton('Szukaj',array('class'=>'btn btn-primary')); ?>\n"; ?>
 	</div>
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>

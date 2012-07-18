@@ -26,9 +26,17 @@ class UserController extends Controller
 	public function accessRules()
 	{
 		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','view'),
-				'roles'=>array('admin'),
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -101,7 +109,7 @@ class UserController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		//if(Yii::app()->request->isPostRequest)
+		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
@@ -110,8 +118,8 @@ class UserController extends Controller
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
-		//else
-		//	throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
 
 	/**
@@ -136,51 +144,6 @@ class UserController extends Controller
 			$model->attributes=$_GET['User'];
 
 		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
-	
-	public function actionUserList()
-	{
-		$model=new User('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['User']))
-			$model->attributes=$_GET['User'];
-
-		$this->render('userList',array(
-			'model'=>$model,
-		));
-	}
-	
-	public function actionTkiProfile()
-	{
-		$uri = Yii::app()->request->baseUrl."/css/tki.css";
-		Yii::app()->clientScript->registerCssFile($uri);
-	
-		$model= User::model()->findByPk(Yii::app()->user->id);
-		
-		$characteristics = $model->chrs;
-		$TKI_done = count($characteristics) > 0 ? true : false;
-		
-		if($TKI_done)
-		{
-			$this->render('TkiProfile',array(
-				'model'=>$model,
-			));
-		}
-		else
-		{
-			$this->redirect(array('characteristic/create',));
-		}
-	}
-	
-	public function actionNegotiatorProfile()
-	{
-		$uri = Yii::app()->request->baseUrl."/css/tki.css";
-		Yii::app()->clientScript->registerCssFile($uri);
-	
-		$model= User::model()->findByPk(Yii::app()->user->id);
-		$this->render('NegotiatorProfile',array(
 			'model'=>$model,
 		));
 	}

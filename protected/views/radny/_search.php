@@ -3,39 +3,106 @@
 	'method'=>'get',
 )); ?>
 
-	<?php echo $form->textFieldRow($model,'RDN_ID',array('class'=>'span5')); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_ID',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_ID'); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_FIRSTNAME',array('class'=>'span5','maxlength'=>64)); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_FIRSTNAME',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_FIRSTNAME',array('size'=>60,'maxlength'=>64)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_LASTNAME',array('class'=>'span5','maxlength'=>64)); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_LASTNAME',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_LASTNAME',array('size'=>60,'maxlength'=>64)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_EMAIL',array('class'=>'span5','maxlength'=>128)); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_EMAIL',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_EMAIL',array('size'=>60,'maxlength'=>128)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_PHONE',array('class'=>'span5','maxlength'=>32)); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_PHONE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_PHONE',array('size'=>32,'maxlength'=>32)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_DUTY',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_DUTY',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_DUTY',array('rows'=>6, 'cols'=>50)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_WEBSITE',array('class'=>'span5','maxlength'=>128)); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_WEBSITE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_WEBSITE',array('size'=>60,'maxlength'=>128)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_PHOTO',array('class'=>'span5','maxlength'=>256)); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_PHOTO',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_PHOTO',array('size'=>60,'maxlength'=>256)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_PROMISE',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_PROMISE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_PROMISE',array('rows'=>6, 'cols'=>50)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_INTERVIEW',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_INTERVIEW',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_INTERVIEW',array('rows'=>6, 'cols'=>50)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_PROMISE_CMT',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_PROMISE_CMT',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_PROMISE_CMT',array('rows'=>6, 'cols'=>50)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textAreaRow($model,'RDN_INTERVIEW_CMT',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_INTERVIEW_CMT',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textArea($model,'RDN_INTERVIEW_CMT',array('rows'=>6, 'cols'=>50)); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_TNR_ID',array('class'=>'span5')); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_TNR_ID',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_TNR_ID'); ?>
+		</div>
+	</div>
 
-	<?php echo $form->textFieldRow($model,'RDN_OKR_ID',array('class'=>'span5')); ?>
+	<div class="control-group">
+		<?php echo $form->label($model,'RDN_OKR_ID',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_OKR_ID'); ?>
+		</div>
+	</div>
 
 	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.BootButton', array(
-			'type'=>'primary',
-			'label'=>'Search',
-		)); ?>
+		<?php echo CHtml::submitButton('Szukaj',array('class'=>'btn btn-primary')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

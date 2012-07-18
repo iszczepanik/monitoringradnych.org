@@ -1,18 +1,16 @@
 <?php
 $this->breadcrumbs=array(
-	'Radnys'=>array('index'),
+	'Radnies'=>array('index'),
 	$model->RDN_ID=>array('view','id'=>$model->RDN_ID),
 	'Update',
 );
 
 $this->menu=array(
-	array('label'=>'List Radny','url'=>array('index')),
-	array('label'=>'Create Radny','url'=>array('create')),
-	array('label'=>'View Radny','url'=>array('view','id'=>$model->RDN_ID)),
-	array('label'=>'Manage Radny','url'=>array('admin')),
+	array('label'=>'Nowy', 'url'=>array('create')),
+	array('label'=>'Lista', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Radny <?php echo $model->RDN_ID; ?></h1>
+<h2>Radny - Edycja</h2>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>

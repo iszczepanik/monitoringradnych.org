@@ -29,7 +29,7 @@ class BootActiveForm extends CActiveForm
 	/**
 	 * @var string the form type. See class constants.
 	 */
-	public $type = self::TYPE_VERTICAL;
+	public $type = self::TYPE_HORIZONTAL;
 
 	/**
 	 * @var boolean flag that indicates if the errors should be displayed as blocks.
