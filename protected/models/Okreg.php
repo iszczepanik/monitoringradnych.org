@@ -1,22 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "usr".
+ * This is the model class for table "okr".
  *
- * The followings are the available columns in table 'usr':
- * @property integer $USR_ID
- * @property string $USR_NAME
- * @property string $USR_PASS
- * @property string $USR_FIRSTNAME
- * @property string $USR_LASTNAME
- * @property string $USR_EMAIL
+ * The followings are the available columns in table 'okr':
+ * @property integer $OKR_ID
+ * @property string $OKR_NAME
+ *
+ * The followings are the available model relations:
+ * @property Dzl[] $dzls
+ * @property Rdn[] $rdns
  */
-class User extends CActiveRecord
+class Okreg extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return User the static model class
+	 * @return Okreg the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -28,7 +28,7 @@ class User extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'usr';
+		return 'okr';
 	}
 
 	/**
@@ -39,12 +39,11 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('USR_NAME, USR_PASS', 'length', 'max'=>16),
-			array('USR_FIRSTNAME, USR_LASTNAME, USR_EMAIL', 'length', 'max'=>100),
-			array('USR_NAME, USR_PASS, USR_FIRSTNAME, USR_LASTNAME, USR_EMAIL', 'required'),
+			array('OKR_NAME', 'required'),
+			array('OKR_NAME', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('USR_ID, USR_NAME, USR_PASS, USR_FIRSTNAME, USR_LASTNAME, USR_EMAIL', 'safe', 'on'=>'search'),
+			array('OKR_ID, OKR_NAME', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,27 +55,19 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'dzls' => array(self::HAS_MANY, 'Dzl', 'DZL_OKR_ID'),
+			'rdns' => array(self::HAS_MANY, 'Rdn', 'RDN_OKR_ID'),
 		);
 	}
 
-	public function WholeName()
-	{
-		return $this->USR_FIRSTNAME." ".$this->USR_LASTNAME;
-	}
-	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels()
 	{
 		return array(
-			'USR_ID' => '#',
-			'USR_NAME' => 'Login',
-			'USR_PASS' => 'Hasło',
-			'USR_FIRSTNAME' => 'Imię',
-			'USR_LASTNAME' => 'Nazwisko',
-			'USR_EMAIL' => 'Email',
-			'USR_WHOLENAME' => 'Imię i nazwisko'
+			'OKR_ID' => '#',
+			'OKR_NAME' => 'Nazwa',
 		);
 	}
 
@@ -91,12 +82,8 @@ class User extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('USR_ID',$this->USR_ID);
-		$criteria->compare('USR_NAME',$this->USR_NAME,true);
-		$criteria->compare('USR_PASS',$this->USR_PASS,true);
-		$criteria->compare('USR_FIRSTNAME',$this->USR_FIRSTNAME,true);
-		$criteria->compare('USR_LASTNAME',$this->USR_LASTNAME,true);
-		$criteria->compare('USR_EMAIL',$this->USR_EMAIL,true);
+		$criteria->compare('OKR_ID',$this->OKR_ID);
+		$criteria->compare('OKR_NAME',$this->OKR_NAME,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

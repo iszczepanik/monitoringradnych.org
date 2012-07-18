@@ -1,5 +1,6 @@
 <?php $form=$this->beginWidget('bootstrap.widgets.BootActiveForm',array(
 	'action'=>Yii::app()->createUrl($this->route),
+	'htmlOptions' => array('style' => 'margin-top: 15px;'),
 	'method'=>'get',
 )); ?>
 
