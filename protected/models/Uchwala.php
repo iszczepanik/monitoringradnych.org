@@ -20,6 +20,22 @@
  */
 class Uchwala extends CActiveRecord
 {
+	public function behaviors(){
+		return array( 'CAdvancedArBehavior' => array(
+			            'class' => 'application.extensions.CAdvancedArBehavior'));
+	}
+	
+	public $dzielniceUchwalIDs = array();
+	
+	public function afterFind()
+	{
+		if(!empty($this->DzielniceUchwal))
+		{
+			foreach($this->DzielniceUchwal as $n=>$dzielnica)
+			$this->dzielniceUchwalIDs[] = $dzielnica->DZL_ID;
+		}
+	}
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -77,7 +93,7 @@ class Uchwala extends CActiveRecord
 			'exps' => array(self::HAS_MANY, 'Exp', 'EXP_UCH_ID'),
 			'Kategoria' => array(self::BELONGS_TO, 'Kategoria', 'UCH_CAT_ID'),
 			'Komisja' => array(self::BELONGS_TO, 'Komisja', 'UCH_KMS_ID'),
-			'uchInDzls' => array(self::HAS_MANY, 'UchInDzl', 'UCH_IN_DZL_UCH_ID'),
+			'DzielniceUchwal' => array(self::MANY_MANY, 'Dzielnica', 'uch_in_dzl(UCH_IN_DZL_UCH_ID, UCH_IN_DZL_DZL_ID)'),
 		);
 	}
 
@@ -93,6 +109,7 @@ class Uchwala extends CActiveRecord
 			'UCH_TYPE' => 'Typ',
 			'UCH_CAT_ID' => 'Kategoria',
 			'UCH_KMS_ID' => 'Komisja',
+			'dzielniceUchwalIDs' => 'Dzielnice'
 		);
 	}
 

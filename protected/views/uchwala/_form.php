@@ -46,6 +46,15 @@
 		<?php echo $form->error($model,'UCH_KMS_ID',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
+	
+	<div class='control-group' >
+    <?php echo $form->checkBoxListRow($model, 'dzielniceUchwalIDs', 
+            CHtml::listData(
+                Dzielnica::model()->findAll(), 
+                'DZL_ID', 
+                'DZL_NAME'
+            )); ?>
+    </div>
 
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.BootButton', array(

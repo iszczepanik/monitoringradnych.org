@@ -26,5 +26,9 @@ $this->menu=array(
 			'name'=>'UCH_KMS_ID',
 			'value'=>$model->Komisja->KMS_NAME,
 		),
+		'dzielniceUchwalIDs'=> array(
+            'name'  => 'dzielniceUchwalIDs',
+            'value' => implode(', ', CHtml::listData($model->DzielniceUchwal, 'DZL_ID', 'DZL_NAME')),
+		),
 	),
 )); ?>

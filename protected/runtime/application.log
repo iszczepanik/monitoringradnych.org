@@ -5037,3 +5037,65 @@ REQUEST_URI=/monitoringradnych.org/index.php?r=uchwala/create
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\uchwala\_form.php (33)
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\uchwala\create.php (15)
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (78)
+2012/07/19 20:42:21 [error] [system.db.CDbCommand] Wywołanie CDbCommand::fetchAll() nie powiodło się: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DzielniceUchwal_DzielniceUchwal.UCH_IN_DZL_DZL_ID' in 'on clause'. Wykonywana instrukcja SQL to: SELECT `DzielniceUchwal`.`DZL_ID` AS `t1_c0`, `DzielniceUchwal`.`DZL_NAME` AS `t1_c1`, `DzielniceUchwal`.`DZL_OKR_ID` AS `t1_c2`, `DzielniceUchwal`.`DZL_CITIZEN_COUNT` AS `t1_c3`, `DzielniceUchwal`.`DZL_AREA` AS `t1_c4` FROM `dzl` `DzielniceUchwal`  INNER JOIN `rdn_in_kms` `DzielniceUchwal_DzielniceUchwal` ON (`DzielniceUchwal_DzielniceUchwal`.`RDN_IN_KMS_RND_ID`=:ypl0) AND (`DzielniceUchwal`.`DZL_ID`=`DzielniceUchwal_DzielniceUchwal`.`UCH_IN_DZL_DZL_ID`).
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php (32)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\bootstrap\widgets\BootGridView.php (51)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\uchwala\admin.php (60)
+2012/07/19 20:42:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'DzielniceUchwal_DzielniceUchwal.UCH_IN_DZL_DZL_ID' in 'on clause'. The SQL statement executed was: SELECT `DzielniceUchwal`.`DZL_ID` AS `t1_c0`, `DzielniceUchwal`.`DZL_NAME` AS `t1_c1`, `DzielniceUchwal`.`DZL_OKR_ID` AS `t1_c2`, `DzielniceUchwal`.`DZL_CITIZEN_COUNT` AS `t1_c3`, `DzielniceUchwal`.`DZL_AREA` AS `t1_c4` FROM `dzl` `DzielniceUchwal`  INNER JOIN `rdn_in_kms` `DzielniceUchwal_DzielniceUchwal` ON (`DzielniceUchwal_DzielniceUchwal`.`RDN_IN_KMS_RND_ID`=:ypl0) AND (`DzielniceUchwal`.`DZL_ID`=`DzielniceUchwal_DzielniceUchwal`.`UCH_IN_DZL_DZL_ID`)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveFinder.php(818): CDbCommand->queryAll()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveFinder.php(167): CJoinElement->lazyFind(Object(Uchwala))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Uchwala))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(180): CActiveRecord->getRelated('DzielniceUchwal')
+#6 C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php(32): CActiveRecord->__isset('DzielniceUchwal')
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1799): Uchwala->afterFind()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1820): CActiveRecord->populateRecord(Array, true)
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1287): CActiveRecord->populateRecords(Array, true, NULL)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CActiveDataProvider.php(150): CActiveRecord->findAll(Object(CDbCriteria))
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\zii\widgets\grid\CGridView.php(269): CBaseListView->init()
+#15 C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\bootstrap\widgets\BootGridView.php(51): CGridView->init()
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(148): BootGridView->init()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#18 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\uchwala\admin.php(60): CBaseController->widget('bootstrap.widge...', Array)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('admin', Array, true)
+#23 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php(152): CController->render('admin', Array)
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): UchwalaController->actionAdmin()
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#27 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#28 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#29 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#30 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#31 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#32 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#33 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('admin')
+#34 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('uchwala/admin')
+#35 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#36 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#37 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=uchwala/admin
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=projekt/admin
+---
+2012/07/19 20:45:36 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 20:46:06 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (71)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 20:50:13 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Projekt" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\ProjektController.php (71)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 20:50:25 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Projekt" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\ProjektController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 20:51:19 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Projekt" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\ProjektController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)

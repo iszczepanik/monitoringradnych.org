@@ -69,6 +69,8 @@ class ProjektController extends Controller
 		if(isset($_POST['Projekt']))
 		{
 			$model->attributes=$_POST['Projekt'];
+			$model->DzielniceUchwal = $_POST['Projekt']['dzielniceUchwalIDs'] != '' ?
+				$_POST['Projekt']['dzielniceUchwalIDs'] : null;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->UCH_ID));
 		}
@@ -93,6 +95,8 @@ class ProjektController extends Controller
 		if(isset($_POST['Projekt']))
 		{
 			$model->attributes=$_POST['Projekt'];
+			$model->DzielniceUchwal = $_POST['Projekt']['dzielniceUchwalIDs'] != '' ?
+				$_POST['Projekt']['dzielniceUchwalIDs'] : null;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->UCH_ID));
 		}

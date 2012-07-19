@@ -69,6 +69,8 @@ class UchwalaController extends Controller
 		if(isset($_POST['Uchwala']))
 		{
 			$model->attributes=$_POST['Uchwala'];
+			$model->DzielniceUchwal = $_POST['Uchwala']['dzielniceUchwalIDs'] != '' ?
+				$_POST['Uchwala']['dzielniceUchwalIDs'] : null;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->UCH_ID));
 		}
@@ -93,6 +95,8 @@ class UchwalaController extends Controller
 		if(isset($_POST['Uchwala']))
 		{
 			$model->attributes=$_POST['Uchwala'];
+			$model->DzielniceUchwal = $_POST['Uchwala']['dzielniceUchwalIDs'] != '' ?
+				$_POST['Uchwala']['dzielniceUchwalIDs'] : null;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->UCH_ID));
 		}
