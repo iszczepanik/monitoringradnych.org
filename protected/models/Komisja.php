@@ -95,6 +95,7 @@ class Komisja extends CActiveRecord
 			'KMS_ID' => '#',
 			'KMS_NAME' => 'Komisja',
 			'KMS_DESC' => 'Opis',
+			'kategorieKomisjiIDs' => 'Kategorie'
 		);
 	}
 

@@ -18,5 +18,9 @@ $this->menu=array(
 		'KMS_ID',
 		'KMS_NAME',
 		'KMS_DESC',
+		'kategorieKomisjiIDs'=> array(
+            'name'  => 'kategorieKomisjiIDs',
+            'value' => implode(', ', CHtml::listData($model->KategorieKomisji, 'CAT_ID', 'CAT_NAME')),
+        ),
 	),
 )); ?>

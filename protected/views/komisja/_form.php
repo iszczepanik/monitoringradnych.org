@@ -23,24 +23,13 @@
 		</div>
 	</div>
 	
-	<div>
-	<?php
-		//echo $form->checkBoxListRow($model, 'KategorieKomisji', CHtml::listData(
-		//	Kategoria::model()->findAll(), 'CAT_ID', 'CAT_NAME')
-    //); 
-		?>
-    
-    
-    <?php echo CHtml::activeCheckBoxList($model, 'kategorieKomisjiIDs', 
+	<div class='control-group' >
+    <?php echo $form->checkBoxListRow($model, 'kategorieKomisjiIDs', 
             CHtml::listData(
                 Kategoria::model()->findAll(), 
                 'CAT_ID', 
                 'CAT_NAME'
-            ) /* In this case I want to show only the sucursales-departments that belong 
-               * to the company that the Employee belongs to. Otherwise you just 
-               * Sucursal::model()->findAll() without condition */
-           ) ?>
-    
+            )); ?>
     </div>
 
 	<div class="form-actions">
