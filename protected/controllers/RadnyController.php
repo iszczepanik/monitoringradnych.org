@@ -69,6 +69,8 @@ class RadnyController extends Controller
 		if(isset($_POST['Radny']))
 		{
 			$model->attributes=$_POST['Radny'];
+			$model->KomisjeRadnych = $_POST['Radny']['komisjeRadnychIDs'] != '' ?
+				$_POST['Radny']['komisjeRadnychIDs'] : null;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->RDN_ID));
 		}
@@ -93,7 +95,8 @@ class RadnyController extends Controller
 		if(isset($_POST['Radny']))
 		{
 			$model->attributes=$_POST['Radny'];
-			$model->KomisjeRadnych = $_POST['Radny']['komisjeRadnychIDs'];
+			$model->KomisjeRadnych = $_POST['Radny']['komisjeRadnychIDs'] != '' ?
+				$_POST['Radny']['komisjeRadnychIDs'] : null;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->RDN_ID));
 		}

@@ -69,6 +69,8 @@ class KomisjaController extends Controller
 		if(isset($_POST['Komisja']))
 		{
 			$model->attributes=$_POST['Komisja'];
+			$model->KategorieKomisji = $_POST['Komisja']['kategorieKomisjiIDs'] != '' ? 
+				$_POST['Komisja']['kategorieKomisjiIDs'] : null;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->KMS_ID));
 		}
@@ -93,10 +95,11 @@ class KomisjaController extends Controller
 
 		if(isset($_POST['Komisja']))
 		{
-			//var_dump($_POST);
-
+			//var_dump($_POST['Komisja']['kategorieKomisjiIDs']);
+			//return;
 			$model->attributes = $_POST['Komisja'];
-			$model->KategorieKomisji = $_POST['Komisja']['kategorieKomisjiIDs'];
+			$model->KategorieKomisji = $_POST['Komisja']['kategorieKomisjiIDs'] != '' ? 
+				$_POST['Komisja']['kategorieKomisjiIDs'] : null;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->KMS_ID));
 		}

@@ -4919,3 +4919,92 @@ in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
 2012/07/19 17:48:47 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (95)
 in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 17:55:26 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (71)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 17:57:47 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (71)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 17:57:59 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (99)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 17:58:23 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`radni`.`kms_in_cat`, CONSTRAINT `kms_in_cat_ibfk_1` FOREIGN KEY (`KMS_IN_CAT_KMS_ID`) REFERENCES `kms` (`KMS_ID`)). Wykonywana instrukcja SQL to: DELETE FROM `kms` WHERE `kms`.`KMS_ID`=10.
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (120)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 17:58:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`radni`.`kms_in_cat`, CONSTRAINT `kms_in_cat_ibfk_1` FOREIGN KEY (`KMS_IN_CAT_KMS_ID`) REFERENCES `kms` (`KMS_ID`)). The SQL statement executed was: DELETE FROM `kms` WHERE `kms`.`KMS_ID`=10' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1735): CDbCommand->execute()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1159): CActiveRecord->deleteByPk('10')
+#2 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php(120): CActiveRecord->delete()
+#3 [internal function]: KomisjaController->actionDelete('10')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(KomisjaController), Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(KomisjaController), Object(ReflectionMethod), Array)
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('delete')
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('komisja/delete')
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=komisja%2Fdelete&id=10&ajax=komisja-grid
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=komisja/admin
+---
+2012/07/19 17:58:53 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (99)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 17:58:53 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`radni`.`kms_in_cat`, CONSTRAINT `kms_in_cat_ibfk_2` FOREIGN KEY (`KMS_IN_CAT_CAT_ID`) REFERENCES `cat` (`CAT_ID`)). Wykonywana instrukcja SQL to: insert into kms_in_cat (KMS_IN_CAT_KMS_ID, KMS_IN_CAT_CAT_ID) values ('10', '').
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\CAdvancedArBehavior.php (180)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\CAdvancedArBehavior.php (167)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\CAdvancedArBehavior.php (107)
+2012/07/19 17:58:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`radni`.`kms_in_cat`, CONSTRAINT `kms_in_cat_ibfk_2` FOREIGN KEY (`KMS_IN_CAT_CAT_ID`) REFERENCES `cat` (`CAT_ID`)). The SQL statement executed was: insert into kms_in_cat (KMS_IN_CAT_KMS_ID, KMS_IN_CAT_CAT_ID) values ('10', '')' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\CAdvancedArBehavior.php(180): CDbCommand->execute()
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\CAdvancedArBehavior.php(167): CAdvancedArbehavior->execute('insert into kms...')
+#2 C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\CAdvancedArBehavior.php(107): CAdvancedArbehavior->writeRelation(Array)
+#3 C:\Program Files\wamp\www\monitoringradnych.org\protected\extensions\CAdvancedArBehavior.php(93): CAdvancedArbehavior->writeManyManyTables()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php(559): CAdvancedArbehavior->afterSave(Object(CEvent))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(830): CComponent->raiseEvent('onAfterSave', Object(CEvent))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(905): CActiveRecord->onAfterSave(Object(CEvent))
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1063): CActiveRecord->afterSave()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#9 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php(101): CActiveRecord->save()
+#10 [internal function]: KomisjaController->actionUpdate('10')
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(KomisjaController), Array)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(KomisjaController), Object(ReflectionMethod), Array)
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('update')
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('komisja/update')
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=komisja/update&id=10
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=komisja/update&id=10
+---
+2012/07/19 18:08:31 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 18:11:05 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 18:11:12 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 18:11:20 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 18:11:26 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
