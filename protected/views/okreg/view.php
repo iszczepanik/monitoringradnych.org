@@ -10,7 +10,7 @@ $this->menu=array(
 );
 ?>
 
-<h2>Okreg - Widok</h2>
+<h2>Okręg - Widok</h2>
 
 <?php $this->widget('bootstrap.widgets.BootDetailView',array(
 	'data'=>$model,

@@ -10,7 +10,7 @@ $this->menu=array(
 );
 ?>
 
-<h2>Tenure - Widok</h2>
+<h2>Kadencja - Widok</h2>
 
 <?php $this->widget('bootstrap.widgets.BootDetailView',array(
 	'data'=>$model,

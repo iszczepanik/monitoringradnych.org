@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h2>Nowy Dzielnica</h2>
+<h2>Nowa Dzielnica</h2>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

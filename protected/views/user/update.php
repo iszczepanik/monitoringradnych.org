@@ -11,6 +11,6 @@ $this->menu=array(
 );
 ?>
 
-<h2>User - Edycja</h2>
+<h2>Użytkownik - Edycja</h2>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>

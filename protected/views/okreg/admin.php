@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h2>Okregs - Lista</h2>
+<h2>Okręgi - Lista</h2>
 
 <?php echo CHtml::link('Wyszukiwanie zaawansowane','#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">

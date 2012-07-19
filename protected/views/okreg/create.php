@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h2>Nowy Okreg</h2>
+<h2>Nowy Okręg</h2>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -11,6 +11,6 @@ $this->menu=array(
 );
 ?>
 
-<h2>Okreg - Edycja</h2>
+<h2>Okręg - Edycja</h2>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>
