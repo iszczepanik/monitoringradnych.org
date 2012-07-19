@@ -43,6 +43,7 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php echo "<?php"; ?> $this->widget('bootstrap.widgets.BootGridView',array(
+	'type'=>'striped bordered condensed',
 	'id'=>'<?php echo $this->class2id($this->modelClass); ?>-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,

@@ -33,6 +33,7 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php $this->widget('bootstrap.widgets.BootGridView',array(
+	'type'=>'striped bordered condensed',
 	'id'=>'tenure-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,

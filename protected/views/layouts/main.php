@@ -18,6 +18,26 @@
 <div class="container" id="page">
 
 	<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
+		<?php $this->widget('bootstrap.widgets.BootMenu', array(
+		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
+		    'stacked'=>false, // whether this is a stacked menu
+		    'items'=>array(
+		        array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>false),
+		        array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+		        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Użytkownicy', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Radni', 'url'=>array('/radny/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Okręgi', 'url'=>array('/okreg/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Dzielnice', 'url'=>array('/dzielnica/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Kadencje', 'url'=>array('/tenure/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Komisje', 'url'=>array('/komisja/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Kategorie', 'url'=>array('/kategoria/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Uchwały', 'url'=>array('/uchwala/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Projekty', 'url'=>array('/projekt/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+		    ),
+		)); ?>
+	
+	<!--
 		<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
@@ -38,6 +58,8 @@
 				array('label'=>'Kadencje', 'url'=>array('/tenure/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Komisje', 'url'=>array('/komisja/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Kategorie', 'url'=>array('/kategoria/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Uchwały', 'url'=>array('/uchwala/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Projekty', 'url'=>array('/projekt/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				// array('label'=>'Negotiation Cases', 'url'=>array('/negotiationcase/admin'), 'visible'=>Yii::app()->user->name=='admin'),
 				// array('label'=>'Negotiations', 'url'=>array('/negotiation/admin'), 'visible'=>Yii::app()->user->name=='admin'),
 				// array('label'=>'Criteria', 'url'=>array('/criteria/admin'), 'visible'=>Yii::app()->user->name=='admin'),
@@ -45,7 +67,7 @@
 				// array('label'=>'TEST', 'url'=>array('/site/index'), 'visible'=>(Yii::app()->user->checkAccess('admin'))),
 			),
 		)); ?>
-		</div><!-- mainmenu -->
+		</div> mainmenu -->
 		
 
 	<!-- breadcrumbs		
