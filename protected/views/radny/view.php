@@ -35,5 +35,9 @@ $this->menu=array(
 			'name'=>'RDN_TNR_ID',
 			'value'=>$model->Tenure->TNR_NAME,
 		),
+		'komisjeRadnychIDs'=> array(
+		            'name'  => 'komisjeRadnychIDs',
+		            'value' => implode(', ', CHtml::listData($model->KomisjeRadnych, 'KMS_ID', 'KMS_NAME')),
+		),
 	),
 )); ?>

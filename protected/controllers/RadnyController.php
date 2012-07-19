@@ -93,6 +93,7 @@ class RadnyController extends Controller
 		if(isset($_POST['Radny']))
 		{
 			$model->attributes=$_POST['Radny'];
+			$model->KomisjeRadnych = $_POST['Radny']['komisjeRadnychIDs'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->RDN_ID));
 		}

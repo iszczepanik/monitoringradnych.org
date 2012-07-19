@@ -29,6 +29,22 @@
  */
 class Radny extends CActiveRecord
 {
+	public function behaviors(){
+		return array( 'CAdvancedArBehavior' => array(
+		            'class' => 'application.extensions.CAdvancedArBehavior'));
+	}
+	
+	public $komisjeRadnychIDs = array();
+	
+	public function afterFind()
+	{
+		if(!empty($this->KomisjeRadnych))
+		{
+			foreach($this->KomisjeRadnych as $n=>$komisja)
+			$this->komisjeRadnychIDs[] = $komisja->KMS_ID;
+		}
+	}
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Radny the static model class
@@ -79,7 +95,7 @@ class Radny extends CActiveRecord
 			'ints' => array(self::HAS_MANY, 'Int', 'INT_RDN_ID'),
 			'Tenure' => array(self::BELONGS_TO, 'Tenure', 'RDN_TNR_ID'),
 			'Okreg' => array(self::BELONGS_TO, 'Okreg', 'RDN_OKR_ID'),
-			'rdnInKms' => array(self::HAS_MANY, 'RdnInKms', 'RDN_IN_KMS_RND_ID'),
+			'KomisjeRadnych' => array(self::MANY_MANY, 'Komisja', 'rdn_in_kms(RDN_IN_KMS_RND_ID, RDN_IN_KMS_KMS_ID)'),
 			'rnk' => array(self::HAS_ONE, 'Rnk', 'RNK_RDN_ID'),
 		);
 	}
@@ -104,6 +120,7 @@ class Radny extends CActiveRecord
 			'RDN_INTERVIEW_CMT' => 'Komentarz do wywiadu',
 			'RDN_TNR_ID' => 'Kadencja',
 			'RDN_OKR_ID' => 'Okręg',
+			'komisjeRadnychIDs' => 'Komisje',
 		);
 	}
 

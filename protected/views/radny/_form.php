@@ -116,6 +116,15 @@
 		<?php echo $form->error($model,'RDN_OKR_ID',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
+	
+	<div class='control-group' >
+    <?php echo $form->checkBoxListRow($model, 'komisjeRadnychIDs', 
+            CHtml::listData(
+                Komisja::model()->findAll(), 
+                'KMS_ID', 
+                'KMS_NAME'
+            )); ?>
+    </div>
 
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.BootButton', array(

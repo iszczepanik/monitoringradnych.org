@@ -4913,3 +4913,9 @@ in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
 2012/07/19 17:08:03 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (98)
 in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 17:33:04 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (98)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/07/19 17:48:47 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (95)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)

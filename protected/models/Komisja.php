@@ -21,13 +21,7 @@ class Komisja extends CActiveRecord
 	}
 	
 	public $kategorieKomisjiIDs = array();
-	
-	/**
-	* To sync the two "twins": the relation called 'sucursales'
-	* and the public variable 'sucursalesIDs'. If you don't do that
-	* you will not see checkbox checked for the departments-sucursales
-	* that are currently assigned to the Employee
-	*/
+
 	public function afterFind()
 	{
 		if(!empty($this->KategorieKomisji))
