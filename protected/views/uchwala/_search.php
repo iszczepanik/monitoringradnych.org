@@ -26,16 +26,6 @@
 	</div>
 
 	<div class="control-group">
-		<?php echo $form->label($model,'UCH_CAT_ID',array('class'=>'control-label')); ?>
-		<div class="controls">
-		<?php echo $form->dropDownList($model, 'UCH_CAT_ID', CHtml::listData(
-			Kategoria::model()->findAll(), 'CAT_ID', 'CAT_NAME'),
-			array('prompt' => '')
-			);?>
-		</div>
-	</div>
-
-	<div class="control-group">
 		<?php echo $form->label($model,'UCH_KMS_ID',array('class'=>'control-label')); ?>
 		<div class="controls">
 		<?php echo $form->dropDownList($model, 'UCH_KMS_ID', CHtml::listData(

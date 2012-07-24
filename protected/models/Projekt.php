@@ -26,6 +26,7 @@ class Projekt extends CActiveRecord
 	}
 	
 	public $dzielniceUchwalIDs = array();
+	public $kategorieUchwalIDs = array();
 	
 	public function afterFind()
 	{
@@ -33,6 +34,12 @@ class Projekt extends CActiveRecord
 		{
 			foreach($this->DzielniceUchwal as $n=>$dzielnica)
 			$this->dzielniceUchwalIDs[] = $dzielnica->DZL_ID;
+		}
+		if(!empty($this->KategorieUchwal))
+		{
+			foreach($this->KategorieUchwal as $n=>$kategoria)
+			$this->kategorieUchwalIDs[] = $kategoria->CAT_ID;
+		
 		}
 	}
 	
@@ -62,13 +69,13 @@ class Projekt extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('UCH_FILE, UCH_TYPE, UCH_CAT_ID, UCH_KMS_ID', 'required'),
-			array('UCH_TYPE, UCH_CAT_ID, UCH_KMS_ID', 'numerical', 'integerOnly'=>true),
+			array('UCH_FILE, UCH_TYPE, UCH_KMS_ID', 'required'),
+			array('UCH_TYPE, UCH_KMS_ID', 'numerical', 'integerOnly'=>true),
 			array('UCH_FILE', 'length', 'max'=>256),
 			array('UCH_NAME', 'length', 'max'=>512),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('UCH_ID, UCH_FILE, UCH_NAME, UCH_TYPE, UCH_CAT_ID, UCH_KMS_ID', 'safe', 'on'=>'search'),
+			array('UCH_ID, UCH_FILE, UCH_NAME, UCH_TYPE, UCH_KMS_ID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -82,9 +89,9 @@ class Projekt extends CActiveRecord
 		return array(
 			'cmtUches' => array(self::HAS_MANY, 'CmtUch', 'CMT_UCH_ID'),
 			'exps' => array(self::HAS_MANY, 'Exp', 'EXP_UCH_ID'),
-			'Kategoria' => array(self::BELONGS_TO, 'Kategoria', 'UCH_CAT_ID'),
 			'Komisja' => array(self::BELONGS_TO, 'Komisja', 'UCH_KMS_ID'),
 			'DzielniceUchwal' => array(self::MANY_MANY, 'Dzielnica', 'uch_in_dzl(UCH_IN_DZL_UCH_ID, UCH_IN_DZL_DZL_ID)'),
+			'KategorieUchwal' => array(self::MANY_MANY, 'Kategoria', 'uch_in_cat(UCH_IN_CAT_UCH_ID, UCH_IN_CAT_CAT_ID)'),
 		);
 	}
 
@@ -98,9 +105,9 @@ class Projekt extends CActiveRecord
 			'UCH_FILE' => 'Plik',
 			'UCH_NAME' => 'Nazwa',
 			'UCH_TYPE' => 'Typ',
-			'UCH_CAT_ID' => 'Kategoria',
 			'UCH_KMS_ID' => 'Komisja',
-			'dzielniceUchwalIDs' => 'Dzielnice'
+			'dzielniceUchwalIDs' => 'Dzielnice',
+			'kategorieUchwalIDs' => 'Kategorie',
 		);
 	}
 
@@ -119,7 +126,6 @@ class Projekt extends CActiveRecord
 		$criteria->compare('UCH_FILE',$this->UCH_FILE,true);
 		$criteria->compare('UCH_NAME',$this->UCH_NAME,true);
 		$criteria->compare('UCH_TYPE',2);
-		$criteria->compare('UCH_CAT_ID',$this->UCH_CAT_ID);
 		$criteria->compare('UCH_KMS_ID',$this->UCH_KMS_ID);
 
 		return new CActiveDataProvider($this, array(

@@ -75,11 +75,11 @@ class Radny extends CActiveRecord
 			array('RDN_FIRSTNAME, RDN_LASTNAME', 'length', 'max'=>64),
 			array('RDN_EMAIL, RDN_WEBSITE', 'length', 'max'=>128),
 			array('RDN_PHONE', 'length', 'max'=>32),
-			array('RDN_PHOTO', 'length', 'max'=>256),
+			array('RDN_PHOTO, RDN_STATEMENT_FILE', 'length', 'max'=>256),
 			array('RDN_DUTY, RDN_PROMISE_CMT, RDN_INTERVIEW_CMT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('RDN_ID, RDN_FIRSTNAME, RDN_LASTNAME, RDN_EMAIL, RDN_PHONE, RDN_DUTY, RDN_WEBSITE, RDN_PHOTO, RDN_PROMISE, RDN_INTERVIEW, RDN_PROMISE_CMT, RDN_INTERVIEW_CMT, RDN_TNR_ID, RDN_OKR_ID', 'safe', 'on'=>'search'),
+			array('RDN_ID, RDN_FIRSTNAME, RDN_LASTNAME, RDN_EMAIL, RDN_PHONE, RDN_DUTY, RDN_WEBSITE, RDN_PHOTO, RDN_PROMISE, RDN_INTERVIEW, RDN_PROMISE_CMT, RDN_INTERVIEW_CMT, RDN_TNR_ID, RDN_OKR_ID, RDN_STATEMENT_FILE', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -98,6 +98,11 @@ class Radny extends CActiveRecord
 			'KomisjeRadnych' => array(self::MANY_MANY, 'Komisja', 'rdn_in_kms(RDN_IN_KMS_RND_ID, RDN_IN_KMS_KMS_ID)'),
 			'rnk' => array(self::HAS_ONE, 'Rnk', 'RNK_RDN_ID'),
 		);
+	}
+	
+	public function ImieNazwisko()
+	{
+		return $this->RDN_FIRSTNAME . " " . $this->RDN_LASTNAME;
 	}
 
 	/**
@@ -120,6 +125,7 @@ class Radny extends CActiveRecord
 			'RDN_INTERVIEW_CMT' => 'Komentarz do wywiadu',
 			'RDN_TNR_ID' => 'Kadencja',
 			'RDN_OKR_ID' => 'Okręg',
+			'RDN_STATEMENT_FILE' => 'Oświadczenie majątkowe',
 			'komisjeRadnychIDs' => 'Komisje',
 		);
 	}
@@ -149,6 +155,7 @@ class Radny extends CActiveRecord
 		$criteria->compare('RDN_INTERVIEW_CMT',$this->RDN_INTERVIEW_CMT,true);
 		$criteria->compare('RDN_TNR_ID',$this->RDN_TNR_ID);
 		$criteria->compare('RDN_OKR_ID',$this->RDN_OKR_ID);
+		$criteria->compare('RDN_STATEMENT_FILE',$this->RDN_STATEMENT_FILE, true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Uchwalas'=>array('index'),
+	'Rankings'=>array('index'),
 	'Manage',
 );
 
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('uchwala-grid', {
+	$.fn.yiiGridView.update('ranking-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h2>Uchwały - Lista</h2>
+<h2>Rankings - Lista</h2>
 
 <?php echo CHtml::link('Wyszukiwanie zaawansowane','#',array('class'=>'search-button btn')); ?>
 <div class="search-form" style="display:none">
@@ -34,23 +34,26 @@ $('.search-form form').submit(function(){
 
 <?php $this->widget('bootstrap.widgets.BootGridView',array(
 	'type'=>'striped bordered condensed',
-	'id'=>'uchwala-grid',
+	'id'=>'ranking-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'UCH_ID',
-		'UCH_FILE',
-		'UCH_NAME',
-		/*array(
-			'name'=>'UCH_TYPE',
-			'value'=>'$data->getUchwalaTypeName()',
-		),*/
 		array(
-			'name'=>'UCH_KMS_ID',
-			'value'=>'$data->Komisja->KMS_NAME',
+			'name'=>'RNK_RDN_ID',
+			'value'=>'$data->Radny->ImieNazwisko()',
+		),
+		'RNK_KMS',
+		'RNK_RADY',
+		'RNK_DUTY',
+		'RNK_MAIL',
+		'RNK_INTERNET',
+		array(
+			'name'=>'RNK_SUM',
+			'value'=>'$data->Suma()',
 		),
 		array(
 			'class'=>'bootstrap.widgets.BootButtonColumn',
 		),
+
 	),
 )); ?>

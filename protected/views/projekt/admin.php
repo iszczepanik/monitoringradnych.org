@@ -42,10 +42,6 @@ $('.search-form form').submit(function(){
 		'UCH_FILE',
 		'UCH_NAME',
 		array(
-			'name'=>'UCH_CAT_ID',
-			'value'=>'$data->Kategoria->CAT_NAME',
-		),
-		array(
 			'name'=>'UCH_KMS_ID',
 			'value'=>'$data->Komisja->KMS_NAME',
 		),

@@ -27,6 +27,7 @@ $this->menu=array(
 		'RDN_INTERVIEW',
 		'RDN_PROMISE_CMT',
 		'RDN_INTERVIEW_CMT',
+		'RDN_STATEMENT_FILE',
 		array(
 			'name'=>'RDN_OKR_ID',
 			'value'=>$model->Okreg->OKR_NAME,

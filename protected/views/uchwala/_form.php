@@ -25,17 +25,6 @@
 
 	<?php echo $form->hiddenField($model,'UCH_TYPE',array('value'=>'1')); ?>
 
-	<div class='control-group<?php echo (CHtml::error($model,'UCH_CAT_ID') == '' ? '' : ' error'); ?>'>
-		<?php echo $form->labelEx($model,'UCH_CAT_ID',array('class'=>'control-label')); ?>
-		<div class="controls">
-		<?php echo $form->dropDownList($model, 'UCH_CAT_ID', CHtml::listData(
-			Kategoria::model()->findAll(), 'CAT_ID', 'CAT_NAME')
-			//array('prompt' => '')
-			);?>
-		<?php echo $form->error($model,'UCH_CAT_ID',array('class'=>'help-inline')); ?>
-		</div>
-	</div>
-
 	<div class='control-group<?php echo (CHtml::error($model,'UCH_KMS_ID') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'UCH_KMS_ID',array('class'=>'control-label')); ?>
 		<div class="controls">
@@ -53,6 +42,15 @@
                 Dzielnica::model()->findAll(), 
                 'DZL_ID', 
                 'DZL_NAME'
+            )); ?>
+    </div>
+    
+    <div class='control-group' >
+    <?php echo $form->checkBoxListRow($model, 'kategorieUchwalIDs', 
+            CHtml::listData(
+                Kategoria::model()->findAll(), 
+                'CAT_ID', 
+                'CAT_NAME'
             )); ?>
     </div>
 

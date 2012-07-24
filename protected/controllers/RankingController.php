@@ -1,6 +1,6 @@
 <?php
 
-class UchwalaController extends Controller
+class RankingController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,20 +61,16 @@ class UchwalaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Uchwala;
+		$model=new Ranking;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Uchwala']))
+		if(isset($_POST['Ranking']))
 		{
-			$model->attributes=$_POST['Uchwala'];
-			$model->DzielniceUchwal = $_POST['Uchwala']['dzielniceUchwalIDs'] != '' ?
-				$_POST['Uchwala']['dzielniceUchwalIDs'] : null;
-			$model->KategorieUchwal = $_POST['Uchwala']['kategorieUchwalIDs'] != '' ?
-				$_POST['Uchwala']['kategorieUchwalIDs'] : null;
+			$model->attributes=$_POST['Ranking'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->UCH_ID));
+				$this->redirect(array('view','id'=>$model->RNK_RDN_ID));
 		}
 
 		$this->render('create',array(
@@ -94,15 +90,11 @@ class UchwalaController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Uchwala']))
+		if(isset($_POST['Ranking']))
 		{
-			$model->attributes=$_POST['Uchwala'];
-			$model->DzielniceUchwal = $_POST['Uchwala']['dzielniceUchwalIDs'] != '' ?
-				$_POST['Uchwala']['dzielniceUchwalIDs'] : null;
-			$model->KategorieUchwal = $_POST['Uchwala']['kategorieUchwalIDs'] != '' ?
-				$_POST['Uchwala']['kategorieUchwalIDs'] : null;
+			$model->attributes=$_POST['Ranking'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->UCH_ID));
+				$this->redirect(array('view','id'=>$model->RNK_RDN_ID));
 		}
 
 		$this->render('update',array(
@@ -135,7 +127,7 @@ class UchwalaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Uchwala');
+		$dataProvider=new CActiveDataProvider('Ranking');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -146,10 +138,10 @@ class UchwalaController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Uchwala('search');
+		$model=new Ranking('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Uchwala']))
-			$model->attributes=$_GET['Uchwala'];
+		if(isset($_GET['Ranking']))
+			$model->attributes=$_GET['Ranking'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -163,7 +155,7 @@ class UchwalaController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Uchwala::model()->findByPk($id);
+		$model=Ranking::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -175,7 +167,7 @@ class UchwalaController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='uchwala-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='ranking-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

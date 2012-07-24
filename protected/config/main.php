@@ -2,27 +2,6 @@
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
-/*
- 'preload'=>array(
-    .....
-    'bootstrap', // preload the bootstrap component
-),
-'modules'=>array(
-    .....
-    'gii'=>array(
-        .....
-        'generatorPaths'=>array(
-            'bootstrap.gii', // since 0.9.1
-        ),
-    ),
-),
-'components'=>array(
-    .....
-    'bootstrap'=>array(
-        'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
-    ),
-),
- * */
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
@@ -86,6 +65,13 @@ return array(
 			'password' => '',
 			'charset' => 'utf8',
 		),
+		/*'db'=>array(
+					'connectionString' => 'mysql:host=localhost;dbname=bonafide_monit',
+					'emulatePrepare' => true,
+					'username' => 'bonafide_monit',
+					'password' => 'lifei$p3rfec+',
+					'charset' => 'utf8',
+		),*/
 		'authManager'=>array(
 			'class'=>'CDbAuthManager',
 			'connectionID'=>'db',

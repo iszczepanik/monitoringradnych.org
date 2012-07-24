@@ -54,13 +54,6 @@
 	</div>
 
 	<div class="control-group">
-		<?php echo $form->label($model,'RDN_PHOTO',array('class'=>'control-label')); ?>
-		<div class="controls">
-		<?php echo $form->textField($model,'RDN_PHOTO',array('size'=>60,'maxlength'=>256)); ?>
-		</div>
-	</div>
-
-	<div class="control-group">
 		<?php echo $form->label($model,'RDN_PROMISE',array('class'=>'control-label')); ?>
 		<div class="controls">
 		<?php echo $form->textArea($model,'RDN_PROMISE',array('rows'=>6, 'cols'=>50)); ?>

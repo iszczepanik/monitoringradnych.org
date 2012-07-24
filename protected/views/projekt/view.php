@@ -19,16 +19,16 @@ $this->menu=array(
 		'UCH_FILE',
 		'UCH_NAME',
 		array(
-			'name'=>'UCH_CAT_ID',
-			'value'=>$model->Kategoria->CAT_NAME,
-		),
-		array(
 			'name'=>'UCH_KMS_ID',
 			'value'=>$model->Komisja->KMS_NAME,
 		),
 		'dzielniceUchwalIDs'=> array(
             'name'  => 'dzielniceUchwalIDs',
             'value' => implode(', ', CHtml::listData($model->DzielniceUchwal, 'DZL_ID', 'DZL_NAME')),
+		),
+		'kategorieUchwalIDs'=> array(
+            'name'  => 'kategorieUchwalIDs',
+            'value' => implode(', ', CHtml::listData($model->KategorieUchwal, 'CAT_ID', 'CAT_NAME')),
 		),
 	),
 )); ?>

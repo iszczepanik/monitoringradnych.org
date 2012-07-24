@@ -94,6 +94,14 @@
 		<?php echo $form->error($model,'RDN_INTERVIEW_CMT',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
+	
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_STATEMENT_FILE') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_STATEMENT_FILE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_STATEMENT_FILE',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->error($model,'RDN_STATEMENT_FILE',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_TNR_ID') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_TNR_ID',array('class'=>'control-label')); ?>
