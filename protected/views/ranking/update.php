@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Nowy', 'url'=>array('create')),
+	//array('label'=>'Nowy', 'url'=>array('create')),
 	array('label'=>'Lista', 'url'=>array('admin')),
 );
 ?>

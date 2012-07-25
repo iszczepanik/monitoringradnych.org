@@ -7,11 +7,13 @@
 
 	<?php echo $form->errorSummary($model,null,null,array('class'=>'alert alert-error')); ?>
 	
+	<?php echo $form->hiddenField($model,'RNK_RDN_ID'); ?>
+
+	
 	<div class='control-group<?php echo (CHtml::error($model,'RNK_RDN_ID') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RNK_RDN_ID',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textField($model,'RNK_RDN_ID'); ?>
-		<?php echo $form->error($model,'RNK_RDN_ID',array('class'=>'help-inline')); ?>
+			<input value="<?php echo $model->Radny->ImieNazwisko(); ?>" disabled="disabled" />
 		</div>
 	</div>
 

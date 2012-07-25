@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Nowy', 'url'=>array('create')),
+	//array('label'=>'Nowy', 'url'=>array('create')),
 	array('label'=>'Lista', 'url'=>array('admin')),
 );
 ?>
@@ -15,7 +15,10 @@ $this->menu=array(
 <?php $this->widget('bootstrap.widgets.BootDetailView',array(
 	'data'=>$model,
 	'attributes'=>array(
-		'RNK_RDN_ID',
+		array(
+			'name'=>'RNK_RDN_ID',
+			'value'=>$model->Radny->ImieNazwisko(),
+		),
 		'RNK_KMS',
 		'RNK_RADY',
 		'RNK_DUTY',

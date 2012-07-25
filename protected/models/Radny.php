@@ -104,7 +104,7 @@ class Radny extends CActiveRecord
 	{
 		return $this->RDN_FIRSTNAME . " " . $this->RDN_LASTNAME;
 	}
-
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
