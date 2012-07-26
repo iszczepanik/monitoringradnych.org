@@ -13,11 +13,6 @@ echo "\$this->breadcrumbs=array(
 );\n";
 ?>
 
-$this->menu=array(
-	array('label'=>'Lista','url'=>array('admin')),
-	array('label'=>'Nowy','url'=>array('create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -32,15 +27,30 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
+<div class="row-fluid">
+<div class="span6">
+<?php
+echo "<?php \$this->widget('bootstrap.widgets.BootMenu', array(
+    'type'=>'tabs',
+    'items'=>array(
+//array('label'=>'LIST HEADER'),
+array('label'=>'Lista', 'icon'=>'th-list', 'url'=>array('admin')),
+array('label'=>'Nowy', 'icon'=>'plus-sign', 'url'=>array('create')),
+array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkOptions'=>array('class'=>'search-button')),
+),
+));
+?>"; ?>
 <h2><?php echo $this->pluralize($this->class2name($this->modelClass)); ?> - Lista</h2>
-
-<?php echo "<?php echo CHtml::link('Wyszukiwanie zaawansowane','#',array('class'=>'search-button btn')); ?>"; ?>
-
+</div>
+<div class='span6'>
+<?php //echo CHtml::link('Wyszukiwanie zaawansowane','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php echo "<?php \$this->renderPartial('_search',array(
 	'model'=>\$model,
-)); ?>\n"; ?>
+)); ?>"; ?>
 </div><!-- search-form -->
+</div>
+</div>
 
 <?php echo "<?php"; ?> $this->widget('bootstrap.widgets.BootGridView',array(
 	'type'=>'striped bordered condensed',

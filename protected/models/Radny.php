@@ -105,6 +105,21 @@ class Radny extends CActiveRecord
 		return $this->RDN_FIRSTNAME . " " . $this->RDN_LASTNAME;
 	}
 	
+	public static function GetList()
+	{
+		$listData=array();
+		$models = Radny::model()->findAll();
+		
+		foreach($models as $model)
+		{
+			$value=$model->RDN_ID;
+			$text=$model->ImieNazwisko();
+			$listData[$value]=$text;
+		}
+		
+		return $listData;
+	}
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

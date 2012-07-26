@@ -1,14 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Dzielnicas'=>array('index'),
-	$model->DZL_ID,
+	'Interpelacjas'=>array('index'),
+	'Create',
 );
 ?>
 
+
+
 <div class="row-fluid">
 <div class="span6">
-<?php
-$this->widget('bootstrap.widgets.BootMenu', array(
+<?php $this->widget('bootstrap.widgets.BootMenu', array(
     'type'=>'tabs',
     'items'=>array(
 //array('label'=>'LIST HEADER'),
@@ -17,29 +18,14 @@ array('label'=>'Nowy', 'icon'=>'plus-sign', 'url'=>array('create')),
 array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkOptions'=>array('class'=>'search-button')),
 ),
 ));
-?>
-<h2>Dzielnica - Widok</h2>
+?><h2>Nowy Interpelacja</h2>
 </div>
-<div class="span6">
-<?php //echo CHtml::link('Wyszukiwanie zaawansowane','#',array('class'=>'search-button')); ?>
+<div class='span6'>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+)); ?></div><!-- search-form -->
 </div>
 </div>
 
-<?php $this->widget('bootstrap.widgets.BootDetailView',array(
-	'data'=>$model,
-	'attributes'=>array(
-		'DZL_ID',
-		'DZL_NAME',
-		array(
-			'name'=>'DZL_OKR_ID',
-			'value'=>$model->Okreg->OKR_NAME,
-		),
-		'DZL_CITIZEN_COUNT',
-		'DZL_AREA',
-	),
-)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

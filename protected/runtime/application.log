@@ -5978,3 +5978,6 @@ Stack trace:
 #28 {main}
 REQUEST_URI=/monitoringradnych.org/index.php?r=ranking/update&id=2
 ---
+2012/07/26 19:38:29 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieKomisjiIDs" klasy "Komisja" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomisjaController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)

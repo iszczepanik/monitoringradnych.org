@@ -1,14 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Dzielnicas'=>array('index'),
-	$model->DZL_ID,
+	'Interpelacjas'=>array('index'),
+	$model->INT_ID,
 );
 ?>
 
+
+
 <div class="row-fluid">
 <div class="span6">
-<?php
-$this->widget('bootstrap.widgets.BootMenu', array(
+<?php $this->widget('bootstrap.widgets.BootMenu', array(
     'type'=>'tabs',
     'items'=>array(
 //array('label'=>'LIST HEADER'),
@@ -17,29 +18,27 @@ array('label'=>'Nowy', 'icon'=>'plus-sign', 'url'=>array('create')),
 array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkOptions'=>array('class'=>'search-button')),
 ),
 ));
-?>
-<h2>Dzielnica - Widok</h2>
+?><h2>Interpelacja - Widok</h2>
 </div>
-<div class="span6">
-<?php //echo CHtml::link('Wyszukiwanie zaawansowane','#',array('class'=>'search-button')); ?>
+<div class='span6'>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
+)); ?></div><!-- search-form -->
 </div>
 </div>
 
 <?php $this->widget('bootstrap.widgets.BootDetailView',array(
 	'data'=>$model,
 	'attributes'=>array(
-		'DZL_ID',
-		'DZL_NAME',
+		'INT_ID',
 		array(
-			'name'=>'DZL_OKR_ID',
-			'value'=>$model->Okreg->OKR_NAME,
+			'name'=>'INT_RDN_ID',
+			'value'=>$model->Radny->ImieNazwisko(),
 		),
-		'DZL_CITIZEN_COUNT',
-		'DZL_AREA',
+		'INT_NAME',
+		'INT_FILE',
+		'INT_ANSWER_FILE',
+		'INT_RDN_COMMENT',
 	),
 )); ?>

@@ -47,7 +47,8 @@
 	</div>
 
 	<div class="form-actions">
-		<?php echo CHtml::submitButton('Szukaj',array('class'=>'btn btn-primary')); ?>
+		<?php echo CHtml::submitButton('Szukaj',array('class'=>'btn btn-primary')); 
+		echo CHtml::link('Zamknij','#',array('class'=>'btn search-button'));?>
 	</div>
 
 <?php $this->endWidget(); ?>
