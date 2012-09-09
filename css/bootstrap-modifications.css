@@ -1,1 +1,81 @@
 table input { width: auto; }
+
+.nav-pills > li > a
+{
+	padding-top: 1px;
+	padding-bottom: 1px;
+	text-transform: uppercase;
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/******************/
+#logo
+{
+	margin-bottom: 25px;
+	
+}
+
+
+#slider1 {
+    width: 940px; /* important to be same as image width */
+    height: 310px; /* important to be same as image height */
+    position: relative; /* important */
+	overflow: hidden; /* important */
+}
+
+#slider1Content {
+    width: 940px; /* important to be same as image width or wider */
+    position: absolute;
+	top: 0;
+	margin-left: 0;
+}
+.slider1Image {
+    float: left;
+    position: relative;
+	display: none;
+}
+.slider1Image span {
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    display: none;
+}
+.clear {
+	clear: both;
+}
+.slider1Image span strong {
+    font-size: 14px;
+}
+.right {
+	right: 0;
+	bottom: 0;
+	width: 300px !important;
+	height: 310px;
+}
+.bottom {
+	bottom: 0;
+    left: 30px;
+    width: 300px;  !important;
+    filter: alpha(opacity=90);
+    -moz-opacity: 0.9;
+	-khtml-opacity: 0.9;
+    opacity: 0.9;
+    padding: 15px;
+    border: 1px dotted gray;
+    border-bottom: 0;
+}
+ul { list-style-type: none;}
+
+.plot { 
+	position: absolute; z-index: 1000; background: white; right: 0; top:0; 
+	width: 220px;
+	height: 290px;
+	filter: alpha(opacity=90);
+    -moz-opacity: 0.9;
+	-khtml-opacity: 0.9;
+    opacity: 0.9;
+    padding: 15px;
+    border-left: 1px dotted gray;
+}

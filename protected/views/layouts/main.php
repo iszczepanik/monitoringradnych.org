@@ -7,24 +7,29 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"  />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.css"  />
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-modifications.css"  />
+	
 	
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.7.2.min.js"></script>
-	
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nivo.slider.js"></script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-modifications.css"  />
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/s3Slider.js"></script>
+
 
 <body data-offset="50" data-target=".subnav" data-spy="scroll">
 <div class="container" id="page">
-
-	<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
+<div id="logo" ><a href="<?php echo Yii::app()->request->baseUrl; ?>" ><img src="img/logo.png" alt="Monitoring radnych" /></a></div>
+	<!--<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>-->
 		<?php $this->widget('bootstrap.widgets.BootMenu', array(
 		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
 		    'stacked'=>false, // whether this is a stacked menu
 		    'items'=>array(
-		        array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>true),
-		        array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-		        array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
+		        //array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>true),
+				array('label'=>'O projekcie', 'url'=>array('/site/oprojekcie'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Kontakt', 'url'=>array('/site/konakt'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logowanie', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+		        array('label'=>'Wyloguj ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Użytkownicy', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Radni', 'url'=>array('/radny/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Okręgi', 'url'=>array('/okreg/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
@@ -80,7 +85,7 @@
 		)); ?>
 	<?php endif?> -->
 	
-
+	<div style="height: 40px;"></div>
 
 
 
