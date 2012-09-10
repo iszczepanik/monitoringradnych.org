@@ -42,11 +42,12 @@ class Ranking extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('RNK_RDN_ID, RNK_KMS, RNK_RADY, RNK_DUTY, RNK_MAIL, RNK_INTERNET', 'required'),
-			array('RNK_RDN_ID, RNK_KMS, RNK_RADY, RNK_DUTY, RNK_MAIL, RNK_INTERNET', 'numerical', 'integerOnly'=>true),
+			array('RNK_RDN_ID, RNK_KMS, RNK_RADY, RNK_DUTY, RNK_MAIL, RNK_INTERNET, RNK_SUM, RNK_LP', 'required'),
+			array('RNK_RDN_ID, RNK_LP', 'numerical', 'integerOnly'=>true),
+			array('RNK_KMS, RNK_RADY, RNK_DUTY, RNK_MAIL, RNK_INTERNET, RNK_SUM', 'numerical'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('RNK_RDN_ID, RNK_KMS, RNK_RADY, RNK_DUTY, RNK_MAIL, RNK_INTERNET', 'safe', 'on'=>'search'),
+			array('RNK_RDN_ID, RNK_KMS, RNK_RADY, RNK_DUTY, RNK_MAIL, RNK_INTERNET, RNK_SUM, RNK_LP', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,10 +65,10 @@ class Ranking extends CActiveRecord
 	
 	public $RNK_SUM = "";
 	
-	public function Suma()
+	/*public function Suma()
 	{
 		return $this->RNK_KMS + $this->RNK_RADY + $this->RNK_DUTY + $this->RNK_MAIL + $this->RNK_INTERNET;
-	}
+	}*/
 
 	/**
 	 * @return array customized attribute labels (name=>label)
@@ -82,6 +83,7 @@ class Ranking extends CActiveRecord
 			'RNK_MAIL' => 'Emaile',
 			'RNK_INTERNET' => 'Internet',
 			'RNK_SUM' => 'Suma',
+			'RNK_LP' => 'Lp',
 		);
 	}
 
@@ -102,6 +104,8 @@ class Ranking extends CActiveRecord
 		$criteria->compare('RNK_DUTY',$this->RNK_DUTY);
 		$criteria->compare('RNK_MAIL',$this->RNK_MAIL);
 		$criteria->compare('RNK_INTERNET',$this->RNK_INTERNET);
+		$criteria->compare('RNK_SUM',$this->RNK_SUM);
+		$criteria->compare('RNK_LP',$this->RNK_LP);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -21,6 +21,7 @@
 <div class="container" id="page">
 <div id="logo" ><a href="<?php echo Yii::app()->request->baseUrl; ?>" ><img src="img/logo.png" alt="Monitoring radnych" /></a></div>
 	<!--<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>-->
+	<div class="main-menu" >
 		<?php $this->widget('bootstrap.widgets.BootMenu', array(
 		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
 		    'stacked'=>false, // whether this is a stacked menu
@@ -43,7 +44,7 @@
 				array('label'=>'Interpelacje', 'url'=>array('/interpelacja/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 		    ),
 		)); ?>
-	
+	</div>
 	<!--
 		<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
@@ -93,7 +94,10 @@
 
 
 	<footer class="footer" id="footer">
-		<?php echo Yii::powered(); ?>
+		<div class="row"> 
+	    <div class="span8" >Tekst stopki</div>
+	    <div class="span4" ><img src="img/bonafides.png" alt="bonafides" /></div>
+	    </div>
 	</footer><!-- footer -->
 </div><!-- page -->
 

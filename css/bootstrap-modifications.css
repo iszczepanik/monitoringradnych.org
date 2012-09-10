@@ -1,6 +1,6 @@
 table input { width: auto; }
 
-.nav-pills > li > a
+.main-menu > .nav-pills > li > a , .lower-menu > .nav-pills > li > a
 {
 	padding-top: 1px;
 	padding-bottom: 1px;
@@ -9,6 +9,18 @@ table input { width: auto; }
 	font-size: 12px;
 	font-weight: bold;
 }
+.footer
+{
+	margin-top: 75px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.span3 .image
+{
+	border: 1px solid #aaa;
+	height: 70px;
+	margin: 3px 0;
+}
 
 /******************/
 #logo
@@ -16,8 +28,24 @@ table input { width: auto; }
 	margin-bottom: 25px;
 	
 }
+.green
+{
+	color: #9aca3c;
+}
+.radny .image
+{
+	
+	width: 120px;
+	height: 120px;
+	float: left;
+	margin: 0 8px 8px 0;
+}
+.radny_info
+{
+	margin-top: 15px;
+}
 
-
+/******************/
 #slider1 {
     width: 940px; /* important to be same as image width */
     height: 310px; /* important to be same as image height */
@@ -63,10 +91,9 @@ table input { width: auto; }
 	-khtml-opacity: 0.9;
     opacity: 0.9;
     padding: 15px;
-    border: 1px dotted gray;
-    border-bottom: 0;
+    border-top: 1px solid #9aca3c;
 }
-ul { list-style-type: none;}
+/*ul { list-style-type: none;}*/
 
 .plot { 
 	position: absolute; z-index: 1000; background: white; right: 0; top:0; 
@@ -77,5 +104,5 @@ ul { list-style-type: none;}
 	-khtml-opacity: 0.9;
     opacity: 0.9;
     padding: 15px;
-    border-left: 1px dotted gray;
+    border-left: 1px solid #9aca3c;
 }

@@ -96,7 +96,7 @@ class Radny extends CActiveRecord
 			'Tenure' => array(self::BELONGS_TO, 'Tenure', 'RDN_TNR_ID'),
 			'Okreg' => array(self::BELONGS_TO, 'Okreg', 'RDN_OKR_ID'),
 			'KomisjeRadnych' => array(self::MANY_MANY, 'Komisja', 'rdn_in_kms(RDN_IN_KMS_RND_ID, RDN_IN_KMS_KMS_ID)'),
-			'rnk' => array(self::HAS_ONE, 'Rnk', 'RNK_RDN_ID'),
+			'Ranking' => array(self::HAS_ONE, 'Ranking', 'RNK_RDN_ID'),
 		);
 	}
 	

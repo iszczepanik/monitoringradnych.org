@@ -26,6 +26,29 @@
             <div class="clear slider1Image"></div>
         </ul>
     </div>
+    
+    <div style="height: 50px;"></div>
+    
+    <div class="row lower-menu"> 
+    	<ul class="nav nav-pills">
+	    <li class="span3" >
+	    <a href="<?php echo $this->createUrl('frontRadny/index'); ?>" >Radni
+	    <div class="image" ></div></a>
+	    </li>
+		<li class="span3" >
+		<a href="#">Wyszukiwarka uchwał
+		<div class="image" ></div></a>
+		</li>
+		<li class="span3" >
+		<a href="#">Dzielnice
+		<div class="image" ></div></a>
+		</li>
+		<li class="span3" >
+		<a href="#">Ranking
+		<div class="image" ></div></a>
+		</li>
+		</ul>
+	</div>
         
 
 <script type="text/javascript">

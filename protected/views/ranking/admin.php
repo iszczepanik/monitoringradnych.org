@@ -61,10 +61,8 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'RNK_DUTY',
 		'RNK_MAIL',
 		'RNK_INTERNET',
-		array(
-			'name'=>'RNK_SUM',
-			'value'=>'$data->Suma()',
-		),
+		'RNK_SUM',
+		'RNK_LP',
 		array(
 			'class'=>'bootstrap.widgets.BootButtonColumn',
 		),
