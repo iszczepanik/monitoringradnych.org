@@ -50,8 +50,22 @@ class UchwalaController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
+		
+		$criteria = new CDbCriteria;
+		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID';
+		$criteria->params=array(':VOT_UCH_ID'=>$id);
+		
+		$votesFull = Vote::model()->findAll($criteria);
+		
+		foreach($votesFull as $i=>$item)
+		{
+			$votes[] = $item->Radny->ImieNazwisko()." - ".$item->VoteLabel();
+		}
+	
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model,
+			'votes'=>$votes,
 		));
 	}
 
@@ -74,7 +88,22 @@ class UchwalaController extends Controller
 			$model->KategorieUchwal = $_POST['Uchwala']['kategorieUchwalIDs'] != '' ?
 				$_POST['Uchwala']['kategorieUchwalIDs'] : null;
 			if($model->save())
+			{
+				$i = 0;
+				while (isset($_POST['Vote'.$i.'RDN_ID']))
+				{
+					$vot = new Vote;
+					$vot->VOT_RDN_ID = $_POST['Vote'.$i.'RDN_ID'];
+					$vot->VOT_UCH_ID = $model->UCH_ID;
+					$vot->VOT_VOTE = $_POST['Vote'.$i];
+					
+					$vot->save();
+					
+					$i++;
+				}
+				//
 				$this->redirect(array('view','id'=>$model->UCH_ID));
+			}
 		}
 
 		$this->render('create',array(
@@ -102,11 +131,38 @@ class UchwalaController extends Controller
 			$model->KategorieUchwal = $_POST['Uchwala']['kategorieUchwalIDs'] != '' ?
 				$_POST['Uchwala']['kategorieUchwalIDs'] : null;
 			if($model->save())
+			{
+				$i = 0;
+				while (isset($_POST['Vote'.$i.'RDN_ID']))
+				{
+					$vot = new Vote;
+					$vot->VOT_RDN_ID = $_POST['Vote'.$i.'RDN_ID'];
+					$vot->VOT_UCH_ID = $model->UCH_ID;
+					$vot->VOT_VOTE = $_POST['Vote'.$i];
+					
+					$vot->save();
+					
+					$i++;
+				}
+				//
 				$this->redirect(array('view','id'=>$model->UCH_ID));
+			}
 		}
-
+		
+		$criteria = new CDbCriteria;
+		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID';
+		$criteria->params=array(':VOT_UCH_ID'=>$id);
+		
+		$votesFull = Vote::model()->findAll($criteria);
+		
+		foreach($votesFull as $i=>$item)
+		{
+			$votes[$item->VOT_RDN_ID] = $item->VOT_VOTE;
+		}
+		
 		$this->render('update',array(
 			'model'=>$model,
+			'votes'=>$votes,
 		));
 	}
 

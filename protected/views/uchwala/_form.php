@@ -54,6 +54,34 @@
             )); ?>
     </div>
 
+	<div class='control-group' >
+		<label class="control-label" for="Vote">Głosowanie</label>
+		<div class="controls">
+			<table class="glosowanie">
+			<?php
+			$Radni = Radny::model()->findAll();
+			foreach($Radni as $i=>$item)
+			{
+				$vote = isset($votes) ? $votes[$item->RDN_ID] : 2;
+				?>
+				<tr><td>
+				<?
+				echo $item->ImieNazwisko();
+				?>
+				<input type="hidden" name="Vote<? echo $i;?>RDN_ID" value="<? echo $item->RDN_ID; ?>" />
+				</td>
+				<td><input type="radio" name="Vote<? echo $i;?>" value="-1" <? if ($vote == -1) echo "checked=checked"; ?> /> przeciw</td>
+				<td><input type="radio" name="Vote<? echo $i;?>" value="0" <? if ($vote == 0) echo "checked=checked"; ?> /> wstrzymał się</td>
+				<td><input type="radio" name="Vote<? echo $i;?>" value="1" <? if ($vote == 1) echo "checked=checked"; ?> /> za</td>
+				<td><input type="radio" name="Vote<? echo $i;?>" value="2" <? if ($vote == 2) echo "checked=checked"; ?> /> nieobecny na głosowaniu</td>
+				</tr>
+				<?
+			}
+			?>
+			</table>
+		</div>
+	</div>
+
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.BootButton', array(
 			'buttonType'=>'submit',

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
  * This is the model class for table "uch".
@@ -27,6 +27,7 @@ class Uchwala extends CActiveRecord
 	
 	public $dzielniceUchwalIDs = array();
 	public $kategorieUchwalIDs = array();
+	//public $votes = array();
 	
 	public function afterFind()
 	{
@@ -39,8 +40,9 @@ class Uchwala extends CActiveRecord
 		{
 			foreach($this->KategorieUchwal as $n=>$kategoria)
 			$this->kategorieUchwalIDs[] = $kategoria->CAT_ID;
-		
 		}
+		
+
 	}
 	
 	
@@ -119,6 +121,7 @@ class Uchwala extends CActiveRecord
 			'UCH_KMS_ID' => 'Komisja',
 			'dzielniceUchwalIDs' => 'Dzielnice',
 			'kategorieUchwalIDs' => 'Kategorie',
+			'glosowanie' => 'Głosowanie',
 		);
 	}
 

@@ -64,12 +64,12 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
-		),
-		/*'db'=>array(
-					'connectionString' => 'mysql:host=localhost;dbname=bonafide_monit',
+		),/*
+		'db'=>array(
+					'connectionString' => 'mysql:host=localhost;dbname=bonafide_radni',
 					'emulatePrepare' => true,
-					'username' => 'bonafide_monit',
-					'password' => 'lifei$p3rfec+',
+					'username' => 'bonafide_rdn',
+					'password' => 'tr@mw@j',
 					'charset' => 'utf8',
 		),*/
 		'authManager'=>array(

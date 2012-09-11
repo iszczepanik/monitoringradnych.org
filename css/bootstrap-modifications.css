@@ -44,6 +44,10 @@ table input { width: auto; }
 {
 	margin-top: 15px;
 }
+.glosowanie tr td
+{
+	padding: 1px 20px 1px 0;
+}
 
 /******************/
 #slider1 {

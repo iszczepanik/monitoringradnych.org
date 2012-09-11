@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $this->breadcrumbs=array(
 	'Uchwalas'=>array('index'),
 	$model->UCH_ID,
@@ -30,6 +30,10 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 </div>
 </div>
 
+<?
+//var_dump($votes);
+?>
+
 <?php $this->widget('bootstrap.widgets.BootDetailView',array(
 	'data'=>$model,
 	'attributes'=>array(
@@ -48,5 +52,21 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
             'name'  => 'kategorieUchwalIDs',
             'value' => implode(', ', CHtml::listData($model->KategorieUchwal, 'CAT_ID', 'CAT_NAME')),
 		),
+		// 'glosowanie'=> array(
+            // 'name'  => 'glosowanie',
+            // 'value' => implode(', ', $votes),
+		// ),
 	),
-)); ?>
+)); 
+
+if(isset($votes))
+{
+	?><table class="detail-view table table-striped table-condensed" ><tr class="odd"><th>Głosowanie</th><td><?
+		foreach($votes as $i=>$item)
+		{
+			echo $item."<br />";
+		}
+	?></td></tr></table><?
+}
+
+?>
