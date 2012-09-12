@@ -6490,3 +6490,9 @@ REQUEST_URI=/monitoringradnych.org/index.php?r=uchwala/view&id=2
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\uchwala\view.php (62)
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (69)
 in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/12 14:54:11 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (85)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/12 14:54:11 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (85)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
