@@ -84,6 +84,11 @@ class Ranking extends CActiveRecord
 			'RNK_INTERNET' => 'Internet',
 			'RNK_SUM' => 'Suma',
 			'RNK_LP' => 'Lp',
+			'RNK_LP_KMS' => 'Lp - Komisje',
+			'RNK_LP_RADY' => 'Lp - Rady',
+			'RNK_LP_DUTY' => 'Lp - Dyżury',
+			'RNK_LP_MAIL' => 'Lp - Emaile',
+			'RNK_LP_INTERNET' => 'Lp - Internet',
 		);
 	}
 
@@ -106,6 +111,11 @@ class Ranking extends CActiveRecord
 		$criteria->compare('RNK_INTERNET',$this->RNK_INTERNET);
 		$criteria->compare('RNK_SUM',$this->RNK_SUM);
 		$criteria->compare('RNK_LP',$this->RNK_LP);
+		$criteria->compare('RNK_LP_KMS',$this->RNK_LP_KMS);
+		$criteria->compare('RNK_LP_RADY',$this->RNK_LP_RADY);
+		$criteria->compare('RNK_LP_DUTY',$this->RNK_LP_DUTY);
+		$criteria->compare('RNK_LP_MAIL',$this->RNK_LP_MAIL);
+		$criteria->compare('RNK_LP_INTERNET',$this->RNK_LP_INTERNET);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

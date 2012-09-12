@@ -19,7 +19,7 @@
 
 <body data-offset="50" data-target=".subnav" data-spy="scroll">
 <div class="container" id="page">
-<div id="logo" ><a href="<?php echo Yii::app()->request->baseUrl; ?>" ><img src="img/logo.png" alt="Monitoring radnych" /></a></div>
+<div id="logo" ><a href="<?php echo $this->createUrl('/'); ?>" ><img src="img/logo.png" alt="Monitoring radnych" /></a></div>
 	<!--<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>-->
 	<div class="main-menu" >
 		<?php $this->widget('bootstrap.widgets.BootMenu', array(

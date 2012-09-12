@@ -40,11 +40,11 @@
 		<div class="image" ></div></a>
 		</li>
 		<li class="span3" >
-		<a href="#">Dzielnice
+		<a href="<?php echo $this->createUrl('frontDzielnice/index'); ?>">Dzielnice
 		<div class="image" ></div></a>
 		</li>
 		<li class="span3" >
-		<a href="#">Ranking
+		<a href="<?php echo $this->createUrl('frontRanking/index'); ?>">Ranking
 		<div class="image" ></div></a>
 		</li>
 		</ul>
