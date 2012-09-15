@@ -22,6 +22,22 @@
 		<?php echo $form->error($model,'UCH_NAME',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
+	
+	<div class='control-group<?php echo (CHtml::error($model,'UCH_NUMBER') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'UCH_NUMBER',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'UCH_NUMBER',array('size'=>60,'maxlength'=>8)); ?>
+		<?php echo $form->error($model,'UCH_NUMBER',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
+	
+	<div class='control-group<?php echo (CHtml::error($model,'UCH_DATE') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'UCH_DATE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'UCH_DATE',array('size'=>60,'maxlength'=>10)); ?>
+		<?php echo $form->error($model,'UCH_DATE',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
 	<?php echo $form->hiddenField($model,'UCH_TYPE',array('value'=>'1')); ?>
 
@@ -59,23 +75,47 @@
 		<div class="controls">
 			<table class="glosowanie">
 			<?php
-			$Radni = Radny::model()->findAll();
-			foreach($Radni as $i=>$item)
+			if (isset($votes))
 			{
-				$vote = isset($votes) ? $votes[$item->RDN_ID] : 2;
-				?>
-				<tr><td>
-				<?
-				echo $item->ImieNazwisko();
-				?>
-				<input type="hidden" name="Vote<? echo $i;?>RDN_ID" value="<? echo $item->RDN_ID; ?>" />
-				</td>
-				<td><input type="radio" name="Vote<? echo $i;?>" value="-1" <? if ($vote == -1) echo "checked=checked"; ?> /> przeciw</td>
-				<td><input type="radio" name="Vote<? echo $i;?>" value="0" <? if ($vote == 0) echo "checked=checked"; ?> /> wstrzymał się</td>
-				<td><input type="radio" name="Vote<? echo $i;?>" value="1" <? if ($vote == 1) echo "checked=checked"; ?> /> za</td>
-				<td><input type="radio" name="Vote<? echo $i;?>" value="2" <? if ($vote == 2) echo "checked=checked"; ?> /> nieobecny na głosowaniu</td>
-				</tr>
-				<?
+				$i = 0;
+				foreach($votes as $key => $item)
+				{
+					?>
+					<tr><td>
+					<?
+					echo $item[0];
+					?>
+					<input type="hidden" name="Vote<? echo $i;?>" value="<? echo $key; ?>" />
+					</td>
+					<td><input type="radio" name="Vote<? echo $key;?>" value="-1" <? if ($item[1] == -1) echo "checked='checked'"; ?> /> przeciw</td>
+					<td><input type="radio" name="Vote<? echo $key;?>" value="0" <? if ($item[1] == 0) echo "checked='checked'"; ?> /> wstrzymał się</td>
+					<td><input type="radio" name="Vote<? echo $key;?>" value="1" <? if ($item[1] == 1) echo "checked='checked'"; ?> /> za</td>
+					<td><input type="radio" name="Vote<? echo $key;?>" value="2"  <? if ($item[1] == 2) echo "checked='checked'"; ?> /> nieobecny na głosowaniu</td>
+					</tr>
+					<?
+					$i++;
+				}
+			}
+			else
+			{
+				$Radni = Radny::model()->findAll();
+				foreach($Radni as $i=>$item)
+				{
+					//$vote = isset($votes) ? $votes[$item->RDN_ID] : 2;
+					?>
+					<tr><td>
+					<?
+					echo $item->ImieNazwisko();
+					?>
+					<input type="hidden" name="Vote<? echo $i;?>RDN_ID" value="<? echo $item->RDN_ID; ?>" />
+					</td>
+					<td><input type="radio" name="Vote<? echo $i;?>" value="-1" <? //if ($vote == -1) echo "checked=checked"; ?> /> przeciw</td>
+					<td><input type="radio" name="Vote<? echo $i;?>" value="0" /> wstrzymał się</td>
+					<td><input type="radio" name="Vote<? echo $i;?>" value="1" /> za</td>
+					<td><input type="radio" name="Vote<? echo $i;?>" value="2" checked="checked" /> nieobecny na głosowaniu</td>
+					</tr>
+					<?
+				}
 			}
 			?>
 			</table>

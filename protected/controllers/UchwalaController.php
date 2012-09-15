@@ -133,12 +133,13 @@ class UchwalaController extends Controller
 			if($model->save())
 			{
 				$i = 0;
-				while (isset($_POST['Vote'.$i.'RDN_ID']))
+				while (isset($_POST['Vote'.$i]))
 				{
-					$vot = new Vote;
-					$vot->VOT_RDN_ID = $_POST['Vote'.$i.'RDN_ID'];
-					$vot->VOT_UCH_ID = $model->UCH_ID;
-					$vot->VOT_VOTE = $_POST['Vote'.$i];
+					$vot_id = $_POST['Vote'.$i];
+					$vot = Vote::model()->findByPk($vot_id);
+					//$vot->VOT_RDN_ID = $_POST['Vote'.$i.'RDN_ID'];
+					//$vot->VOT_UCH_ID = $model->UCH_ID;
+					$vot->VOT_VOTE = $_POST['Vote'.$vot_id];
 					
 					$vot->save();
 					
@@ -157,7 +158,7 @@ class UchwalaController extends Controller
 		
 		foreach($votesFull as $i=>$item)
 		{
-			$votes[$item->VOT_RDN_ID] = $item->VOT_VOTE;
+			$votes[$item->VOT_ID] = array($item->Radny->ImieNazwisko(), $item->VOT_VOTE);
 		}
 		
 		$this->render('update',array(

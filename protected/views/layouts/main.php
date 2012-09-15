@@ -95,7 +95,38 @@
 
 	<footer class="footer" id="footer">
 		<div class="row"> 
-	    <div class="span8" >Tekst stopki</div>
+	    
+
+			
+				<div class="span4" >
+					<h3>Komisje <small>tutaj znajdziecie skład komisji, listy obecności, plany pracy i protokoły z posiedzeń</small></h3>
+					
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316724" >Budżetu</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316788" >Edukacji</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292317193" >Infrastruktury i środowiska</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316878" >Kultury, Promocji i Sportu</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316948" >Polityki społecznej</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316610" >Organizacyjna</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292317310" >Rozwoju miasta</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316485" >Rewizyjna</a>
+				</div>
+<div class="span4" >
+<h3>Warto odwiedzić</h3>
+<a href="http://bip.um.katowice.pl/index.php?s=15&r=1221779186" >Projekty uchwał</a>
+
+<a href="http://bip.um.katowice.pl/index.php?s=189&rok=2012" >Akty prawa miejscowego</a>
+
+<a href="http://bip.um.katowice.pl/index.php?s=102&r=1" >Oświadczenia majątkowe</a>
+
+<a href="http://bip.um.katowice.pl/index.php?s=15&r=1221734909" >Plan pracy rady</a>
+
+<a href="http://bip.um.katowice.pl/index.php?s=16&r=1221751187&id=1227080613" >Regulamin Rady</a>
+
+<a href="http://www.katowice.eu/portalradnych" >Portal Radnych</a>
+</div>
+			
+		
+		
 	    <div class="span4" ><img src="img/bonafides.png" alt="bonafides" /></div>
 	    </div>
 	</footer><!-- footer -->

@@ -24,6 +24,20 @@
 		<?php echo $form->textField($model,'UCH_NAME',array('size'=>60,'maxlength'=>512)); ?>
 		</div>
 	</div>
+	
+	<div class="control-group">
+		<?php echo $form->label($model,'UCH_NUMBER',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'UCH_NUMBER',array('size'=>60,'maxlength'=>512)); ?>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<?php echo $form->label($model,'UCH_DATE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'UCH_DATE',array('size'=>60,'maxlength'=>512)); ?>
+		</div>
+	</div>
 
 	<div class="control-group">
 		<?php echo $form->label($model,'UCH_KMS_ID',array('class'=>'control-label')); ?>

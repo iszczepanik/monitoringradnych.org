@@ -12,8 +12,12 @@ table input { width: auto; }
 .footer
 {
 	margin-top: 75px;
-	text-align: center;
+	/*text-align: center;*/
 	margin-bottom: 10px;
+}
+.footer a
+{
+	display: block;
 }
 .span3 .image
 {

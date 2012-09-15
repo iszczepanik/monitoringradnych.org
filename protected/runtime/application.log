@@ -6505,3 +6505,121 @@ Stack trace:
 REQUEST_URI=/monitoringradnych.org/index.php?r=frontRanking/index
 HTTP_REFERER=http://localhost/monitoringradnych.org/index.php
 ---
+2012/09/12 17:22:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection nie zdołał otworzyć połączenia DB: SQLSTATE[28000] [1045] Access denied for user 'bonafide_rdn'@'localhost' (using password: YES)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(586): CModule->getComponent('db')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(60): CDbAuthManager->getDbConnection()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbAuthManager->init()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(179): CModule->getComponent('authManager')
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CWebUser.php(794): CWebApplication->getAuthManager()
+#8 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\main.php(34): CWebUser->checkAccess('admin')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\Program File...', Array, true)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#16 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('C:\Program File...', Array, true)
+#20 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\SiteController.php(32): CController->render('index')
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('')
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#27 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/monitoringradnych.org/
+---
+2012/09/12 17:22:54 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (128)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/12 17:22:54 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (128)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 11:42:03 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (128)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 11:42:03 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (128)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 11:53:55 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`radni`.`uch_in_cat`, CONSTRAINT `uch_in_cat_ibfk_1` FOREIGN KEY (`UCH_IN_CAT_UCH_ID`) REFERENCES `uch` (`UCH_ID`)). Wykonywana instrukcja SQL to: DELETE FROM `uch` WHERE `uch`.`UCH_ID`=4.
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (179)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 11:53:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`radni`.`uch_in_cat`, CONSTRAINT `uch_in_cat_ibfk_1` FOREIGN KEY (`UCH_IN_CAT_UCH_ID`) REFERENCES `uch` (`UCH_ID`)). The SQL statement executed was: DELETE FROM `uch` WHERE `uch`.`UCH_ID`=4' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1735): CDbCommand->execute()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1159): CActiveRecord->deleteByPk('4')
+#2 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php(179): CActiveRecord->delete()
+#3 [internal function]: UchwalaController->actionDelete('4')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UchwalaController), Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UchwalaController), Object(ReflectionMethod), Array)
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('delete')
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('uchwala/delete')
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=uchwala%2Fdelete&id=4&ajax=uchwala-grid
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=uchwala/admin
+---
+2012/09/15 14:59:48 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`radni`.`uch_in_cat`, CONSTRAINT `uch_in_cat_ibfk_1` FOREIGN KEY (`UCH_IN_CAT_UCH_ID`) REFERENCES `uch` (`UCH_ID`)). Wykonywana instrukcja SQL to: DELETE FROM `uch` WHERE `uch`.`UCH_ID`=1.
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (179)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 14:59:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`radni`.`uch_in_cat`, CONSTRAINT `uch_in_cat_ibfk_1` FOREIGN KEY (`UCH_IN_CAT_UCH_ID`) REFERENCES `uch` (`UCH_ID`)). The SQL statement executed was: DELETE FROM `uch` WHERE `uch`.`UCH_ID`=1' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1735): CDbCommand->execute()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1159): CActiveRecord->deleteByPk('1')
+#2 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php(179): CActiveRecord->delete()
+#3 [internal function]: UchwalaController->actionDelete('1')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(UchwalaController), Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(UchwalaController), Object(ReflectionMethod), Array)
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('delete')
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('uchwala/delete')
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=uchwala%2Fdelete&id=1&ajax=uchwala-grid
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=uchwala/admin
+---
+2012/09/15 15:00:32 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (85)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 15:00:32 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (85)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 15:05:57 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (128)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 15:05:57 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (128)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 15:06:45 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (128)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/15 15:06:45 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (128)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)

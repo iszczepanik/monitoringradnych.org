@@ -54,6 +54,8 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'UCH_ID',
 		'UCH_FILE',
 		'UCH_NAME',
+		'UCH_NUMBER',
+		'UCH_DATE',
 		/*array(
 			'name'=>'UCH_TYPE',
 			'value'=>'$data->getUchwalaTypeName()',
