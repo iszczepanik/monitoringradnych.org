@@ -15,7 +15,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-modifications.css"  />
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/s3Slider.js"></script>
-
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
 
 <body data-offset="50" data-target=".subnav" data-spy="scroll">
 <div class="container" id="page">
@@ -99,7 +99,8 @@
 
 			
 				<div class="span4" >
-					<h3>Komisje <small>tutaj znajdziecie skład komisji, listy obecności, plany pracy i protokoły z posiedzeń</small></h3>
+					<h3>Komisje</h3>
+					<div class="photo-title muted" style="text-align: left;">tutaj znajdziecie skład komisji, listy obecności, plany pracy i protokoły z posiedzeń</div>
 					
 					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316724" >Budżetu</a>
 					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316788" >Edukacji</a>
@@ -112,6 +113,7 @@
 				</div>
 <div class="span4" >
 <h3>Warto odwiedzić</h3>
+<div class="photo-title muted" style="text-align: left;">tutaj znajdziecie informacje o radnych i ich pracach</div>
 <a href="http://bip.um.katowice.pl/index.php?s=15&r=1221779186" >Projekty uchwał</a>
 
 <a href="http://bip.um.katowice.pl/index.php?s=189&rok=2012" >Akty prawa miejscowego</a>

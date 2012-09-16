@@ -1,18 +1,10 @@
 <h2>Radni</h2>
-<div class="well well-small">
-<?php 
-
-foreach($model as $i=>$item)
-{
-	$items[$i] = array('label'=>$item->ImieNazwisko() , 
-	'url'=>array('/frontRadny/view&id='.$item->RDN_ID), 
-	'visible'=>Yii::app()->user->isGuest);
-}
-
-$this->widget('bootstrap.widgets.BootMenu', array(
-		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
-		    'stacked'=>false, // whether this is a stacked menu
-		    'items'=>$items,
-		)); 
-?>
+<div class="main-menu">
+<ul class="nav nav-pills ">
+	<? foreach($model as $i=>$item) : ?>
+	<li <? if (isset($viewed) && $viewed->RDN_ID == $item->RDN_ID) echo "class='active'" ?> >
+		<a href="<? echo  $this->createUrl('frontRadny/view&id='.$item->RDN_ID); ?>" ><? echo $item->ImieNazwisko(); ?></a>
+	</li>
+	<? endforeach; ?>
+</ul>
 </div>

@@ -90,6 +90,17 @@ class Vote extends CActiveRecord
 		}
 	}
 	
+	public static function VoteLabelStatic($vote)
+	{
+		switch($vote)
+		{
+			case -1: return "przeciw"; break;
+			case 0: return "wstrzymał się"; break;
+			case 1: return "za"; break;
+			case 2: return "nieobecny za głosowaniu"; break;
+		}
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

@@ -53,12 +53,16 @@
 	</div>
 	
 	<div class='control-group' >
-    <?php echo $form->checkBoxListRow($model, 'dzielniceUchwalIDs', 
+		<label class="control-label" for="Uchwala_dzielniceUchwalIDs" >Dzielnice</label>
+		<div class="controls">
+    <?php echo $form->checkBoxList($model, 'dzielniceUchwalIDs', 
             CHtml::listData(
                 Dzielnica::model()->findAll(), 
                 'DZL_ID', 
                 'DZL_NAME'
             )); ?>
+			<a href="javascript:jqCheckAll('uchwala-form', 'Uchwala_dzielniceUchwalIDs_', 1);" >zaznacz wszystkie</a>
+		</div>
     </div>
     
     <div class='control-group' >
@@ -68,6 +72,7 @@
                 'CAT_ID', 
                 'CAT_NAME'
             )); ?>
+		
     </div>
 
 	<div class='control-group' >

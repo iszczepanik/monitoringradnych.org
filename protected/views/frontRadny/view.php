@@ -1,20 +1,12 @@
 <h2>Radni</h2>
-<div class="well well-small">
-<?php 
-
-foreach($model as $i=>$item)
-{
-	$items[$i] = array('label'=>$item->ImieNazwisko() , 
-	'url'=>array('/frontRadny/view&id='.$item->RDN_ID), 
-	'visible'=>Yii::app()->user->isGuest);
-}
-
-$this->widget('bootstrap.widgets.BootMenu', array(
-		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
-		    'stacked'=>false, // whether this is a stacked menu
-		    'items'=>$items,
-		)); 
-?>
+<div class="main-menu">
+<ul class="nav nav-pills ">
+	<? foreach($model as $i=>$item) : ?>
+	<li <? if (isset($viewed) && $viewed->RDN_ID == $item->RDN_ID) echo "class='active'" ?> >
+		<a href="<? echo  $this->createUrl('frontRadny/view&id='.$item->RDN_ID); ?>" ><? echo $item->ImieNazwisko(); ?></a>
+	</li>
+	<? endforeach; ?>
+</ul>
 </div>
 <?
 
@@ -22,48 +14,107 @@ if (isset($viewed))
 {
 	
 	?>
-	<div class="radny">
-	<div class="well well-small image" ><img src="<?php echo $viewed->RDN_PHOTO; ?>" alt="<?php echo $viewed->ImieNazwisko(); ?>" /></div>	
-
-	<h3><?php echo $viewed->ImieNazwisko(); ?></h3>
-	<p><a href="mailto:<?php echo $viewed->RDN_EMAIL; ?>" ><?php echo $viewed->RDN_EMAIL; ?></a></p>
-	<p>tel: <?php echo $viewed->RDN_PHONE; ?></p>
-	<p>strona internetowa: <?php echo $viewed->RDN_WEBSITE; ?></p>
-	<p>dyżur: <?php echo $viewed->RDN_DUTY; ?></p>
-	<p>okręg: <a href="#" ><?php echo $viewed->Okreg->OKR_NAME; ?></a></p>
+	<div class="tabbable tabs-left">
+	<ul class="nav nav-tabs" >
+		<li class="active" >
+			<a href="#lA" data-toggle="tab" >
+				<img src="materialy/radni/<?php echo $viewed->RDN_PHOTO; ?>" alt="<?php echo $viewed->ImieNazwisko(); ?>" /><br />
+				
+			</a>
+			<p class="muted photo-title" >Wszystkie zdjęcia radnych<br />pochodzą ze strony<br /><a href="http://bip.um.katowice.pl" target="_blank" >bip.um.katowice.pl</a></p>
+		</li>
+	</ul>
 	
-	<div class="row" style="margin-top: 15px;"> 
-	    <div class="span3" >
-			<h4>Uchwały</h4>
-			<div class="radny_info" ></div>
-	    </div>
-		<div class="span3" >
-			<h4>Ranking</h4>
-			<div class="radny_info" ><div style="border-bottom: 1px solid #9aca3c; margin-bottom: 5px;"><span style="font-size: 24pt;"><? echo $viewed->Ranking->RNK_LP; ?></span> miejsce</div>
-			dyżur: <? echo $viewed->Ranking->RNK_LP_DUTY; ?> miejsce<br />
-			mail: <? echo $viewed->Ranking->RNK_LP_MAIL; ?> miejsce<br />
-			sesja: <? echo $viewed->Ranking->RNK_LP_RADY; ?> miejsce<br />
-			komisja: <? echo $viewed->Ranking->RNK_LP_KMS; ?> miejsce<br />
-			strona: <? echo $viewed->Ranking->RNK_LP_INTERNET; ?> miejsce<br />
-			<a href="#" >zobacz ranking</a>
-			</div>
-		</div>
-		<div class="span3" >
-			<h4>Komisje</h4>
-			<div class="radny_info" >
-			<ul>
+	<div class="tab-content" >
+		<div class="tab-pane active" id="lA" >
+			<h3><?php echo $viewed->ImieNazwisko(); ?></h3>
+			<p><a href="mailto:<?php echo $viewed->RDN_EMAIL; ?>" ><?php echo $viewed->RDN_EMAIL; ?></a></p>
+			<p>Tel: <?php echo $viewed->RDN_PHONE; ?></p>
+			<p>Strona internetowa: <?php echo $viewed->RDN_WEBSITE; ?></p>
+			<p>Okręg: <a href="#" ><?php echo $viewed->Okreg->OKR_NAME; ?></a></p>
+			<p><h4>Komisje</h4>
+			<ul><!-- class="unstyled"-->
 			<?php 
 			foreach($viewed->KomisjeRadnych as $n=>$komisja)
 				echo "<li>".$komisja->KMS_NAME."</li>";
 			?>
 			</ul>
+			</p>
+			<div>
+			<p><h4>Ranking</h4></p>
+			<p>Ogółem: <span style="font-size: 24pt;"><? echo $viewed->Ranking->RNK_LP; ?>.</span> miejsce <a href="#" >zobacz cały ranking</a></p>
+			<table class="detail-view table table-striped table-condensed" >
+				<tr>
+					<th>Dyżur</th>
+					<td><? echo $viewed->Ranking->RNK_LP_DUTY; ?>. miejsce</td>
+				</tr>
+				<tr>
+					<th>E-mail</th>
+					<td><? echo $viewed->Ranking->RNK_LP_MAIL; ?>. miejsce</td>
+				</tr>
+				<tr>
+					<th>Sesja</th>
+					<td><? echo $viewed->Ranking->RNK_LP_RADY; ?>. miejsce</td>
+				</tr>
+				<tr>
+					<th>Komisja</th>
+					<td><? echo $viewed->Ranking->RNK_LP_KMS; ?>. miejsce</td>
+				</tr>
+				<tr>
+					<th>Strona</th>
+					<td><? echo $viewed->Ranking->RNK_LP_INTERNET; ?>. miejsce</td>
+				</tr>
+			</table>
+			</div>
+			<div>
+				<p><h4>Uchwały</h4></p>
+				<p>Głosowanie radnego nad trzema ostatnimi uchwałami <a href="#" >zobacz wszystkie</a></p>
+				<table class="detail-view table table-striped table-condensed" >
+				<?
+					$list= Yii::app()->db->createCommand('SELECT * 
+						FROM  `uch` u,  `vot` v
+						WHERE u.UCH_ID = v.VOT_UCH_ID
+						AND v.VOT_RDN_ID = '.$viewed->RDN_ID.'
+						AND u.UCH_TYPE = 1
+						order by u.UCH_DATE desc
+						LIMIT 0 , 3')->queryAll();
+
+					$rs=array();
+					foreach($list as $item){
+						//process each item here
+						?>
+						<tr>
+						<th><? echo Vote::VoteLabelStatic($item['VOT_VOTE']); ?></th>
+						<td><? echo $item['UCH_NAME']; ?></td>
+						</tr>
+						<?
+					}
+				?>
+				</table>
+			</div>
+			<div>
+				<p><h4>Obietnice</h4></p>
+			<p><?php echo $viewed->RDN_PROMISE; ?></p>
+			</div>
+			<div>
+				<p><h4>Komentarz do obietnicy</h4></p>
+			<p><?php echo $viewed->RDN_PROMISE_CMT; ?></p>
+			</div>
+			<div>
+				<p><h4>Oświadczenie majątkowe</h4></p>
+			<p><a href="materialy/oswiadczenia_majatkowe/<?php echo $viewed->RDN_STATEMENT_FILE; ?>" target="_blank" ><img src="img/pdf.png" /> zobacz oświadczenie</a></p>
+			</div>
+			<div>
+				<p><h4>Wywiad</h4></p>
+			<p><?php echo $viewed->RDN_INTERVIEW; ?></p>
+			</div>
+			<div>
+				<p><h4>Komentarz do wywiadu</h4></p>
+			<p><?php echo $viewed->RDN_INTERVIEW_CMT; ?></p>
 			</div>
 		</div>
-		<div class="span3" >
-			<h4>Obietnice</h4>
-			<div class="radny_info" ><?php echo $viewed->RDN_PROMISE; ?></div>
-		</div>
 	</div>
+	
 	</div>
 		<?php 
 	
