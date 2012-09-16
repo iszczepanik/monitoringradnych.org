@@ -81,12 +81,38 @@ class Vote extends CActiveRecord
 
 	public function VoteLabel()
 	{
-		switch($this->VOT_VOTE)
+		return Vote::VoteLabelStatic($this->VOT_VOTE);
+		/*switch($this->VOT_VOTE)
 		{
 			case -1: return "przeciw"; break;
 			case 0: return "wstrzymał się"; break;
 			case 1: return "za"; break;
 			case 2: return "nieobecny za głosowaniu"; break;
+		}*/
+	}
+	
+	public function VoteIcon()
+	{
+		return Vote::VoteIconStatic($this->VOT_VOTE);
+	/*
+		switch($this->VOT_VOTE)
+		{
+			case -1: return "<span class='badge badge-important'><i class='icon-thumbs-down icon-white'></i></span>"; break;
+			case 0: return "<span class='badge'><i class='icon-minus icon-white'></i></span> "; break;
+			case 1: return "<span class='badge badge-success'><i class='icon-thumbs-up icon-white'></i></span>"; break;
+			case 2: return "<span class='badge badge-inverse'><i class='icon-remove icon-white'></i></span> "; break;
+		}
+		*/
+	}
+	
+	public static function VoteIconStatic($vote)
+	{
+		switch($vote)
+		{
+			case -1: return "<span class='badge badge-important'><i class='icon-thumbs-down icon-white'></i></span>"; break;
+			case 0: return "<span class='badge'><i class='icon-minus icon-white'></i></span> "; break;
+			case 1: return "<span class='badge badge-success'><i class='icon-thumbs-up icon-white'></i></span>"; break;
+			case 2: return "<span class='badge badge-inverse'><i class='icon-remove icon-white'></i></span> "; break;
 		}
 	}
 	

@@ -41,6 +41,12 @@ return array(
 		'bootstrap'=>array(
 		        'class'=>'ext.bootstrap.components.Bootstrap', // assuming you extracted bootstrap under extensions
 		),
+		
+        'request' => array(
+            'baseUrl' => 'http://localhost/monitoringradnych.org/',
+        ),
+
+		
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(

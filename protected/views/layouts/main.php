@@ -86,7 +86,7 @@
 		)); ?>
 	<?php endif?> -->
 	
-	<div style="height: 40px;"></div>
+	<!--<div style="height: 40px;"></div>-->
 
 
 

@@ -28,7 +28,7 @@ class Uchwala extends CActiveRecord
 	
 	public $dzielniceUchwalIDs = array();
 	public $kategorieUchwalIDs = array();
-	//public $votes = array();
+	public $votes = array();
 	
 	public function afterFind()
 	{
@@ -43,7 +43,43 @@ class Uchwala extends CActiveRecord
 			$this->kategorieUchwalIDs[] = $kategoria->CAT_ID;
 		}
 		
+		$criteria = new CDbCriteria;
+		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID and VOT_VOTE=:VOT_VOTE';
+		$criteria->params=array(':VOT_UCH_ID'=>$this->UCH_ID, ':VOT_VOTE'=>'1');
+		$votesZa = Vote::model()->findAll($criteria);
+		
+		$this->votes['count_za'] = count($votesZa);
+		foreach($votesZa as $i=>$item)
+			$this->votes['za'] .= "<li>".$item->Radny->ImieNazwisko()."</li>";
+			
+		$criteria = new CDbCriteria;
+		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID and VOT_VOTE=:VOT_VOTE';
+		$criteria->params=array(':VOT_UCH_ID'=>$this->UCH_ID, ':VOT_VOTE'=>'-1');
+		$votesPrzeciw = Vote::model()->findAll($criteria);
+		
+		$this->votes['count_przeciw'] = count($votesPrzeciw);
+		foreach($votesPrzeciw as $i=>$item)
+			$this->votes['przeciw'] .= "<li>".$item->Radny->ImieNazwisko()."</li>";
+			
+		$criteria = new CDbCriteria;
+		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID and VOT_VOTE=:VOT_VOTE';
+		$criteria->params=array(':VOT_UCH_ID'=>$this->UCH_ID, ':VOT_VOTE'=>'0');
+		$votesWstrzymal = Vote::model()->findAll($criteria);
+		
+		$this->votes['count_wstrzymal'] = count($votesWstrzymal);
+		foreach($votesWstrzymal as $i=>$item)
+			$this->votes['wstrzymal'] .= "<li>".$item->Radny->ImieNazwisko()."</li>";
+			
+		$criteria = new CDbCriteria;
+		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID and VOT_VOTE=:VOT_VOTE';
+		$criteria->params=array(':VOT_UCH_ID'=>$this->UCH_ID, ':VOT_VOTE'=>'2');
+		$votesNieob = Vote::model()->findAll($criteria);
+		
+		$this->votes['count_nieobecny'] = count($votesNieob);
+		foreach($votesNieob as $i=>$item)
+			$this->votes['nieobecny'] .= "<li>".$item->Radny->ImieNazwisko()."</li>";
 
+		//	var_dump($this->votes);
 	}
 
 	/**

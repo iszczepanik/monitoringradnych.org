@@ -44,7 +44,7 @@ if (isset($viewed))
 				
 				foreach($radni as $i=>$item)
 				{
-					?><li><a href="" ><? echo $item->ImieNazwisko(); ?></a></li><?
+					?><li><a href="<? echo $this->createUrl('frontRadny/view&id='.$item->RDN_ID);?>" ><? echo $item->ImieNazwisko(); ?></a></li><?
 				}
 			?>
 			</ul>

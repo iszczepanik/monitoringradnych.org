@@ -36,7 +36,7 @@
 	    <div class="image" ></div></a>
 	    </li>
 		<li class="span3" >
-		<a href="#">Wyszukiwarka uchwał
+		<a href="<?php echo $this->createUrl('FrontUchwala/index'); ?>">Wyszukiwarka uchwał
 		<div class="image" ></div></a>
 		</li>
 		<li class="span3" >
