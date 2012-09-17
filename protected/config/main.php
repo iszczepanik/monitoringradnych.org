@@ -44,6 +44,7 @@ return array(
 		
         'request' => array(
             'baseUrl' => 'http://localhost/monitoringradnych.org/',
+			//'baseUrl' => 'http://monitoringradnych.pl/',
         ),
 
 		

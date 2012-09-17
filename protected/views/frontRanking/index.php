@@ -1,4 +1,10 @@
-<h2>Ranking</h2>
+
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#" >
+	<h2>Ranking Radnych</h2></a>
+	</li>
+	<li></li>
+</ul>
 <div class="row">
 	<div class="span6">
 		<table class="items table table-striped table-bordered table-condensed">
@@ -6,7 +12,7 @@
 				<th>lp.</th>
 				<th>Radny</th>
 				<th>K</th>
-				<th>R</th>
+				<th>S</th>
 				<th>D</th>
 				<th>M</th>
 				<th>I</th>

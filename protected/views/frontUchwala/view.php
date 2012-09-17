@@ -1,4 +1,11 @@
-<h2>Uchwała nr <? echo $model->UCH_NUMBER; ?></h2>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#" >
+	<h2>Uchwała nr <? echo $model->UCH_NUMBER; ?></h2></a>
+	</li>
+	<li></li>
+</ul>
+
+
 
 
 <?

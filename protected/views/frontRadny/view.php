@@ -1,4 +1,11 @@
-<h2>Radni</h2>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#" >
+	<h2>Radni</h2></a>
+	</li>
+	<li></li>
+</ul>
+
+
 <div class="main-menu">
 <ul class="nav nav-pills ">
 	<? foreach($model as $i=>$item) : ?>

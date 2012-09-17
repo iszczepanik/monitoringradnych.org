@@ -7249,3 +7249,38 @@ Stack trace:
 REQUEST_URI=/monitoringradnych.org/index.php?r=frontUchwala/view&id=7
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php (62)
 in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/17 19:48:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "oprojekcie".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('oprojekcie')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('oprojekcie')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('site/oprojekcie')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=site/oprojekcie
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php
+---
+2012/09/17 19:48:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można rozszyfrować żądania "Ekspertyzy/index".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('Ekspertyzy/inde...')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=Ekspertyzy/index
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=frontRanking/index
+---
+2012/09/17 19:51:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można rozszyfrować żądania "Komentarze/index".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('Komentarze/inde...')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=Komentarze/index
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php
+---
+2012/09/17 21:41:02 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (85)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/17 21:41:02 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Uchwala" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (85)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
