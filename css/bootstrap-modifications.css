@@ -78,16 +78,52 @@ font-family: Anivers-Regular;
 h1 { font-size: 28pt; color: white; background-color:#9aca3c; margin: 5px 0; }
 h2 { font-size: 26px; line-height: 28px; margin: 3px 0;}
 h3 { font-size: 20px; line-height: 22px; margin: 3px 0;}
-.dropdown-menu a
-{
-	padding: 0;
-	color: #9aca3c;
-}
+
 /******************/
  @font-face {font-family: 'Anivers-Regular';src: url('webfonts/241B12_0_0.eot');src: url('webfonts/241B12_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/241B12_0_0.woff') format('woff'),url('webfonts/241B12_0_0.ttf') format('truetype');}
  
 .anivers { font-family: Anivers-Regular; }
 .lead { font-size: 24px; line-height: 26px; }
+
+.shadow-box
+{
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	list-style: none;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	*border-right-width: 2px;
+	*border-bottom-width: 2px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	
+	margin-right: 5px;
+	padding: 10px;
+}
+
+.shadow-box a {
+	display: block;
+	clear: both;
+	font-weight: normal;
+	line-height: 20px;
+	white-space: nowrap;
+	padding: 0;
+	color: #9aca3c;
+}
+
 
 .frontpage-menu
 {

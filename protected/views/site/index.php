@@ -19,7 +19,7 @@
 	
 	<div class="tab-content"  >
 		<div class="tab-pane active" id="lA"  >
-			<ul class="dropdown-menu" style="padding: 10px; margin-right: 5px; display: block; position: relative; float: right; width: 450px;">
+			<ul class="shadow-box" style="float: right; width: 450px;">
                 <li>
 					<!--<div style="" ><img src="img/mieszkancy_konsultuja_1_orig.jpg" alt="4" /></div>-->
 					

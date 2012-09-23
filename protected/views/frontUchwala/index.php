@@ -62,7 +62,7 @@
 	</div>
 </div>
 <div style="height: 15px;"></div>
-<button class="btn btn-primary" type="button"><i class="icon-search icon-white"></i> Szukaj</button>
+<button class="btn" type="button"><i class="icon-search"></i> Szukaj</button>
 <button class="btn" type="button"><i class="icon-ok"></i> Pokaż Wszystkie</button>
 
 
