@@ -5,22 +5,31 @@
 	<li></li>
 </ul>
 
+<div class="row" >
+<div class="span3" >
 
-<div class="main-menu">
-<ul class="nav nav-pills ">
+<div style="padding: 8px 0px; max-width: 340px;" class="well">
+  <ul class="nav nav-list">
+	<li class="nav-header">Radni alfabetycznie</li>
 	<? foreach($model as $i=>$item) : ?>
 	<li <? if (isset($viewed) && $viewed->RDN_ID == $item->RDN_ID) echo "class='active'" ?> >
 		<a href="<? echo  $this->createUrl('frontRadny/view&id='.$item->RDN_ID); ?>" ><? echo $item->ImieNazwisko(); ?></a>
 	</li>
 	<? endforeach; ?>
-</ul>
+	
+  </ul>
 </div>
+
+</div>
+
 <?
 
 if (isset($viewed))
 {
 	
 	?>
+	<div class="span9" >
+	
 	<div class="tabbable tabs-left">
 	<ul class="nav nav-tabs" >
 		<li class="active" >
@@ -123,9 +132,12 @@ if (isset($viewed))
 	</div>
 	
 	</div>
+	
+	</div>
 		<?php 
 	
 }
 
 
 ?>
+</div>

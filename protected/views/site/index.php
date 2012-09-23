@@ -112,6 +112,7 @@
         $('#slider1').s3Slider({
             timeOut: 4000 
         });
+		
     });
 
 </script>

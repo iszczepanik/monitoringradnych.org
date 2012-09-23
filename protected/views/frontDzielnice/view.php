@@ -5,21 +5,30 @@
 	<li></li>
 </ul>
 
-<div class="main-menu">
-<ul class="nav nav-pills ">
+<div class="row" >
+<div class="span3" >
+
+<div style="padding: 8px 0px; max-width: 340px;" class="well">
+  <ul class="nav nav-list">
+	<li class="nav-header">Dzielnice alfabetycznie</li>
 	<? foreach($model as $i=>$item) : ?>
 	<li <? if (isset($viewed) && $viewed->DZL_ID == $item->DZL_ID) echo "class='active'" ?> >
 		<a href="<? echo  $this->createUrl('/frontDzielnice/view&id='.$item->DZL_ID); ?>" ><? echo $item->DZL_NAME ?></a>
 	</li>
 	<? endforeach; ?>
-</ul>
+	
+  </ul>
 </div>
+
+</div>
+
 <?
 
 if (isset($viewed))
 {
 	
 	?>
+	<div class="span9" >
 	<div class="tabbable tabs-left">
 	<ul class="nav nav-tabs" >
 		<li class="active" >
@@ -100,7 +109,7 @@ if (isset($viewed))
 	</div>
 	
 	</div>
-	
+	</div>
 	
 	
 
@@ -110,3 +119,4 @@ if (isset($viewed))
 
 
 ?>
+</div>

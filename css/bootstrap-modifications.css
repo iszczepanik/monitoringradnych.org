@@ -1,15 +1,32 @@
 table input { width: auto; }
-
+body
+{
+	font-size: 13px;
+}
 .main-menu > .nav-pills > li > a , .lower-menu > .nav-pills > li > a
 {
-	padding-top: 1px;
+	/*padding-top: 1px;
 	padding-bottom: 1px;
 	text-transform: uppercase;
 	font-family: Tahoma;
 	font-size: 12px;
-	font-weight: bold;
+	font-weight: bold;*/
 }
 .main-menu > .nav-pills > .active > a
+{
+	background-color: #9aca3c;
+	color: #000;
+}
+.navbar-inner
+{
+	padding: 0 5px;
+	min-height: 20px;
+}
+.navbar .nav > li > a
+{
+	padding: 5px 12px;
+}
+.nav-list > .active > a , .nav-list > .active > a:hover
 {
 	background-color: #9aca3c;
 	color: #000;
@@ -39,7 +56,8 @@ a:hover
 }
 a
 {
-	color: #9aca3c;
+	color: #77b912; /*#6ba610;*/ /*#729f1b;*/ /*#9aca3c;*/
+	
 }
 .badge-success
 {
@@ -57,9 +75,9 @@ h2, h3, h4, h5, h6
 {
 font-family: Anivers-Regular;
 }
-h1 { font-size: 28pt; color: black;}
-h2 { font-size: 26px; }
-h3 { font-size: 20px; }
+h1 { font-size: 28pt; color: white; background-color:#9aca3c; margin: 5px 0; }
+h2 { font-size: 26px; line-height: 28px; margin: 3px 0;}
+h3 { font-size: 20px; line-height: 22px; margin: 3px 0;}
 .dropdown-menu a
 {
 	padding: 0;
@@ -73,7 +91,7 @@ h3 { font-size: 20px; }
 
 .frontpage-menu
 {
-	width: 585px; /*border: 1px solid red;*/
+	width: 475px; /*border: 1px solid red;*/
 }
 
 #logo

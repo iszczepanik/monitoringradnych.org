@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/datepicker.css"  />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css"  />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.css"  />
 
@@ -16,44 +16,43 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-modifications.css"  />
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/s3Slider.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/scripts.js"></script>
-
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-datepicker.js"></script>
 <body data-offset="50" data-target=".subnav" data-spy="scroll">
 <div class="container" id="page">
 <!--<div id="logo" ><a href="<?php echo $this->createUrl('/'); ?>" ><img src="img/logo.png" alt="Monitoring radnych" /></a></div>-->
-
-<div class="tabbable tabs-below" style="margin-top: 18px;" >
+<div style="height: 18px; background-color:#9aca3c; "></div>
+<div class="tabbable tabs-below" style="/*margin-top: 18px;*/" >
   <div class="tab-content">
 	<div class="tab-pane active" id="A">
 	</div>
   </div>
   <ul class="nav nav-tabs">
-	<li class="active"><a href="<?php echo $this->createUrl('/'); ?>" style="cursor: pointer;" >
+	<li class="active"  ><a href="<?php echo $this->createUrl('/'); ?>" style="background-color:#9aca3c; cursor: pointer;" >
 	<h1 class="anivers" ><?php echo CHtml::encode(Yii::app()->name); ?></h1></a></li>
 	<li><!--<a href="#B" data-toggle="tab">Section 2</a>-->
-	<div class="main-menu frontpage-menu" >
-	<?php $this->widget('bootstrap.widgets.BootMenu', array(
-		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
-		    'stacked'=>false, // whether this is a stacked menu
-		    'items'=>array(
-		        //array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>true),
-				array('label'=>'O projekcie', 'url'=>array('/site/oprojekcie')),
-				array('label'=>'Kontakt', 'url'=>array('/site/konakt')),
-				array('label'=>'Radni', 'url'=>array('/frontRadny/index')),
-				array('label'=>'Wyszukiwarka uchwał', 'url'=>array('/FrontUchwala/index')),
-				array('label'=>'Dzielnice', 'url'=>array('/frontDzielnice/index')),
-				array('label'=>'Ranking Radnych', 'url'=>array('/frontRanking/index')),
-				array('label'=>'Aktualności', 'url'=>array('/Aktualnosci/index')),
-				array('label'=>'Wypowiedzi ekspertów', 'url'=>array('/Ekspertyzy/index')),
-				array('label'=>'Komentarze do uchwał', 'url'=>array('/Komentarze/index')),
-				array('label'=>'Mieszkańcy konsultują', 'url'=>array('/Konsultacje/index')),
-				
-		    ),
-		)); ?>
-		</div>
+	<a href="<?php echo $this->createUrl('/'); ?>">O projekcie</a> </li><li><a href="<?php echo $this->createUrl('/'); ?>">Kontakt</a>
 	</li>
 	
   </ul>
 </div>
+
+<div class="navbar">
+	<div class="navbar-inner" >
+		<div style="padding: 0; width: auto;" class="container">
+                  <ul class="nav">
+					<li><a href="<?php echo $this->createUrl('/'); ?>">Aktualności</a></li>
+                    <li <?//class="active"?> ><a href="<?php echo $this->createUrl('/frontRadny/index'); ?>">Radni</a></li>
+                    <li><a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>">Wyszukiwarka uchwał</a></li>
+                    <li><a href="<?php echo $this->createUrl('/frontDzielnice/index'); ?>">Dzielnice</a></li>
+					<li><a href="<?php echo $this->createUrl('/frontRanking/index'); ?>">Ranking</a></li>
+					<li><a href="<?php echo $this->createUrl('/'); ?>">Wypowiedzi ekspertów</a></li>
+					<li><a href="<?php echo $this->createUrl('/'); ?>">Komentarze</a></li>
+					<li><a href="<?php echo $this->createUrl('/'); ?>">Mieszkańcy konsultują</a></li>
+                  </ul>
+                </div>
+	</div>
+</div>
+
 
 	<? if (Yii::app()->user->checkAccess('admin')): ?>
 	<ul class="nav nav-tabs">
@@ -147,6 +146,19 @@
 		
 	</footer><!-- footer -->
 </div><!-- page -->
+<script type="text/javascript">
 
+    $(document).ready(function() {
+        //$('#slider1').s3Slider({
+         //   timeOut: 4000 
+        //}/);
+		
+		//$('.datepicker').datepicker();
+		
+		$('#dp_do').datepicker();
+		$('#dp_od').datepicker();
+    });
+
+</script>
 </body>
 </html>

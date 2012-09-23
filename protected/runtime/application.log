@@ -7284,3 +7284,220 @@ in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
 2012/09/17 21:41:02 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Uchwala" nie powiodło się
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (85)
 in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/18 16:12:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection nie zdołał otworzyć połączenia DB: SQLSTATE[28000] [1045] Access denied for user 'bonafide_rdn'@'localhost' (using password: YES)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(586): CModule->getComponent('db')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(60): CDbAuthManager->getDbConnection()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbAuthManager->init()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(179): CModule->getComponent('authManager')
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CWebUser.php(794): CWebApplication->getAuthManager()
+#8 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\main.php(58): CWebUser->checkAccess('admin')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\Program File...', Array, true)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#16 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('C:\Program File...', Array, true)
+#20 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\SiteController.php(32): CController->render('index')
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('')
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#27 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/monitoringradnych.org/
+---
+2012/09/18 16:12:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection nie zdołał otworzyć połączenia DB: SQLSTATE[28000] [1045] Access denied for user 'bonafide_rdn'@'localhost' (using password: YES)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(586): CModule->getComponent('db')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(60): CDbAuthManager->getDbConnection()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbAuthManager->init()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(179): CModule->getComponent('authManager')
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CWebUser.php(794): CWebApplication->getAuthManager()
+#8 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\main.php(58): CWebUser->checkAccess('admin')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\Program File...', Array, true)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#16 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('C:\Program File...', Array, true)
+#20 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\SiteController.php(32): CController->render('index')
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('')
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#27 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/monitoringradnych.org/
+---
+2012/09/18 16:12:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection nie zdołał otworzyć połączenia DB: SQLSTATE[28000] [1045] Access denied for user 'bonafide_rdn'@'localhost' (using password: YES)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(586): CModule->getComponent('db')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(60): CDbAuthManager->getDbConnection()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbAuthManager->init()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(179): CModule->getComponent('authManager')
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CWebUser.php(794): CWebApplication->getAuthManager()
+#8 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\main.php(58): CWebUser->checkAccess('admin')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\Program File...', Array, true)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#16 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('C:\Program File...', Array, true)
+#20 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\SiteController.php(32): CController->render('index')
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('')
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#27 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/monitoringradnych.org/
+---
+2012/09/18 16:12:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection nie zdołał otworzyć połączenia DB: SQLSTATE[28000] [1045] Access denied for user 'bonafide_rdn'@'localhost' (using password: YES)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbConnection->init()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(586): CModule->getComponent('db')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CDbAuthManager.php(60): CDbAuthManager->getDbConnection()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CModule.php(388): CDbAuthManager->init()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(179): CModule->getComponent('authManager')
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\auth\CWebUser.php(794): CWebApplication->getAuthManager()
+#8 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\main.php(58): CWebUser->checkAccess('admin')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(77): CBaseController->renderFile('C:\Program File...', Array, true)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\widgets\COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(207): COutputProcessor->run()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#16 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\layouts\column1.php(5): CBaseController->endContent()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(785): CBaseController->renderFile('C:\Program File...', Array, true)
+#20 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\SiteController.php(32): CController->render('index')
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('')
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#27 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/monitoringradnych.org/
+---
+2012/09/18 16:17:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "oprojekcie".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('oprojekcie')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('oprojekcie')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('site/oprojekcie')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=site/oprojekcie
+HTTP_REFERER=http://localhost/monitoringradnych.org/
+---
+2012/09/19 19:04:24 [error] [exception.CException] exception 'CException' with message 'Właściwość "Radny.RDN_NAME" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('RDN_NAME')
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\frontUchwala\index.php(38): CActiveRecord->__get('RDN_NAME')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#6 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php(101): CController->render('index', Array)
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): FrontUchwalaController->actionIndex()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('index')
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('FrontUchwala/in...')
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=FrontUchwala/index
+HTTP_REFERER=http://localhost/monitoringradnych.org/
+---
+2012/09/23 10:54:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "oprojekcie".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('oprojekcie')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('oprojekcie')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('site/oprojekcie')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=site/oprojekcie
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=FrontUchwala/index
+---
+2012/09/23 10:54:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "konakt".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('konakt')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('konakt')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('site/konakt')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=site/konakt
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=site/oprojekcie
+---
+2012/09/23 10:54:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "oprojekcie".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('oprojekcie')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('oprojekcie')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('site/oprojekcie')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=site/oprojekcie
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=site/konakt
+---
+2012/09/23 10:56:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "oprojekcie".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('oprojekcie')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('oprojekcie')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('site/oprojekcie')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=site/oprojekcie
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=site/konakt
+---

@@ -5,30 +5,23 @@
 	<li></li>
 </ul>
 
-<div class="main-menu">
-<ul class="nav nav-pills ">
+<div class="row" >
+<div class="span3" >
+
+<div style="padding: 8px 0px; max-width: 340px;" class="well">
+  <ul class="nav nav-list">
+	<li class="nav-header">Dzielnice alfabetycznie</li>
 	<? foreach($model as $i=>$item) : ?>
 	<li <? if (isset($viewed) && $viewed->DZL_ID == $item->DZL_ID) echo "class='active'" ?> >
 		<a href="<? echo  $this->createUrl('/frontDzielnice/view&id='.$item->DZL_ID); ?>" ><? echo $item->DZL_NAME ?></a>
 	</li>
 	<? endforeach; ?>
-</ul>
+	
+  </ul>
 </div>
 
-<!--
-<div class="well well-small">
-<?php 
+</div>
+<div class="span9">
+</div>
+</div>
 
-foreach($model as $i=>$item)
-{
-	$items[$i] = array('label'=>$item->DZL_NAME , 
-	'url'=>array('/frontDzielnice/view&id='.$item->DZL_ID));
-}
-
-$this->widget('bootstrap.widgets.BootMenu', array(
-		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
-		    'stacked'=>false, // whether this is a stacked menu
-		    'items'=>$items,
-		)); 
-?>
-</div>-->
