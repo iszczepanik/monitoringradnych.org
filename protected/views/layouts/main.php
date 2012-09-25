@@ -41,7 +41,7 @@
 		<div style="padding: 0; width: auto;" class="container">
                   <ul class="nav">
 					<li><a href="<?php echo $this->createUrl('/'); ?>">Aktualności</a></li>
-                    <li <?//class="active"?> ><a href="<?php echo $this->createUrl('/frontRadny/index'); ?>">Radni</a></li>
+                    <li <?//class="active"?> ><a href="<?php echo $this->createUrl('/frontRadny/view&id=1&tab=clubs'); ?>">Radni</a></li>
                     <li><a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>">Wyszukiwarka uchwał</a></li>
                     <li><a href="<?php echo $this->createUrl('/frontDzielnice/index'); ?>">Dzielnice</a></li>
 					<li><a href="<?php echo $this->createUrl('/frontRanking/index'); ?>">Ranking</a></li>
@@ -70,6 +70,7 @@
 		    'items'=>array(
 				array('label'=>'Użytkownicy', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Radni', 'url'=>array('/radny/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Kluby', 'url'=>array('/club/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Okręgi', 'url'=>array('/okreg/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Dzielnice', 'url'=>array('/dzielnica/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Kadencje', 'url'=>array('/tenure/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),

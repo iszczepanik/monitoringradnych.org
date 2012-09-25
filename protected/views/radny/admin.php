@@ -57,9 +57,13 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 			'name'=>'RDN_OKR_ID',
 			'value'=>'$data->Okreg->OKR_NAME',
 		),
-		array(
+		/*array(
 			'name'=>'RDN_TNR_ID',
 			'value'=>'$data->Tenure->TNR_NAME',
+		),*/
+		array(
+			'name'=>'RDN_CLB_ID',
+			'value'=>'$data->Klub->CLB_NAME',
 		),
 		/*
 		'RDN_PHONE',

@@ -54,7 +54,7 @@ class FrontRadnyController extends Controller
 		));
 	}
 	
-	public function actionView($id)
+	public function actionView($id, $tab)
 	{
 		/*
 			$dataProvider=new CActiveDataProvider('Radny');
@@ -68,6 +68,7 @@ class FrontRadnyController extends Controller
 		$this->render('view',array(
 				'model'=>$model,
 				'viewed'=> Radny::model()->findByPk($id),
+				'tab'=>$tab,
 		));
 	}
 

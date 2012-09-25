@@ -52,6 +52,10 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 			'value'=>$model->Okreg->OKR_NAME,
 		),
 		array(
+			'name'=>'RDN_CLB_ID',
+			'value'=>$model->Klub->CLB_NAME,
+		),
+		array(
 			'name'=>'RDN_TNR_ID',
 			'value'=>$model->Tenure->TNR_NAME,
 		),

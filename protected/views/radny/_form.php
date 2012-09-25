@@ -125,6 +125,17 @@
 		</div>
 	</div>
 	
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_CLB_ID') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_CLB_ID',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->dropDownList($model, 'RDN_CLB_ID', CHtml::listData(
+			Club::model()->findAll(), 'CLB_ID', 'CLB_NAME')
+			//array('prompt' => '')
+			);?>
+		<?php echo $form->error($model,'RDN_CLB_ID',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
+	
 	<div class='control-group' >
     <?php echo $form->checkBoxListRow($model, 'komisjeRadnychIDs', 
             CHtml::listData(

@@ -8,17 +8,44 @@
 <div class="row" >
 <div class="span3" >
 
-<div style="padding: 8px 0px; max-width: 340px;" class="well">
-  <ul class="nav nav-list">
-	<li class="nav-header">Radni alfabetycznie</li>
-	<? foreach($model as $i=>$item) : ?>
-	<li <? if (isset($viewed) && $viewed->RDN_ID == $item->RDN_ID) echo "class='active'" ?> >
-		<a href="<? echo  $this->createUrl('frontRadny/view&id='.$item->RDN_ID); ?>" ><? echo $item->ImieNazwisko(); ?></a>
-	</li>
-	<? endforeach; ?>
-	
-  </ul>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+	<ul class="nav nav-tabs">
+		<li <? if ($tab == 'clubs') echo "class='active'"; ?> ><a href="#tab1" data-toggle="tab">Kluby</a></li>
+		<li <? if ($tab == 'alfa') echo "class='active'"; ?> ><a href="#tab2" data-toggle="tab">Alfabetycznie</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane <? if ($tab == 'clubs') echo "active"; ?>" id="tab1">
+			<div style="padding: 8px 0px; max-width: 340px;" class="well">
+				<ul class="nav nav-list">
+				<?
+				$lista = Radny::GetAllGroupedByClubs();
+				foreach ($lista as $key=>$club) : ?>
+				<li class="nav-header"><? echo $key; echo " (".count($club).")" ?></li>
+					<? foreach ($club as $key=>$radny) : ?>
+					<li <? if (isset($viewed) && $viewed->RDN_ID == $radny->RDN_ID) echo "class='active'" ?> >
+						<a href="<? echo  $this->createUrl('frontRadny/view&id='.$radny->RDN_ID.'&tab=clubs'); ?>" ><? echo $radny->ImieNazwisko(); ?></a>
+					</li>
+					<? endforeach; ?>
+				<? endforeach; ?>
+				</ul>
+			</div>
+		</div>
+		<div class="tab-pane <? if ($tab == 'alfa') echo "active"; ?>" id="tab2">
+			<div style="padding: 8px 0px; max-width: 340px;" class="well">
+				<ul class="nav nav-list">
+					<li class="nav-header">Radni alfabetycznie</li>
+					<? foreach($model as $i=>$item) : ?>
+					<li <? if (isset($viewed) && $viewed->RDN_ID == $item->RDN_ID) echo "class='active'" ?> >
+					<a href="<? echo  $this->createUrl('frontRadny/view&id='.$item->RDN_ID.'&tab=alfa'); ?>" ><? echo $item->ImieNazwisko(); ?></a>
+					</li>
+					<? endforeach; ?>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
+
+
 
 </div>
 
@@ -43,11 +70,13 @@ if (isset($viewed))
 	
 	<div class="tab-content" >
 		<div class="tab-pane active" id="lA" >
+			<img src="materialy/kluby/<?php echo $viewed->Klub->CLB_LOGO; ?>" alt="<?php echo $viewed->Klub->CLB_NAME; ?>" class="pull-right" />
 			<h3><?php echo $viewed->ImieNazwisko(); ?></h3>
 			<p><a href="mailto:<?php echo $viewed->RDN_EMAIL; ?>" ><?php echo $viewed->RDN_EMAIL; ?></a></p>
 			<p>Tel: <?php echo $viewed->RDN_PHONE; ?></p>
 			<p>Strona internetowa: <?php echo $viewed->RDN_WEBSITE; ?></p>
 			<p>Okręg: <a href="#" ><?php echo $viewed->Okreg->OKR_NAME; ?></a></p>
+			<p>Klub: <?php echo $viewed->Klub->CLB_NAME; ?></p>
 			<p><h4>Komisje</h4>
 			<ul><!-- class="unstyled"-->
 			<?php 
@@ -58,7 +87,8 @@ if (isset($viewed))
 			</p>
 			<div>
 			<p><h4>Ranking</h4></p>
-			<p>Ogółem: <span style="font-size: 24pt;"><? echo $viewed->Ranking->RNK_LP; ?>.</span> miejsce <a href="#" >zobacz cały ranking</a></p>
+			<p>Ogółem: <span style="font-size: 24pt;"><? echo $viewed->Ranking->RNK_LP; ?>.</span> miejsce 
+			<a href="<? echo  $this->createUrl('/frontRanking/index'); ?>" >zobacz cały ranking</a></p>
 			<table class="detail-view table table-striped table-condensed" >
 				<tr>
 					<th>Dyżur</th>
@@ -101,7 +131,9 @@ if (isset($viewed))
 						?>
 						<tr>
 						<th><? echo Vote::VoteLabelStatic($item['VOT_VOTE']); ?></th>
-						<td><? echo $item['UCH_NAME']; ?></td>
+						<td>
+							<a href="<? echo  $this->createUrl('/frontUchwala/view&id='.$item['UCH_ID']); ?>" ><?php echo $item['UCH_NAME']; ?></a>
+						</td>
 						</tr>
 						<?
 					}

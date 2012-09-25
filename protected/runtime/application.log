@@ -7501,3 +7501,98 @@ Stack trace:
 REQUEST_URI=/monitoringradnych.org/index.php?r=site/oprojekcie
 HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=site/konakt
 ---
+2012/09/25 17:59:55 [error] [php] Missing argument 3 for CrudCode::generateActiveLabel(), called in C:\Program Files\wamp\www\yii-1.1.10\framework\gii\generators\crud\templates\default\_form.php on line 25 and defined (C:\Program Files\wamp\www\yii-1.1.10\framework\gii\generators\crud\CrudCode.php:200)
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\gii\generators\crud\CrudCode.php(97): CrudCode->render()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\gii\CCodeGenerator.php(161): CrudCode->prepare()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\gii\CCodeGenerator.php(64): CrudGenerator->prepare()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): CrudGenerator->actionIndex()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(287): CrudGenerator->runAction()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CrudGenerator->runActionWithFilters()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CrudGenerator->run()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/monitoringradnych.org/index.php?r=gii/crud
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/25 18:33:36 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "RDN_CLB_ID" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/25 18:33:36 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/25 18:36:58 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "RDN_CLB_ID" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (71)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/25 18:36:58 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (71)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/25 18:40:02 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/25 18:40:23 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/25 18:40:35 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/09/25 18:42:04 [error] [exception.CException] exception 'CException' with message 'Właściwość "Club.OLB_NAME" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('OLB_NAME')
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\frontRadny\view.php(51): CActiveRecord->__get('OLB_NAME')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontRadnyController.php(71): CController->render('view', Array)
+#7 [internal function]: FrontRadnyController->actionView('1')
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FrontRadnyController), Array)
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FrontRadnyController), Object(ReflectionMethod), Array)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('view')
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontRadny/view')
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontRadny/view&id=1
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=frontRadny/index
+---
+2012/09/25 19:28:07 [error] [exception.CException] exception 'CException' with message 'Właściwość "Radny.RDN_NAME" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('RDN_NAME')
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\frontRadny\view.php(25): CActiveRecord->__get('RDN_NAME')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#6 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontRadnyController.php(71): CController->render('view', Array)
+#7 [internal function]: FrontRadnyController->actionView('1')
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FrontRadnyController), Array)
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FrontRadnyController), Object(ReflectionMethod), Array)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('view')
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontRadny/view')
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontRadny/view&id=1
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=frontRadny/index
+---
+2012/09/25 19:47:37 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)

@@ -87,7 +87,7 @@
     <div class="row lower-menu"> 
     	<ul class="nav nav-pills">
 	    <li class="span3" >
-	    <a href="<?php echo $this->createUrl('frontRadny/index'); ?>" >Radni
+	    <a href="<?php echo $this->createUrl('/frontRadny/view&id=1&tab=clubs'); ?>" >Radni
 	    <div class="image" ></div></a>
 	    </li>
 		<li class="span3" >
