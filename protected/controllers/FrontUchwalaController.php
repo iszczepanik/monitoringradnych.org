@@ -40,50 +40,7 @@ class FrontUchwalaController extends Controller
 	public function actionView($id)
 	{
 		$model = $this->loadModel($id);
-		/*
-		$criteria = new CDbCriteria;
-		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID';
-		$criteria->params=array(':VOT_UCH_ID'=>$id);
-		
-		$votesFull = Vote::model()->findAll($criteria);
-		
-		foreach($votesFull as $i=>$item)
-		{
-			$votes[] = $item->VoteIcon()." ".$item->Radny->ImieNazwisko()." - ".$item->VoteLabel();
-		}*/
-	/*
-		$criteria = new CDbCriteria;
-		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID and VOT_VOTE=:VOT_VOTE';
-		$criteria->params=array(':VOT_UCH_ID'=>$id, ':VOT_VOTE'=>'1');
-		$votesZa = Vote::model()->findAll($criteria);
-		
-		foreach($votesZa as $i=>$item)
-			$votes['za'] .= $item->Radny->ImieNazwisko()."<br />";
-			
-		$criteria = new CDbCriteria;
-		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID and VOT_VOTE=:VOT_VOTE';
-		$criteria->params=array(':VOT_UCH_ID'=>$id, ':VOT_VOTE'=>'-1');
-		$votesPrzeciw = Vote::model()->findAll($criteria);
-		
-		foreach($votesPrzeciw as $i=>$item)
-			$votes['przeciw'] .= $item->Radny->ImieNazwisko()."<br />";
-			
-		$criteria = new CDbCriteria;
-		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID and VOT_VOTE=:VOT_VOTE';
-		$criteria->params=array(':VOT_UCH_ID'=>$id, ':VOT_VOTE'=>'0');
-		$votesWstrzymal = Vote::model()->findAll($criteria);
-		
-		foreach($votesWstrzymal as $i=>$item)
-			$votes['wstrzymal'] .= $item->Radny->ImieNazwisko()."<br />";
-			
-		$criteria = new CDbCriteria;
-		$criteria->condition='VOT_UCH_ID=:VOT_UCH_ID and VOT_VOTE=:VOT_VOTE';
-		$criteria->params=array(':VOT_UCH_ID'=>$id, ':VOT_VOTE'=>'2');
-		$votesNieob = Vote::model()->findAll($criteria);
-		
-		foreach($votesNieob as $i=>$item)
-			$votes['nieobecny'] .= $item->Radny->ImieNazwisko()."<br />";
-	*/
+
 		$this->render('view',array(
 			'model'=>$model,
 			'votes'=>$model->votes,
@@ -99,6 +56,70 @@ class FrontUchwalaController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+	}
+	
+	public function actionSearch()
+	{
+		if (isset($_POST['search']))
+		{
+			$condition = "1=1";
+			
+			if (count($_POST['Uchwala']['Kategorie']) > 0)
+			{
+				$query = "select distinct UCH_IN_CAT_UCH_ID from uch_in_cat where UCH_IN_CAT_CAT_ID in ( ".implode(', ', $_POST['Uchwala']['Kategorie']).")";
+				$list = Yii::app()->db->createCommand($query)->queryAll();
+				foreach ($list as $id)
+					$uchwaly_w_kategoriach[] = $id['UCH_IN_CAT_UCH_ID'];
+				
+				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_w_kategoriach).")";
+			}
+
+			if (count($_POST['Uchwala']['Dzielnice']) > 0)
+			{
+				$query = "select distinct UCH_IN_DZL_UCH_ID from uch_in_dzl where UCH_IN_DZL_DZL_ID in ( ".implode(', ', $_POST['Uchwala']['Dzielnice']).")";
+				$list = Yii::app()->db->createCommand($query)->queryAll();
+				foreach ($list as $id)
+					$uchwaly_w_dzielnicach[] = $id['UCH_IN_DZL_UCH_ID'];
+					
+				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_w_dzielnicach).")";
+			}
+			
+			if (isset($_POST['Uchwala']['Radny']) && isset($_POST['Uchwala']['Glosowanie']))
+			{
+				$query = "select distinct VOT_UCH_ID from vot where VOT_RDN_ID = ".$_POST['Uchwala']['Radny']." and VOT_VOTE = ".$_POST['Uchwala']['Glosowanie'];
+				$list = Yii::app()->db->createCommand($query)->queryAll();
+				foreach ($list as $id)
+					$uchwaly_glosowanie[] = $id['VOT_UCH_ID'];
+					
+				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_glosowanie).")";
+			}
+			
+			if (isset($_POST['Uchwala']['DataOd']) && $_POST['Uchwala']['DataOd'] != "")
+			{
+				$condition .= " and UCH_DATE >= '".$_POST['Uchwala']['DataOd']."'";
+			}
+			
+			if (isset($_POST['Uchwala']['DataDo']) && $_POST['Uchwala']['DataDo'] != "")
+			{
+				$condition .= " and UCH_DATE <= '".$_POST['Uchwala']['DataDo']."'";
+			}
+			
+			$criteria=new CDbCriteria(array(
+					'condition'=>$condition,
+				));
+
+			$dataProvider=new CActiveDataProvider('Uchwala', array(
+					'criteria'=>$criteria,
+				));
+			$this->render('index',array(
+						'dataProvider'=>$dataProvider,
+						'condition'=>$condition,
+				));
+		}
+		else
+		{
+			$this->redirect(array('FrontUchwala/index'));
+		}
 	}
 
 	/**

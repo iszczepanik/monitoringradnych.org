@@ -9,6 +9,7 @@ return array(
 	'name'=>'Monitoring Radnych',
 	'sourceLanguage'=>'pl',
 	'language'=>'pl',
+	//'debug'=>true,
 	// preloading 'log' component
 	'preload'=>array('log','bootstrap'),
 
@@ -66,7 +67,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		/* localhost */
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=radni',
+			'connectionString' => 'mysql:host=localhost;dbname=bonafide_radni',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
@@ -118,5 +119,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
+		'debug'=>false,
 	),
 );
