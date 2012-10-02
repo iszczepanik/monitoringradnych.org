@@ -42,7 +42,7 @@
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_DUTY') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_DUTY',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textArea($model,'RDN_DUTY',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'RDN_DUTY', 'id'=>'RDN_DUTY', )); ?>
 		<?php echo $form->error($model,'RDN_DUTY',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
@@ -66,7 +66,10 @@
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_PROMISE') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_PROMISE',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textArea($model,'RDN_PROMISE',array('rows'=>6, 'cols'=>50)); ?>
+		<?php //echo $form->textArea($model,'RDN_PROMISE',array('rows'=>6, 'cols'=>50)); ?>
+		<?php //$this->widget('application.extensions.tinymce.ETinyMce', array('name'=>'RDN_PROMISE', 'value'=>$model->RDN_PROMISE,'model'=>$model, 'attribute'=>'RDN_PROMISE', 'useSwitch' => false, 'editorTemplate'=>'full')); ?>
+		<?php //$this->widget('application.extensions.tinymce.ETinyMce', array('editorTemplate'=>'full', 'name'=>'Radny[RDN_PROMISE]', 'id'=>'kkkkkk', 'useSwitch' => false, )); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'RDN_PROMISE', 'id'=>'RDN_PROMISE', )); ?>
 		<?php echo $form->error($model,'RDN_PROMISE',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
@@ -74,7 +77,8 @@
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_INTERVIEW') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_INTERVIEW',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textArea($model,'RDN_INTERVIEW',array('rows'=>6, 'cols'=>50)); ?>
+		<?php //echo $form->textArea($model,'RDN_INTERVIEW',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'RDN_INTERVIEW', 'id'=>'RDN_INTERVIEW', )); ?>
 		<?php echo $form->error($model,'RDN_INTERVIEW',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
@@ -82,7 +86,7 @@
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_PROMISE_CMT') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_PROMISE_CMT',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textArea($model,'RDN_PROMISE_CMT',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'RDN_PROMISE_CMT', 'id'=>'RDN_PROMISE_CMT', )); ?>
 		<?php echo $form->error($model,'RDN_PROMISE_CMT',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
@@ -90,7 +94,7 @@
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_INTERVIEW_CMT') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_INTERVIEW_CMT',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textArea($model,'RDN_INTERVIEW_CMT',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'RDN_INTERVIEW_CMT', 'id'=>'RDN_INTERVIEW_CMT', )); ?>
 		<?php echo $form->error($model,'RDN_INTERVIEW_CMT',array('class'=>'help-inline')); ?>
 		</div>
 	</div>

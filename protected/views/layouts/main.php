@@ -11,6 +11,7 @@
 	
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nivo.slider.js"></script>
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-modifications.css"  />
@@ -155,6 +156,7 @@
         //}/);
 		
 		//$('.datepicker').datepicker();
+
 		
 		$('#dp_do').datepicker();
 		$('#dp_od').datepicker();
