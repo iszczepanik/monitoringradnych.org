@@ -1,5 +1,5 @@
 *.7z
-application.log
+protected/runtime/application.log
 .buildpath
 .project
 
