@@ -30,10 +30,9 @@
   <ul class="nav nav-tabs">
 	<li class="active"  ><a href="<?php echo $this->createUrl('/'); ?>" style="background-color:#9aca3c; cursor: pointer;" >
 	<h1 class="anivers" ><?php echo CHtml::encode(Yii::app()->name); ?></h1></a></li>
-	<li><!--<a href="#B" data-toggle="tab">Section 2</a>-->
-	<a href="<?php echo $this->createUrl('/'); ?>">O projekcie</a> </li><li><a href="<?php echo $this->createUrl('/'); ?>">Kontakt</a>
-	</li>
-	
+	<li><a href="<?php echo $this->createUrl('site/page&view=about'); ?>">O projekcie</a></li>
+	<li><a href="<?php echo $this->createUrl('site/page&view=contact'); ?>">Kontakt</a></li>
+	<li><a href="<?php echo $this->createUrl('site/page&view=akademia_monitoringu'); ?>">Akademia monitoringu</a></li>
   </ul>
 </div>
 
@@ -44,8 +43,8 @@
 					<li><a href="<?php echo $this->createUrl('/'); ?>">Aktualności</a></li>
                     <li <?//class="active"?> ><a href="<?php echo $this->createUrl('/frontRadny/view&id=1&tab=clubs'); ?>">Radni</a></li>
                     <li><a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>">Wyszukiwarka uchwał</a></li>
-                    <li><a href="<?php echo $this->createUrl('/frontDzielnice/index'); ?>">Dzielnice</a></li>
-					<li><a href="<?php echo $this->createUrl('/frontRanking/index'); ?>">Ranking</a></li>
+                    <li><a href="<?php echo $this->createUrl('/frontDzielnice/view&id=1'); ?>">Dzielnice</a></li>
+					<li><a href="<?php echo $this->createUrl('/frontRanking/index&id=ranking'); ?>">Ranking</a></li>
 					<li><a href="<?php echo $this->createUrl('/'); ?>">Wypowiedzi ekspertów</a></li>
 					<li><a href="<?php echo $this->createUrl('/'); ?>">Komentarze</a></li>
 					<li><a href="<?php echo $this->createUrl('/'); ?>">Mieszkańcy konsultują</a></li>
@@ -131,7 +130,12 @@
 			
 		
 		
-	    <div class="span4" ><img src="img/bonafides.png" alt="bonafides" />
+	    <div class="span4" >
+		<h3>Pomysł i realizacja:</h3>
+		<a href="http://bonafides.pl" ><img src="img/bonafides.png" alt="Bonafides" /></a>
+		<br /><br />
+		<h3>Finansowanie ze środków:</h3>
+		<a href="http://http://www.batory.org.pl" ><img src="img/fundacjabatorego.png" alt="Fundacja im. Stefana Batorego" /></a>
 		<?php $this->widget('bootstrap.widgets.BootMenu', array(
 		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
 		    'stacked'=>false, // whether this is a stacked menu

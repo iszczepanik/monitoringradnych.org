@@ -123,7 +123,7 @@ class Vote extends CActiveRecord
 			case -1: return "przeciw"; break;
 			case 0: return "wstrzymał się"; break;
 			case 1: return "za"; break;
-			case 2: return "nieobecny za głosowaniu"; break;
+			case 2: return "nieobecny na głosowaniu"; break;
 		}
 	}
 	

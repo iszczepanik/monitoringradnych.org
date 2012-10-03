@@ -38,7 +38,7 @@ class FrontRankingController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($id)
 	{
 		/*
 		$dataProvider=new CActiveDataProvider('Radny');
@@ -51,6 +51,7 @@ class FrontRankingController extends Controller
 		
 		$this->render('index',array(
 			'model'=>$model,
+			'id'=>$id,
 		));
 	}
 }

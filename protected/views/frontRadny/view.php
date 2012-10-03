@@ -74,7 +74,7 @@ if (isset($viewed))
 			<h3><?php echo $viewed->ImieNazwisko(); ?></h3>
 			<p><a href="mailto:<?php echo $viewed->RDN_EMAIL; ?>" ><?php echo $viewed->RDN_EMAIL; ?></a></p>
 			<p>Tel: <?php echo $viewed->RDN_PHONE; ?></p>
-			<p>Strona internetowa: <?php echo $viewed->RDN_WEBSITE; ?></p>
+			<p>Strona internetowa: <a href="<?php echo $viewed->RDN_WEBSITE; ?>" ><?php echo $viewed->RDN_WEBSITE; ?></a></p>
 			<p>Okręg: <a href="#" ><?php echo $viewed->Okreg->OKR_NAME; ?></a></p>
 			<p>Klub: <?php echo $viewed->Klub->CLB_NAME; ?></p>
 			<p><h4>Komisje</h4>

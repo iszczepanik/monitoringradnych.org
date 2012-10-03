@@ -7932,3 +7932,57 @@ Stack trace:
 REQUEST_URI=/monitoringradnych.org/index.php?r=frontRadny/view&id=1
 HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=frontDzielnice/view&id=3
 ---
+2012/10/03 15:05:22 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (97)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/03 15:43:51 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Twoje żądanie jest nieprawidłowe.' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('index')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontRanking/in...')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontRanking/index
+---
+2012/10/03 15:44:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "index?id=monitoring".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('index?id=monito...')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('index?id=monito...')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontRanking/in...')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontRanking/index?id=monitoring
+---
+2012/10/03 16:25:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "registered".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:484
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(271): CController->missingAction('registered')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('registered')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('site/registered')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=site/registered
+---
+2012/10/03 16:27:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Żądany widok "index" nie został znaleziony.' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CViewAction.php:113
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CViewAction.php(124): CViewAction->resolveView('index')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(75): CViewAction->run()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(287): CController->runAction(Object(CViewAction))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('page')
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('site/page/regis...')
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=site/page/registered
+---
