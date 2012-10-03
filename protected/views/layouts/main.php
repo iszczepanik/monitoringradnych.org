@@ -40,7 +40,7 @@
 	<div class="navbar-inner" >
 		<div style="padding: 0; width: auto;" class="container">
                   <ul class="nav">
-					<li><a href="<?php echo $this->createUrl('/'); ?>">Aktualności</a></li>
+					<li><a href="<?php echo $this->createUrl('/Aktualnosci/index'); ?>">Aktualności</a></li>
                     <li <?//class="active"?> ><a href="<?php echo $this->createUrl('/frontRadny/view&id=1&tab=clubs'); ?>">Radni</a></li>
                     <li><a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>">Wyszukiwarka uchwał</a></li>
                     <li><a href="<?php echo $this->createUrl('/frontDzielnice/view&id=1'); ?>">Dzielnice</a></li>
@@ -80,6 +80,8 @@
 				array('label'=>'Projekty', 'url'=>array('/projekt/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Ranking', 'url'=>array('/ranking/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Interpelacje', 'url'=>array('/interpelacja/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Aktualności', 'url'=>array('/NewsBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Aktualności - kategorie', 'url'=>array('/NewsCategoryBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 		    ),
 		)); ?>
 	</div>
@@ -164,6 +166,9 @@
 		
 		$('#dp_do').datepicker();
 		$('#dp_od').datepicker();
+		
+		$('#news-form').popover();
+		
     });
 
 </script>
