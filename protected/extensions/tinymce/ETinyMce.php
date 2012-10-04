@@ -239,13 +239,13 @@ class ETinyMce extends CInputWidget
     * @var array
     */
    private $validLanguages = array(
-       'ar', 'bg', 'bs', 'cn', 'da', 'el', 'es', 'fa', 'gl', 'hi', 'hy', 'is',
+       /*'ar', 'bg', 'bs', 'cn', 'da', 'el', 'es', 'fa', 'gl', 'hi', 'hy', 'is',
        'ka', 'ko', 'lv', 'mn', 'nb', 'no', 'pt', 'sc', 'sk', 'sr', 'te', 'tr',
        'uk', 'zh-cn', 'zu', 'az', 'bn', 'ca', 'cs', 'de', 'en', 'et', 'fi',
        'gu', 'hr', 'ia', 'it', 'kl', 'lb', 'mk', 'ms', 'nl', 'pl', 'ro', 'se',
        'sl', 'sv', 'th', 'tt', 'ur', 'zh', 'be', 'br', 'ch', 'cy', 'dv', 'eo',
        'eu', 'fr', 'he', 'hu', 'id', 'ja', 'km', 'lt', 'ml', 'my', 'nn', 'ps',
-       'ru', 'si', 'sq', 'ta', 'tn', 'tw', 'vi', 'zh-tw',
+       'ru', 'si', 'sq', 'ta', 'tn', 'tw', 'vi', 'zh-tw',*/ 'pl',
    );
 
    /**

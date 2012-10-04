@@ -71,6 +71,9 @@ class RadnyController extends Controller
 			$model->attributes=$_POST['Radny'];
 			$model->KomisjeRadnych = $_POST['Radny']['komisjeRadnychIDs'] != '' ?
 				$_POST['Radny']['komisjeRadnychIDs'] : null;
+			$model->DzielniceDyzurow = $_POST['Radny']['dzielniceDyzurowIDs'] != '' ?
+				$_POST['Radny']['dzielniceDyzurowIDs'] : null;	
+				
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->RDN_ID));
 		}
@@ -97,6 +100,9 @@ class RadnyController extends Controller
 			$model->attributes=$_POST['Radny'];
 			$model->KomisjeRadnych = $_POST['Radny']['komisjeRadnychIDs'] != '' ?
 				$_POST['Radny']['komisjeRadnychIDs'] : null;
+			$model->DzielniceDyzurow = $_POST['Radny']['dzielniceDyzurowIDs'] != '' ?
+				$_POST['Radny']['dzielniceDyzurowIDs'] : null;
+				
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->RDN_ID));
 		}

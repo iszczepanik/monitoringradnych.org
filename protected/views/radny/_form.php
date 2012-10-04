@@ -39,6 +39,15 @@
 		</div>
 	</div>
 
+	<div class='control-group' >
+    <?php echo $form->checkBoxListRow($model, 'dzielniceDyzurowIDs', 
+            CHtml::listData(
+                Dzielnica::model()->findAll(), 
+                'DZL_ID', 
+                'DZL_NAME'
+            )); ?>
+    </div>
+	
 	<div class='control-group<?php echo (CHtml::error($model,'RDN_DUTY') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'RDN_DUTY',array('class'=>'control-label')); ?>
 		<div class="controls">

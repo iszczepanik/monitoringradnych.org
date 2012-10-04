@@ -128,8 +128,8 @@
     </div>
     -->
 	<!---->
-    <div style="height: 30px;"></div>
-    
+     <!-- <div style="height: 30px;"></div>
+  
     <div class="row lower-menu"> 
     	<ul class="nav nav-pills">
 	    <li class="span3" >
@@ -149,7 +149,7 @@
 		<div class="image" ></div></a>
 		</li>
 		</ul>
-	</div>
+	</div>-->
 	
 	
         

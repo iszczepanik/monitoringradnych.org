@@ -47,20 +47,22 @@ if (isset($viewed))
 			<p>Liczba miszkańców: <?php echo $viewed->DZL_CITIZEN_COUNT; ?></p>
 			<p>Powierzchnia: <?php echo $viewed->DZL_AREA; ?></p>
 			<div><h4>Radni na dyżurach w dzielncy</h4>
+			<ul>
+			<? 
+			$radni = $viewed->RadniNaDyzurze(); 
+			foreach ($radni as $radny)
+				echo "<li><a href='".$this->createUrl('frontRadny/view&id='.$radny['RDN_ID'])."&tab=clubs' >".$radny['RDN_FIRSTNAME']." ".$radny['RDN_LASTNAME']."</a></li>";
+			?>
+			</ul>
 			</div>
 			<div><h4>Radni wybrani z okręgu</h4>
 			<ul>
 			<?
-				$criteria = new CDbCriteria;
-				$criteria->condition='RDN_OKR_ID=:RDN_OKR_ID';
-				$criteria->params=array(':RDN_OKR_ID'=>$viewed->Okreg->OKR_ID);
-				
-				$radni = Radny::model()->findAll($criteria);
-				
-				foreach($radni as $i=>$item)
-				{
-					?><li><a href="<? echo $this->createUrl('frontRadny/view&id='.$item->RDN_ID);?>" ><? echo $item->ImieNazwisko(); ?></a></li><?
-				}
+			$radni = $viewed->RadniWybraniZOkregu();
+			foreach($radni as $i=>$item)
+			{
+				?><li><a href="<? echo $this->createUrl('frontRadny/view&id='.$item->RDN_ID)."&tab=clubs";?>" ><? echo $item->ImieNazwisko(); ?></a></li><?
+			}
 			?>
 			</ul>
 			</div>
@@ -98,7 +100,7 @@ if (isset($viewed))
 						}
 						?>
 						</th>
-						<td><? echo $uchwala['UCH_NAME']; ?></td>
+						<td><a href="<? echo $this->createUrl('frontUchwala/view&id='.$uchwala['UCH_ID'])."&tab=clubs";?>" ><? echo $uchwala['UCH_NAME']; ?></td>
 						</tr>
 						<?
 					}

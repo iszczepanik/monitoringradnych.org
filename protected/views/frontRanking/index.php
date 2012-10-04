@@ -44,7 +44,7 @@
 			{
 				?><tr><?
 				echo "<td>".$item->RNK_LP."</td>";
-				echo "<td><a href='".$this->createUrl("frontRadny/view&id=".$item->RNK_RDN_ID)."' >".$item->Radny->ImieNazwisko()."</a></td>";
+				echo "<td><a href='".$this->createUrl("frontRadny/view&id=".$item->RNK_RDN_ID)."&tab=clubs' >".$item->Radny->ImieNazwisko()."</a></td>";
 				echo "<td>".$item->RNK_KMS."</td>";
 				echo "<td>".$item->RNK_RADY."</td>";
 				echo "<td>".$item->RNK_DUTY."</td>";
@@ -64,7 +64,7 @@
 			{
 				$item = $model[$i];
 				?><li><?
-				echo "<a href='".$this->createUrl("frontRadny/view&id=".$item->RNK_RDN_ID)."' >".$item->Radny->ImieNazwisko()."</a>";
+				echo "<a href='".$this->createUrl("frontRadny/view&id=".$item->RNK_RDN_ID)."&tab=clubs' >".$item->Radny->ImieNazwisko()."</a>";
 				?></li><?
 			}
 		?>

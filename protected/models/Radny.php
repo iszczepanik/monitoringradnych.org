@@ -35,6 +35,7 @@ class Radny extends CActiveRecord
 	}
 	
 	public $komisjeRadnychIDs = array();
+	public $dzielniceDyzurowIDs = array();
 	
 	public function afterFind()
 	{
@@ -42,6 +43,11 @@ class Radny extends CActiveRecord
 		{
 			foreach($this->KomisjeRadnych as $n=>$komisja)
 			$this->komisjeRadnychIDs[] = $komisja->KMS_ID;
+		}
+		if(!empty($this->DzielniceDyzurow))
+		{
+			foreach($this->DzielniceDyzurow as $n=>$dzielnica)
+			$this->dzielniceDyzurowIDs[] = $dzielnica->DZL_ID;
 		}
 	}
 	
@@ -114,6 +120,7 @@ class Radny extends CActiveRecord
 			'Klub' => array(self::BELONGS_TO, 'Club', 'RDN_CLB_ID'),
 			'KomisjeRadnych' => array(self::MANY_MANY, 'Komisja', 'rdn_in_kms(RDN_IN_KMS_RND_ID, RDN_IN_KMS_KMS_ID)'),
 			'Ranking' => array(self::HAS_ONE, 'Ranking', 'RNK_RDN_ID'),
+			'DzielniceDyzurow' => array(self::MANY_MANY, 'Dzielnica', 'rdn_in_dzl(RDN_IN_DZL_RDN_ID, RDN_IN_DZL_DZL_ID)'),
 		);
 	}
 	
@@ -160,6 +167,7 @@ class Radny extends CActiveRecord
 			'RDN_CLB_ID' => 'Klub',
 			'RDN_STATEMENT_FILE' => 'Oświadczenie majątkowe',
 			'komisjeRadnychIDs' => 'Komisje',
+			'dzielniceDyzurowIDs' => 'Dyżury na dzielnicach',
 		);
 	}
 

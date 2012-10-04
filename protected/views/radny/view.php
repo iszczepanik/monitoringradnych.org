@@ -39,6 +39,10 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'RDN_LASTNAME',
 		'RDN_EMAIL',
 		'RDN_PHONE',
+		'dzielniceDyzurowIDs'=> array(
+		    'name'  => 'dzielniceDyzurowIDs',
+		    'value' => implode(', ', CHtml::listData($model->DzielniceDyzurow, 'DZL_ID', 'DZL_NAME')),
+		),
 		'RDN_DUTY',
 		'RDN_WEBSITE',
 		'RDN_PHOTO',
@@ -63,5 +67,6 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		            'name'  => 'komisjeRadnychIDs',
 		            'value' => implode(', ', CHtml::listData($model->KomisjeRadnych, 'KMS_ID', 'KMS_NAME')),
 		),
+
 	),
 )); ?>

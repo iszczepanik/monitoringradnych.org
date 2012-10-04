@@ -77,6 +77,9 @@ if (isset($viewed))
 			<p>Strona internetowa: <a href="<?php echo $viewed->RDN_WEBSITE; ?>" ><?php echo $viewed->RDN_WEBSITE; ?></a></p>
 			<p>Okręg: <a href="#" ><?php echo $viewed->Okreg->OKR_NAME; ?></a></p>
 			<p>Klub: <?php echo $viewed->Klub->CLB_NAME; ?></p>
+			<p><h4>Dyżur</h4>
+			<?php echo $viewed->RDN_DUTY; ?>
+			</p>
 			<p><h4>Komisje</h4>
 			<ul><!-- class="unstyled"-->
 			<?php 

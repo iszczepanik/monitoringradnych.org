@@ -33,7 +33,26 @@ class Dzielnica extends CActiveRecord
 	{
 		return 'dzl';
 	}
-
+	
+	public function RadniNaDyzurze()
+	{
+		$query = "select * from rdn join rdn_in_dzl on rdn.RDN_ID = rdn_in_dzl.RDN_IN_DZL_RDN_ID where rdn_in_dzl.RDN_IN_DZL_DZL_ID = ".$this->DZL_ID;
+		$radni = Yii::app()->db->createCommand($query)->queryAll();
+		
+		return $radni;
+	}
+	
+	public function RadniWybraniZOkregu()
+	{
+		$criteria = new CDbCriteria;
+		$criteria->condition='RDN_OKR_ID=:RDN_OKR_ID';
+		$criteria->params=array(':RDN_OKR_ID'=>$this->Okreg->OKR_ID);
+		
+		$radni = Radny::model()->findAll($criteria);
+		
+		return $radni;
+	}
+	
 	/**
 	 * @return array validation rules for model attributes.
 	 */
