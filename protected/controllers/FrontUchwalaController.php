@@ -62,6 +62,8 @@ class FrontUchwalaController extends Controller
 			$this->render('index',array(
 				'dataProvider'=>$dataProvider,
 			));
+			
+			return;
 		}
 	
 		

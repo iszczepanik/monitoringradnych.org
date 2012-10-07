@@ -39,7 +39,16 @@
 ?>
 
 <table class="detail-view table table-striped table-condensed" >
+<tr>
+<th>Dokument<br />
 
+</th>
+<td>
+	<!--<iframe class="pdf_document" src="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $model->UCH_FILE?>" ></iframe>-->
+	<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $model->UCH_FILE; ?>" 
+	target="_blank" style="font-weight: normal;" ><img src="img/pdf.png" /> zobacz dokument</a>
+</td>
+</tr>
 
 <?
 if(isset($votes))
@@ -77,12 +86,4 @@ if(isset($votes))
 }
 
 ?>
-<tr>
-<th>Dokument<br />
-<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $model->UCH_FILE?>" target="_blank" style="font-weight: normal;" >zobacz w nowym oknie</a>
-</th>
-<td>
-	<iframe class="pdf_document" src="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $model->UCH_FILE?>" ></iframe>
-</td>
-</tr>
 </table>
