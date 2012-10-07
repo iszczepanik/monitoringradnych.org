@@ -76,6 +76,11 @@ class Radny extends CActiveRecord
 		return $list;
 	}
 	
+	public function Get3Last()
+	{
+		return Uchwala::model()->find3LastByRadny($this->RDN_ID);
+	}
+	
 	/**
 	 * @return string the associated database table name
 	 */

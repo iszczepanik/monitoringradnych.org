@@ -34,6 +34,11 @@ class Dzielnica extends CActiveRecord
 		return 'dzl';
 	}
 	
+	public function Get3Last()
+	{
+		return Uchwala::model()->find3LastByDzielnica($this->DZL_ID);
+	}
+	
 	public function RadniNaDyzurze()
 	{
 		$query = "select * from rdn join rdn_in_dzl on rdn.RDN_ID = rdn_in_dzl.RDN_IN_DZL_RDN_ID where rdn_in_dzl.RDN_IN_DZL_DZL_ID = ".$this->DZL_ID;
@@ -62,7 +67,8 @@ class Dzielnica extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('DZL_NAME, DZL_OKR_ID', 'required'),
-			array('DZL_OKR_ID, DZL_CITIZEN_COUNT, DZL_AREA', 'numerical', 'integerOnly'=>true),
+			array('DZL_OKR_ID, DZL_CITIZEN_COUNT', 'numerical', 'integerOnly'=>true),
+			array('DZL_AREA', 'numerical'),
 			array('DZL_NAME', 'length', 'max'=>128),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

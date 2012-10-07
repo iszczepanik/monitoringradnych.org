@@ -52,69 +52,64 @@ class FrontUchwalaController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Uchwala');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$session = Yii::app()->getComponent('session');
+	
+		if (isset($_POST['showall']))
+		{
+			$session->remove('searchParams', '');
+			
+			$dataProvider=new CActiveDataProvider('Uchwala');
+			$this->render('index',array(
+				'dataProvider'=>$dataProvider,
+			));
+		}
+	
+		
+		
+		if (isset($_POST['search']))
+		{
+			$session->add('searchParams', $_POST['Uchwala']);
+			//var_dump($_POST['Uchwala']); return;
+		
+			$dataProvider = Uchwala::model()->userFind($_POST['Uchwala']);
+			
+			$this->render('index',array(
+				'dataProvider'=>$dataProvider,
+				'searchParams'=>$_POST['Uchwala'],
+			));
+				
+		}
+		else if ($session->get('searchParams','') != null)
+		{
+			$dataProvider = Uchwala::model()->userFind($session->get('searchParams',''));
+			
+			$this->render('index',array(
+				'dataProvider'=>$dataProvider,
+				'searchParams'=>$session->get('searchParams',''),
+			));
+		}
+		else
+		{
+			$dataProvider=new CActiveDataProvider('Uchwala');
+			$this->render('index',array(
+				'dataProvider'=>$dataProvider,
+			));
+		}
 	}
 	
 	public function actionSearch()
 	{
 		if (isset($_POST['search']))
 		{
-			$condition = "1=1";
+			//var_dump($_POST['Uchwala']); return;
+		
+			$dataProvider = Uchwala::model()->userFind($_POST['Uchwala']);
 			
-			if (count($_POST['Uchwala']['Kategorie']) > 0)
-			{
-				$query = "select distinct UCH_IN_CAT_UCH_ID from uch_in_cat where UCH_IN_CAT_CAT_ID in ( ".implode(', ', $_POST['Uchwala']['Kategorie']).")";
-				$list = Yii::app()->db->createCommand($query)->queryAll();
-				foreach ($list as $id)
-					$uchwaly_w_kategoriach[] = $id['UCH_IN_CAT_UCH_ID'];
-				
-				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_w_kategoriach).")";
-			}
-
-			if (count($_POST['Uchwala']['Dzielnice']) > 0)
-			{
-				$query = "select distinct UCH_IN_DZL_UCH_ID from uch_in_dzl where UCH_IN_DZL_DZL_ID in ( ".implode(', ', $_POST['Uchwala']['Dzielnice']).")";
-				$list = Yii::app()->db->createCommand($query)->queryAll();
-				foreach ($list as $id)
-					$uchwaly_w_dzielnicach[] = $id['UCH_IN_DZL_UCH_ID'];
-					
-				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_w_dzielnicach).")";
-			}
-			
-			if (isset($_POST['Uchwala']['Radny']) && isset($_POST['Uchwala']['Glosowanie']))
-			{
-				$query = "select distinct VOT_UCH_ID from vot where VOT_RDN_ID = ".$_POST['Uchwala']['Radny']." and VOT_VOTE = ".$_POST['Uchwala']['Glosowanie'];
-				$list = Yii::app()->db->createCommand($query)->queryAll();
-				foreach ($list as $id)
-					$uchwaly_glosowanie[] = $id['VOT_UCH_ID'];
-					
-				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_glosowanie).")";
-			}
-			
-			if (isset($_POST['Uchwala']['DataOd']) && $_POST['Uchwala']['DataOd'] != "")
-			{
-				$condition .= " and UCH_DATE >= '".$_POST['Uchwala']['DataOd']."'";
-			}
-			
-			if (isset($_POST['Uchwala']['DataDo']) && $_POST['Uchwala']['DataDo'] != "")
-			{
-				$condition .= " and UCH_DATE <= '".$_POST['Uchwala']['DataDo']."'";
-			}
-			
-			$criteria=new CDbCriteria(array(
-					'condition'=>$condition,
-				));
-
-			$dataProvider=new CActiveDataProvider('Uchwala', array(
-					'criteria'=>$criteria,
-				));
 			$this->render('index',array(
-						'dataProvider'=>$dataProvider,
-						'condition'=>$condition,
-				));
+				'dataProvider'=>$dataProvider,
+				'searchParams'=>$_POST['Uchwala'],
+			));
+				
 		}
 		else
 		{

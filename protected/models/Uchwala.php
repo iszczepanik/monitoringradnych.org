@@ -30,6 +30,131 @@ class Uchwala extends CActiveRecord
 	public $kategorieUchwalIDs = array();
 	public $votes = array();
 	
+	public function find3LastByRadny($radnyID)
+	{
+		return Yii::app()->db->createCommand('SELECT * 
+			FROM  `uch` u,  `vot` v
+			WHERE u.UCH_ID = v.VOT_UCH_ID
+			AND v.VOT_RDN_ID = '.$radnyID.'
+			AND u.UCH_TYPE = '.UchwalaType::Uchwala.'
+			order by u.UCH_DATE desc
+			LIMIT 0 , 3')->queryAll();
+	}
+	
+	public function find3LastByDzielnica($dzielnicaID)
+	{
+		return Yii::app()->db->createCommand('select * 
+			from uch u , uch_in_dzl d
+			where u.UCH_ID = d.UCH_IN_DZL_UCH_ID
+			and d.UCH_IN_DZL_DZL_ID = '.$dzielnicaID.'
+			and u.UCH_TYPE = '.UchwalaType::Uchwala.'
+			and u.UCH_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch_in_dzl
+			group by UCH_IN_DZL_UCH_ID
+			having count(UCH_IN_DZL_UCH_ID) < (select count(*) from dzl)
+			)
+			order by u.UCH_DATE desc
+			LIMIT 0 , 3')->queryAll();
+	}
+	
+	public function userFind($searchParams)
+	{
+		$condition = "1=1";
+		
+		if (count($searchParams['Kategorie']) > 0)
+		{
+			$query = "select distinct UCH_IN_CAT_UCH_ID from uch_in_cat where UCH_IN_CAT_CAT_ID in ( ".implode(', ', $searchParams['Kategorie']).")";
+			$list = Yii::app()->db->createCommand($query)->queryAll();
+			foreach ($list as $id)
+				$uchwaly_w_kategoriach[] = $id['UCH_IN_CAT_UCH_ID'];
+			
+			if (count($uchwaly_w_kategoriach) > 0)
+				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_w_kategoriach).")";
+			else 
+				$condition .= " and 1=0";
+		}
+
+		if ($searchParams['DzielniceAll'] == 'on')
+		{
+			$query = 'SELECT distinct UCH_IN_DZL_UCH_ID
+			FROM uch_in_dzl
+			WHERE UCH_IN_DZL_DZL_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch_in_dzl
+			group by UCH_IN_DZL_UCH_ID
+			having count(UCH_IN_DZL_UCH_ID) >= (select count(*) from dzl)
+			)';
+			
+			$list = Yii::app()->db->createCommand($query)->queryAll();
+			foreach ($list as $id)
+				$uchwaly_w_dzielnicach[] = $id['UCH_IN_DZL_UCH_ID'];
+				
+			if (count($uchwaly_w_dzielnicach) > 0)
+				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_w_dzielnicach).")";
+			else 
+				$condition .= " and 1=0";
+		}
+		else if (count($searchParams['Dzielnice']) > 0)
+		{
+			$query = 'select distinct UCH_IN_DZL_UCH_ID
+			from uch_in_dzl
+			WHERE UCH_IN_DZL_DZL_ID in ( '.implode(', ', $searchParams['Dzielnice']).' )
+			and UCH_IN_DZL_UCH_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch_in_dzl
+			group by UCH_IN_DZL_UCH_ID
+			having count(UCH_IN_DZL_UCH_ID) < (select count(*) from dzl)
+			)';
+			
+			//"select distinct UCH_IN_DZL_UCH_ID from uch_in_dzl where UCH_IN_DZL_DZL_ID in ( ".implode(', ', $searchParams['Dzielnice']).")";
+			
+			$list = Yii::app()->db->createCommand($query)->queryAll();
+			foreach ($list as $id)
+				$uchwaly_w_dzielnicach[] = $id['UCH_IN_DZL_UCH_ID'];
+				
+			if (count($uchwaly_w_dzielnicach) > 0)
+				$condition .= " and UCH_ID in (".implode(', ', $uchwaly_w_dzielnicach).")";
+			else 
+				$condition .= " and 1=0";
+		}
+		
+		if (isset($searchParams['Radny']) && isset($searchParams['Glosowanie']))
+		{
+			$query = "select distinct VOT_UCH_ID from vot where VOT_RDN_ID = ".$searchParams['Radny']." and VOT_VOTE = ".$searchParams['Glosowanie'];
+			$list = Yii::app()->db->createCommand($query)->queryAll();
+			foreach ($list as $id)
+				$uchwaly_glosowanie[] = $id['VOT_UCH_ID'];
+				
+				if (count($uchwaly_glosowanie) > 0)
+			$condition .= " and UCH_ID in (".implode(', ', $uchwaly_glosowanie).")";
+			else 
+				$condition .= " and 1=0";
+		}
+		
+		if (isset($searchParams['DataOd']) && $searchParams['DataOd'] != "")
+		{
+			$condition .= " and UCH_DATE >= '".$searchParams['DataOd']."'";
+		}
+		
+		if (isset($searchParams['DataDo']) && $searchParams['DataDo'] != "")
+		{
+			$condition .= " and UCH_DATE <= '".$searchParams['DataDo']."'";
+		}
+		
+		$condition .= " and UCH_TYPE = ".UchwalaType::Uchwala;
+		
+		$criteria = new CDbCriteria(array(
+				'condition'=>$condition,
+			));
+
+		$dataProvider = new CActiveDataProvider('Uchwala', array(
+				'criteria'=>$criteria,
+			));
+			
+		return $dataProvider;
+	}
+	
 	public function afterFind()
 	{
 		if(!empty($this->DzielniceUchwal))
@@ -168,7 +293,7 @@ class Uchwala extends CActiveRecord
 		$criteria->compare('UCH_ID',$this->UCH_ID);
 		$criteria->compare('UCH_FILE',$this->UCH_FILE,true);
 		$criteria->compare('UCH_NAME',$this->UCH_NAME,true);
-		$criteria->compare('UCH_TYPE',$this->UCH_TYPE);
+		$criteria->compare('UCH_TYPE',UchwalaType::Uchwala);
 		$criteria->compare('UCH_KMS_ID',$this->UCH_KMS_ID);
 		$criteria->compare('UCH_DATE',$this->UCH_DATE,true);
 		$criteria->compare('UCH_NUMBER',$this->UCH_NUMBER);

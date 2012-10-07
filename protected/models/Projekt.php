@@ -125,7 +125,7 @@ class Projekt extends CActiveRecord
 		$criteria->compare('UCH_ID',$this->UCH_ID);
 		$criteria->compare('UCH_FILE',$this->UCH_FILE,true);
 		$criteria->compare('UCH_NAME',$this->UCH_NAME,true);
-		$criteria->compare('UCH_TYPE',2);
+		$criteria->compare('UCH_TYPE',UchwalaType::Projekt);
 		$criteria->compare('UCH_KMS_ID',$this->UCH_KMS_ID);
 
 		return new CActiveDataProvider($this, array(

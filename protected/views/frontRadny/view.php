@@ -120,15 +120,8 @@ if (isset($viewed))
 				<p>Głosowanie radnego nad trzema ostatnimi uchwałami <a href="#" >zobacz wszystkie</a></p>
 				<table class="detail-view table table-striped table-condensed" >
 				<?
-					$list= Yii::app()->db->createCommand('SELECT * 
-						FROM  `uch` u,  `vot` v
-						WHERE u.UCH_ID = v.VOT_UCH_ID
-						AND v.VOT_RDN_ID = '.$viewed->RDN_ID.'
-						AND u.UCH_TYPE = 1
-						order by u.UCH_DATE desc
-						LIMIT 0 , 3')->queryAll();
+					$list= $viewed->Get3Last();
 
-					$rs=array();
 					foreach($list as $item){
 						//process each item here
 						?>

@@ -115,3 +115,196 @@ Stack trace:
 REQUEST_URI=/monitoringradnych.org/index.php?r=frontRadny/view&id=1
 HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=frontDzielnice/view&id=1
 ---
+2012/10/06 13:00:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Twoje żądanie jest nieprawidłowe.' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('view')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontRadny/view')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontRadny/view&id=5
+---
+2012/10/07 09:30:56 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceUchwalIDs" klasy "Projekt" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\ProjektController.php (71)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/07 09:30:56 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "kategorieUchwalIDs" klasy "Projekt" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\ProjektController.php (71)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/07 09:33:50 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Twoje żądanie jest nieprawidłowe.' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('view')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontRadny/view')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontRadny/view&id=5
+---
+2012/10/07 10:30:06 [error] [system.db.CDbCommand] Wywołanie CDbCommand::fetchAll() nie powiodło się: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.UCH_ID' in 'IN/ALL/ANY subquery'. Wykonywana instrukcja SQL to: SELECT distinct UCH_IN_DZL_UCH_ID
+			FROM uch_in_dzl
+			WHERE u.UCH_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch_in_dzl
+			group by UCH_IN_DZL_UCH_ID
+			having count(UCH_IN_DZL_UCH_ID) >= (select count(*) from dzl)
+			).
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php (86)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php (67)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/07 10:30:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.UCH_ID' in 'IN/ALL/ANY subquery'. The SQL statement executed was: SELECT distinct UCH_IN_DZL_UCH_ID
+			FROM uch_in_dzl
+			WHERE u.UCH_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch_in_dzl
+			group by UCH_IN_DZL_UCH_ID
+			having count(UCH_IN_DZL_UCH_ID) >= (select count(*) from dzl)
+			)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php(86): CDbCommand->queryAll()
+#2 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php(67): Uchwala->userFind(Array)
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): FrontUchwalaController->actionSearch()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('search')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontUchwala/se...')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontUchwala/search
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=FrontUchwala/index
+---
+2012/10/07 10:31:32 [error] [system.db.CDbCommand] Wywołanie CDbCommand::fetchAll() nie powiodło się: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in ( 1 )
+			and UCH_IN_DZL_UCH_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch' at line 3. Wykonywana instrukcja SQL to: select distinct UCH_IN_DZL_UCH_ID
+			from uch_in_dzl
+			WHERE UCH_IN_DZL_DZL_ID = in ( 1 )
+			and UCH_IN_DZL_UCH_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch_in_dzl
+			group by UCH_IN_DZL_UCH_ID
+			having count(UCH_IN_DZL_UCH_ID) < (select count(*) from dzl)
+			).
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php (106)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php (67)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/07 10:31:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in ( 1 )
+			and UCH_IN_DZL_UCH_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch' at line 3. The SQL statement executed was: select distinct UCH_IN_DZL_UCH_ID
+			from uch_in_dzl
+			WHERE UCH_IN_DZL_DZL_ID = in ( 1 )
+			and UCH_IN_DZL_UCH_ID in 
+			( 
+			select UCH_IN_DZL_UCH_ID from uch_in_dzl
+			group by UCH_IN_DZL_UCH_ID
+			having count(UCH_IN_DZL_UCH_ID) < (select count(*) from dzl)
+			)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php(106): CDbCommand->queryAll()
+#2 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php(67): Uchwala->userFind(Array)
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): FrontUchwalaController->actionSearch()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('search')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontUchwala/se...')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontUchwala/search
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=frontUchwala/search
+---
+2012/10/07 10:32:56 [error] [php] implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed (C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php:110)
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): FrontUchwalaController->actionSearch()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): FrontUchwalaController->runAction()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): FrontUchwalaController->filterAccessControl()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): FrontUchwalaController->runActionWithFilters()
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): FrontUchwalaController->run()
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontUchwala/search
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php (110)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php (67)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/07 17:41:34 [error] [php] array_search() expects parameter 2 to be array, null given (C:\Program Files\wamp\www\monitoringradnych.org\protected\views\frontUchwala\index.php:22)
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): FrontUchwalaController->renderInternal()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): FrontUchwalaController->renderFile()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): FrontUchwalaController->renderPartial()
+#3 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php(64): FrontUchwalaController->render()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): FrontUchwalaController->actionIndex()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): FrontUchwalaController->runAction()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): FrontUchwalaController->filterAccessControl()
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): FrontUchwalaController->runActionWithFilters()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): FrontUchwalaController->run()
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontUchwala/index
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\frontUchwala\index.php (22)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php (64)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/07 17:42:16 [error] [php] array_search() expects parameter 2 to be array, null given (C:\Program Files\wamp\www\monitoringradnych.org\protected\views\frontUchwala\index.php:22)
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): FrontUchwalaController->renderInternal()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): FrontUchwalaController->renderFile()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): FrontUchwalaController->renderPartial()
+#3 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php(64): FrontUchwalaController->render()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): FrontUchwalaController->actionIndex()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): FrontUchwalaController->runAction()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): FrontUchwalaController->filterAccessControl()
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): FrontUchwalaController->runActionWithFilters()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): FrontUchwalaController->run()
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontUchwala/index
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\frontUchwala\index.php (22)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php (64)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
