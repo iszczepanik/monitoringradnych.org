@@ -134,10 +134,10 @@
 		
 	    <div class="span4" >
 		<h3>Pomysł i realizacja:</h3>
-		<a href="http://bonafides.pl" ><img src="img/bonafides.png" alt="Bonafides" /></a>
+		<a href="http://bonafides.pl" target="_blank" ><img src="img/bonafides.png" alt="Bonafides" /></a>
 		<br /><br />
 		<h3>Finansowanie ze środków:</h3>
-		<a href="http://http://www.batory.org.pl" ><img src="img/fundacjabatorego.png" alt="Fundacja im. Stefana Batorego" /></a>
+		<a href="http://www.batory.org.pl" target="_blank" ><img src="img/fundacjabatorego.png" alt="Fundacja im. Stefana Batorego" /></a>
 		<?php $this->widget('bootstrap.widgets.BootMenu', array(
 		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
 		    'stacked'=>false, // whether this is a stacked menu

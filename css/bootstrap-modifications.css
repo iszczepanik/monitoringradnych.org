@@ -107,11 +107,11 @@ padding-right: 4px;
  */
  @font-face {
     font-family: 'Anivers-Regular';
-    src: url('webfonts/241b12_0_0-webfont.eot');
-    src: url('webfonts/241b12_0_0-webfont.eot?#iefix') format('embedded-opentype'),
-         url('webfonts/241b12_0_0-webfont.woff') format('woff'),
-         url('webfonts/241b12_0_0-webfont.ttf') format('truetype'),
-         url('webfonts/241b12_0_0-webfont.svg#webfontuploaded_file') format('svg');
+    src: url('http://monitoringradnych.pl/css/webfonts/241b12_0_0-webfont.eot');
+    src: url('http://monitoringradnych.pl/css/webfonts/241b12_0_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://monitoringradnych.pl/css/webfonts/241b12_0_0-webfont.woff') format('woff'),
+         url('http://monitoringradnych.pl/css/webfonts/241b12_0_0-webfont.ttf') format('truetype'),
+         url('http://monitoringradnych.pl/css/webfonts/241b12_0_0-webfont.svg#webfontuploaded_file') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -246,4 +246,7 @@ iframe
     border-top: 1px solid #9aca3c;
 }
 /*ul { list-style-type: none;}*/
-
+h3 li
+{
+	margin-top: 15px;
+}
