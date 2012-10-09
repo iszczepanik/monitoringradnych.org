@@ -39,6 +39,7 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'RDN_LASTNAME',
 		'RDN_EMAIL',
 		'RDN_PHONE',
+		'RDN_INFO_RNK',
 		'dzielniceDyzurowIDs'=> array(
 		    'name'  => 'dzielniceDyzurowIDs',
 		    'value' => implode(', ', CHtml::listData($model->DzielniceDyzurow, 'DZL_ID', 'DZL_NAME')),

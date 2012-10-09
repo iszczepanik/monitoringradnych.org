@@ -103,10 +103,11 @@ class Radny extends CActiveRecord
 			array('RDN_EMAIL, RDN_WEBSITE', 'length', 'max'=>128),
 			array('RDN_PHONE', 'length', 'max'=>32),
 			array('RDN_PHOTO, RDN_STATEMENT_FILE', 'length', 'max'=>256),
-			array('RDN_DUTY, RDN_PROMISE_CMT, RDN_INTERVIEW_CMT', 'safe'),
+			array('RDN_INFO_RNK', 'length', 'max'=>512),
+			array('RDN_DUTY, RDN_PROMISE_CMT, RDN_INTERVIEW_CMT, RDN_INFO_RNK', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('RDN_ID, RDN_FIRSTNAME, RDN_LASTNAME, RDN_EMAIL, RDN_PHONE, RDN_DUTY, RDN_WEBSITE, RDN_PHOTO, RDN_PROMISE, RDN_INTERVIEW, RDN_PROMISE_CMT, RDN_INTERVIEW_CMT, RDN_TNR_ID, RDN_CLB_ID, RDN_OKR_ID, RDN_STATEMENT_FILE', 'safe', 'on'=>'search'),
+			array('RDN_ID, RDN_FIRSTNAME, RDN_LASTNAME, RDN_EMAIL, RDN_PHONE, RDN_DUTY, RDN_WEBSITE, RDN_PHOTO, RDN_PROMISE, RDN_INTERVIEW, RDN_PROMISE_CMT, RDN_INTERVIEW_CMT, RDN_TNR_ID, RDN_CLB_ID, RDN_OKR_ID, RDN_STATEMENT_FILE, RDN_INFO_RNK', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -171,6 +172,7 @@ class Radny extends CActiveRecord
 			'RDN_OKR_ID' => 'Okręg',
 			'RDN_CLB_ID' => 'Klub',
 			'RDN_STATEMENT_FILE' => 'Oświadczenie majątkowe',
+			'RDN_INFO_RNK' => 'Dodatkowa informacja dot. rankingu',
 			'komisjeRadnychIDs' => 'Komisje',
 			'dzielniceDyzurowIDs' => 'Dyżury na dzielnicach',
 		);

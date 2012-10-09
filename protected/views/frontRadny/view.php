@@ -90,8 +90,12 @@ if (isset($viewed))
 			</p>
 			<div>
 			<p><h4>Ranking</h4></p>
+			<? if ($viewed->RDN_INFO_RNK != null && $viewed->RDN_INFO_RNK != "")
+					echo "<p>".$viewed->ImieNazwisko()." ".$viewed->RDN_INFO_RNK."</p>";
+			?>
+			<? if ($viewed->Ranking != null): ?>
 			<p>Ogółem: <span style="font-size: 24pt;"><? echo $viewed->Ranking->RNK_LP; ?>.</span> miejsce 
-			<a href="<? echo  $this->createUrl('/frontRanking/index'); ?>" >zobacz cały ranking</a></p>
+			<a href="<? echo  $this->createUrl('/frontRanking/index&id=ranking'); ?>" >zobacz cały ranking</a></p>
 			<table class="detail-view table table-striped table-condensed" >
 				<tr>
 					<th>Dyżur</th>
@@ -114,6 +118,7 @@ if (isset($viewed))
 					<td><? echo $viewed->Ranking->RNK_LP_INTERNET; ?>. miejsce</td>
 				</tr>
 			</table>
+			<? endif; ?>
 			</div>
 			<div>
 				<p><h4>Uchwały</h4></p>

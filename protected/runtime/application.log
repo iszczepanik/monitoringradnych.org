@@ -308,3 +308,84 @@ REQUEST_URI=/monitoringradnych.org/index.php?r=frontUchwala/index
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\frontUchwala\index.php (22)
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\FrontUchwalaController.php (64)
 in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/09 18:39:55 [error] [exception.CException] exception 'CException' with message 'Klasa RankingController i jej zachowania nie posiadają metody lub domknięcia "getCommandBuilder".' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RankingController.php(133): CComponent->__call('getCommandBuild...', Array)
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RankingController.php(133): RankingController->getCommandBuilder()
+#2 [internal function]: RankingController->actionDelete('6')
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(RankingController), Array)
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(RankingController), Object(ReflectionMethod), Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('delete')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('ranking/delete')
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=ranking%2Fdelete&id=6&ajax=ranking-grid
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=ranking/admin
+---
+2012/10/09 18:41:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RankingController.php:180
+Stack trace:
+#0 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RankingController.php(94): RankingController->loadModel('6')
+#1 [internal function]: RankingController->actionUpdate('6')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(RankingController), Array)
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(RankingController), Object(ReflectionMethod), Array)
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('update')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('ranking/update')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=ranking/update&id=6
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=ranking/admin
+---
+2012/10/09 18:43:35 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Twoje żądanie jest nieprawidłowe.' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('index')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontRanking/in...')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontRanking/index
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=frontRadny/view&id=18&tab=clubs
+---
+2012/10/09 19:01:32 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceDyzurowIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/09 19:01:32 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/09 19:02:35 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceDyzurowIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/09 19:02:35 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/09 19:18:19 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "dzielniceDyzurowIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/09 19:18:19 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (100)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)

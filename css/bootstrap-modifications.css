@@ -165,7 +165,14 @@ padding-right: 4px;
 {
 	width: 475px; /*border: 1px solid red;*/
 }
-
+h3 li
+{
+	margin-top: 15px;
+}
+.asterix
+{
+	font-family: Verdana; font-size: 10pt;
+}
 #logo
 {
 	margin-bottom: 25px;
@@ -246,7 +253,4 @@ iframe
     border-top: 1px solid #9aca3c;
 }
 /*ul { list-style-type: none;}*/
-h3 li
-{
-	margin-top: 15px;
-}
+

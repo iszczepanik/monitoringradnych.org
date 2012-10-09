@@ -40,11 +40,27 @@
 				<th>Suma</th>
 			</tr>
 			<? 
+			$gwiazdki_count = 1;
+			$przypisy = "";
 			foreach($model as $i=>$item)
 			{
 				?><tr><?
 				echo "<td>".$item->RNK_LP."</td>";
-				echo "<td><a href='".$this->createUrl("frontRadny/view&id=".$item->RNK_RDN_ID)."&tab=clubs' >".$item->Radny->ImieNazwisko()."</a></td>";
+				echo "<td><a href='".$this->createUrl("frontRadny/view&id=".$item->RNK_RDN_ID)."&tab=clubs' >";
+				if ($item->Radny->RDN_INFO_RNK != null && $item->Radny->RDN_INFO_RNK != "")
+				{
+					$gwiazdki = "";
+					for ($i = 0; $i < $gwiazdki_count; $i++)
+						$gwiazdki .= "*";
+						
+					$gwiazdki = "<span class='asterix' >".$gwiazdki."</span> ";
+					echo $gwiazdki;
+					$przypisy .= "<p>".$gwiazdki." ".$item->Radny->ImieNazwisko()." ".$item->Radny->RDN_INFO_RNK."</p>";
+					
+					$gwiazdki_count++;
+				}
+				echo $item->Radny->ImieNazwisko();
+				echo "</a></td>";
 				echo "<td>".$item->RNK_KMS."</td>";
 				echo "<td>".$item->RNK_RADY."</td>";
 				echo "<td>".$item->RNK_DUTY."</td>";
@@ -55,6 +71,7 @@
 			}
 			?>
 		</table>
+		<? echo $przypisy; ?>
 	<? endif; ?>
 	<? if (isset($id) && $id == 'najlepsi') : ?>
 		<h3>Najlepsi</h3>

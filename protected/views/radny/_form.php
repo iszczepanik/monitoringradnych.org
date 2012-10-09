@@ -38,6 +38,14 @@
 		<?php echo $form->error($model,'RDN_PHONE',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
+	
+	<div class='control-group<?php echo (CHtml::error($model,'RDN_INFO_RNK') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'RDN_INFO_RNK',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'RDN_INFO_RNK',array('size'=>60,'maxlength'=>512)); ?>
+		<?php echo $form->error($model,'RDN_INFO_RNK',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
 	<div class='control-group' >
     <?php echo $form->checkBoxListRow($model, 'dzielniceDyzurowIDs', 

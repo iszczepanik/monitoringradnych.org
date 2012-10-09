@@ -71,8 +71,12 @@ class RankingController extends Controller
 			$model->attributes=$_POST['Ranking'];
 			if($model->save())
 			{
-				$builder = $this->getCommandBuilder();
-				$command = $builder->createSqlCommand('CALL ranking()');
+				$sql = "CALL ranking()";
+     
+				//set database connection and start the yii query builder to be executed.
+				$connection = Yii::app()->db;
+				$command = $connection->createCommand($sql);
+				
 				$command->execute();
 				
 				$this->redirect(array('view','id'=>$model->RNK_RDN_ID));
@@ -130,8 +134,12 @@ class RankingController extends Controller
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
 			
-			$builder = $this->getCommandBuilder();
-			$command = $builder->createSqlCommand('CALL ranking()');
+			$sql = "CALL ranking()";
+     
+			//set database connection and start the yii query builder to be executed.
+			$connection = Yii::app()->db;
+			$command = $connection->createCommand($sql);
+			
 			$command->execute();
 			
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
