@@ -135,6 +135,11 @@ class Radny extends CActiveRecord
 		return $this->RDN_FIRSTNAME . " " . $this->RDN_LASTNAME;
 	}
 	
+	public function GetImieNazwisko()
+	{
+		return $this->ImieNazwisko();
+	}
+	
 	public static function GetList()
 	{
 		$listData=array();

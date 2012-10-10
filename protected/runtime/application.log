@@ -389,3 +389,316 @@ in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
 2012/10/09 19:18:19 [warning] [application] Ustawianie niebezpiecznego (ang. unsage) atrybutu "komisjeRadnychIDs" klasy "Radny" nie powiodło się
 in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\RadnyController.php (100)
 in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/10 15:12:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Twoje żądanie jest nieprawidłowe.' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php:337
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('view')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('frontRadny/view')
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=frontRadny/view&id=5
+---
+2012/10/10 15:22:32 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bonafide_radni`.`exp`, CONSTRAINT `exp_ibfk_1` FOREIGN KEY (`EXP_UCH_ID`) REFERENCES `uch` (`UCH_ID`) ON DELETE CASCADE). Wykonywana instrukcja SQL to: INSERT INTO `exp` (`EXP_AUTHOR`, `EXP_DATE`, `EXP_CONTENT`, `EXP_UCH_ID`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\EkspertyzaBackendController.php (72)
+in C:\Program Files\wamp\www\monitoringradnych.org\index.php (13)
+2012/10/10 15:22:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bonafide_radni`.`exp`, CONSTRAINT `exp_ibfk_1` FOREIGN KEY (`EXP_UCH_ID`) REFERENCES `uch` (`UCH_ID`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `exp` (`EXP_AUTHOR`, `EXP_DATE`, `EXP_CONTENT`, `EXP_UCH_ID`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\EkspertyzaBackendController.php(72): CActiveRecord->save()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): EkspertyzaBackendController->actionCreate()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('create')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('ekspertyzaBacke...')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=ekspertyzaBackend/create
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=ekspertyzaBackend/create
+---
+2012/10/10 15:29:08 [error] [system.db.CDbCommand] Wywołanie CDbCommand::fetchAll() nie powiodło się: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY UCH_NUMBER' at line 1. Wykonywana instrukcja SQL to: SELECT * FROM `uch` `t` WHERE ORDER BY UCH_NUMBER.
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\ekspertyzaBackend\_form.php (22)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\ekspertyzaBackend\update.php (32)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\EkspertyzaBackendController.php (104)
+2012/10/10 15:29:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY UCH_NUMBER' at line 1. The SQL statement executed was: SELECT * FROM `uch` `t` WHERE ORDER BY UCH_NUMBER' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\ekspertyzaBackend\_form.php(22): CActiveRecord->findAll('ORDER BY UCH_NU...')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#7 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\ekspertyzaBackend\update.php(32): CController->renderPartial('_form', Array)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#12 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\EkspertyzaBackendController.php(104): CController->render('update', Array)
+#13 [internal function]: EkspertyzaBackendController->actionUpdate('2')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EkspertyzaBackendController), Array)
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(EkspertyzaBackendController), Object(ReflectionMethod), Array)
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('update')
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('ekspertyzaBacke...')
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=ekspertyzaBackend/update&id=2
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=ekspertyzaBackend/admin
+---
+2012/10/10 17:31:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można rozszyfrować żądania "KomentarzUchwaly/admin".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('KomentarzUchwal...')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=KomentarzUchwaly/admin
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php
+---
+2012/10/10 17:32:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można rozszyfrować żądania "KomentarzUchwaly/admin".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('KomentarzUchwal...')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=KomentarzUchwaly/admin
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=KomentarzUchwaly/admin
+---
+2012/10/10 17:32:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można rozszyfrować żądania "KomentarzUchwaly/admin".' in C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('KomentarzUchwal...')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=KomentarzUchwaly/admin
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=KomentarzUchwaly/admin
+---
+2012/10/10 17:35:37 [error] [php] include(UchwalaType.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\Program Files\wamp\www\yii-1.1.10\framework\YiiBase.php:418)
+Stack trace:
+#0 C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php(296): spl_autoload_call()
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\uchwala\admin.php(51): Uchwala->search()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): UchwalaController->renderInternal()
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): UchwalaController->renderFile()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): UchwalaController->renderPartial()
+#6 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php(213): UchwalaController->render()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): UchwalaController->actionAdmin()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): UchwalaController->runAction()
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): UchwalaController->filterAccessControl()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): UchwalaController->runActionWithFilters()
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): UchwalaController->run()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/monitoringradnych.org/index.php?r=uchwala/admin
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\models\Uchwala.php (296)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\uchwala\admin.php (51)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\UchwalaController.php (213)
+2012/10/10 17:42:28 [error] [php] explode() expects parameter 2 to be string, array given (C:\Program Files\wamp\www\yii-1.1.10\framework\web\helpers\CHtml.php:1695)
+Stack trace:
+#0 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\_form.php(39): listData()
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): KomentarzUchwalyBackendController->renderInternal()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): KomentarzUchwalyBackendController->renderFile()
+#4 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\update.php(32): KomentarzUchwalyBackendController->renderPartial()
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): KomentarzUchwalyBackendController->renderInternal()
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): KomentarzUchwalyBackendController->renderFile()
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): KomentarzUchwalyBackendController->renderPartial()
+#9 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomentarzUchwalyBackendController.php(102): KomentarzUchwalyBackendController->render()
+#10 unknown(0): KomentarzUchwalyBackendController->actionUpdate()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams()
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): KomentarzUchwalyBackendController->runAction()
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): KomentarzUchwalyBackendController->filterAccessControl()
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): KomentarzUchwalyBackendController->runActionWithFilters()
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): KomentarzUchwalyBackendController->run()
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CWebApplication->run()
+REQUEST_URI=/monitoringradnych.org/index.php?r=komentarzUchwalyBackend/update&id=1
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\_form.php (39)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\update.php (32)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomentarzUchwalyBackendController.php (102)
+2012/10/10 17:51:38 [error] [exception.CException] exception 'CException' with message 'Właściwość "Radny.RDN_FIRSTNAME RDN_LASTNAME" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(144): CComponent->__get('RDN_FIRSTNAME R...')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\helpers\CHtml.php(1698): CActiveRecord->__get('RDN_FIRSTNAME R...')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\helpers\CHtml.php(1662): CHtml::value(Object(Radny), 'RDN_FIRSTNAME R...')
+#3 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\_form.php(38): CHtml::listData(Array, 'RDN_ID', 'RDN_FIRSTNAME R...')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#7 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\create.php(31): CController->renderPartial('_form', Array)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#12 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomentarzUchwalyBackendController.php(78): CController->render('create', Array)
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): KomentarzUchwalyBackendController->actionCreate()
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('create')
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('komentarzUchwal...')
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=komentarzUchwalyBackend/create
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=KomentarzUchwalyBackend/admin
+---
+2012/10/10 18:30:52 [error] [system.db.CDbCommand] Wywołanie CDbCommand::fetchAll() nie powiodło się: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by UCH_NUMBER' at line 1. Wykonywana instrukcja SQL to: SELECT * FROM `uch` `t` WHERE UCH_TYPE = 1order by UCH_NUMBER.
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\ekspertyzaBackend\_form.php (22)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\views\ekspertyzaBackend\update.php (32)
+in C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\EkspertyzaBackendController.php (104)
+2012/10/10 18:30:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'by UCH_NUMBER' at line 1. The SQL statement executed was: SELECT * FROM `uch` `t` WHERE UCH_TYPE = 1order by UCH_NUMBER' in C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\ekspertyzaBackend\_form.php(22): CActiveRecord->findAll('UCH_TYPE = 1ord...')
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#7 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\ekspertyzaBackend\update.php(32): CController->renderPartial('_form', Array)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('update', Array, true)
+#12 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\EkspertyzaBackendController.php(104): CController->render('update', Array)
+#13 [internal function]: EkspertyzaBackendController->actionUpdate('2')
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(EkspertyzaBackendController), Array)
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(EkspertyzaBackendController), Object(ReflectionMethod), Array)
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('update')
+#25 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('ekspertyzaBacke...')
+#26 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=ekspertyzaBackend/update&id=2
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=EkspertyzaBackend/admin
+---
+2012/10/10 18:58:03 [error] [exception.CException] exception 'CException' with message 'Właściwość "KomentarzUchwaly.EXP_DATE" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\Program Files\wamp\www\yii-1.1.10\framework\db\ar\CActiveRecord.php(160): CComponent->__set('EXP_DATE', '2012-10-10 18:5...')
+#1 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomentarzUchwalyBackendController.php(73): CActiveRecord->__set('EXP_DATE', '2012-10-10 18:5...')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): KomentarzUchwalyBackendController->actionCreate()
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('create')
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('komentarzUchwal...')
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=komentarzUchwalyBackend/create
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=komentarzUchwalyBackend/create
+---
+2012/10/10 19:23:04 [error] [exception.CException] exception 'CException' with message 'Właściwość "KomentarzUchwalyBackendController.CMT_TYPE" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\_form.php(31): CComponent->__get('CMT_TYPE')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#4 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\create.php(31): CController->renderPartial('_form', Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#9 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomentarzUchwalyBackendController.php(80): CController->render('create', Array)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): KomentarzUchwalyBackendController->actionCreate()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('create')
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('komentarzUchwal...')
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=komentarzUchwalyBackend/create
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=komentarzUchwalyBackend/admin
+---
+2012/10/10 19:24:21 [error] [exception.CException] exception 'CException' with message 'Właściwość "KomentarzUchwalyBackendController.CMT_TYPE" nie jest zdefiniowana.' in C:\Program Files\wamp\www\yii-1.1.10\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\_form.php(31): CComponent->__get('CMT_TYPE')
+#1 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#2 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#3 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#4 C:\Program Files\wamp\www\monitoringradnych.org\protected\views\komentarzUchwalyBackend\create.php(31): CController->renderPartial('_form', Array)
+#5 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(127): require('C:\Program File...')
+#6 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\Program File...', Array, true)
+#7 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(870): CBaseController->renderFile('C:\Program File...', Array, true)
+#8 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#9 C:\Program Files\wamp\www\monitoringradnych.org\protected\controllers\KomentarzUchwalyBackendController.php(80): CController->render('create', Array)
+#10 C:\Program Files\wamp\www\yii-1.1.10\framework\web\actions\CInlineAction.php(50): KomentarzUchwalyBackendController->actionCreate()
+#11 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\Program Files\wamp\www\yii-1.1.10\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(292): CFilterChain->run()
+#18 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(276): CController->run('create')
+#20 C:\Program Files\wamp\www\yii-1.1.10\framework\web\CWebApplication.php(135): CWebApplication->runController('komentarzUchwal...')
+#21 C:\Program Files\wamp\www\yii-1.1.10\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 C:\Program Files\wamp\www\monitoringradnych.org\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/monitoringradnych.org/index.php?r=komentarzUchwalyBackend/create
+HTTP_REFERER=http://localhost/monitoringradnych.org/index.php?r=komentarzUchwalyBackend/admin
+---

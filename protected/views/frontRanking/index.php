@@ -74,15 +74,18 @@
 		<? echo $przypisy; ?>
 	<? endif; ?>
 	<? if (isset($id) && $id == 'najlepsi') : ?>
-		<h3>Najlepsi</h3>
 		<ol>
 		<? 
 			for($i = 0; $i < 3; $i++)
 			{
 				$item = $model[$i];
+				
 				?><li><?
+				echo "<h".($i+1).">";
 				echo "<a href='".$this->createUrl("frontRadny/view&id=".$item->RNK_RDN_ID)."&tab=clubs' >".$item->Radny->ImieNazwisko()."</a>";
+				echo "</h".($i+1).">";
 				?></li><?
+				
 			}
 		?>
 		</ol>

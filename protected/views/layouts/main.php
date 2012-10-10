@@ -82,6 +82,8 @@
 				array('label'=>'Interpelacje', 'url'=>array('/interpelacja/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Aktualności', 'url'=>array('/NewsBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Aktualności - kategorie', 'url'=>array('/NewsCategoryBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Ekspertyzy', 'url'=>array('/EkspertyzaBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Komentarze do uchwał', 'url'=>array('/KomentarzUchwalyBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 		    ),
 		)); ?>
 	</div>

@@ -71,7 +71,7 @@ a
 {
 	padding-top: 3px;
 }
-h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6
 {
 font-family: Anivers-Regular;
 }
@@ -165,6 +165,7 @@ padding-right: 4px;
 {
 	width: 475px; /*border: 1px solid red;*/
 }
+li h1 { background: Transparent;}
 h3 li
 {
 	margin-top: 15px;
