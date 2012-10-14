@@ -21,7 +21,8 @@
 		<?php echo $form->dropDownList($model, 'CMT_TYPE', 
 			array(KomentarzUchwalyType::Dziennikarski=>KomentarzUchwalyType::DziennikarskiLabel,
 			KomentarzUchwalyType::Ekspercki=>KomentarzUchwalyType::EksperckiLabel,
-			KomentarzUchwalyType::Radnego=>KomentarzUchwalyType::RadnegoLabel), array( "onchange" => "DisplayAuthor(this)")
+			KomentarzUchwalyType::Radnego=>KomentarzUchwalyType::RadnegoLabel,
+			KomentarzUchwalyType::Mieszkanca=>KomentarzUchwalyType::MieszkancaLabel), array( "onchange" => "DisplayAuthor(this)")
 			); ?>
 		<?php echo $form->error($model,'CMT_TYPE',array('class'=>'help-inline')); ?>
 		</div>

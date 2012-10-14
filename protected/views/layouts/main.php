@@ -32,7 +32,8 @@
 	<h1 class="anivers" ><?php echo CHtml::encode(Yii::app()->name); ?></h1></a></li>
 	<li><a href="<?php echo $this->createUrl('site/page&view=about'); ?>">O projekcie</a></li>
 	<li><a href="<?php echo $this->createUrl('site/page&view=contact'); ?>">Kontakt</a></li>
-	<li><a href="<?php echo $this->createUrl('site/page&view=akademia_monitoringu'); ?>">Akademia monitoringu</a></li>
+	<li><a href="<?php echo $this->createUrl('/AkademiaMonitoringu/index'); ?>">Akademia Monitoringu</a></li>
+	<? if (!Yii::app()->user->isGuest) : ?><li><a href="<?php echo $this->createUrl('/site/logout'); ?>">Wyloguj (<? echo Yii::app()->user->name; ?>)</a></li><? endif; ?>
   </ul>
 </div>
 
@@ -45,9 +46,9 @@
                     <li><a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>">Wyszukiwarka uchwał</a></li>
                     <li><a href="<?php echo $this->createUrl('/frontDzielnice/view&id=1'); ?>">Dzielnice</a></li>
 					<li><a href="<?php echo $this->createUrl('/frontRanking/index&id=ranking'); ?>">Ranking</a></li>
-					<li><a href="<?php echo $this->createUrl('/'); ?>">Wypowiedzi ekspertów</a></li>
-					<li><a href="<?php echo $this->createUrl('/'); ?>">Komentarze</a></li>
-					<li><a href="<?php echo $this->createUrl('/'); ?>">Mieszkańcy konsultują</a></li>
+					<li><a href="<?php echo $this->createUrl('/Ekspertyzy/index'); ?>">Wypowiedzi ekspertów</a></li>
+					<li><a href="<?php echo $this->createUrl('/KomentarzUchwaly/index'); ?>">Analiza wybranych uchwał</a></li>
+					<li><a href="<?php echo $this->createUrl('/MieszkancyKonsultuja/index'); ?>">Mieszkańcy konsultują</a></li>
                   </ul>
                 </div>
 	</div>
@@ -68,7 +69,7 @@
 		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
 		    'stacked'=>false, // whether this is a stacked menu
 		    'items'=>array(
-				array('label'=>'Użytkownicy', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Użytkownicy', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('superadmin')),
 				array('label'=>'Radni', 'url'=>array('/radny/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Kluby', 'url'=>array('/club/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Okręgi', 'url'=>array('/okreg/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
@@ -80,8 +81,8 @@
 				array('label'=>'Projekty', 'url'=>array('/projekt/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Ranking', 'url'=>array('/ranking/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Interpelacje', 'url'=>array('/interpelacja/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
-				array('label'=>'Aktualności', 'url'=>array('/NewsBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
-				array('label'=>'Aktualności - kategorie', 'url'=>array('/NewsCategoryBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Artykuły', 'url'=>array('/NewsBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Artykuły - kategorie', 'url'=>array('/NewsCategoryBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('superadmin')),
 				array('label'=>'Ekspertyzy', 'url'=>array('/EkspertyzaBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Komentarze do uchwał', 'url'=>array('/KomentarzUchwalyBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 		    ),
@@ -140,14 +141,6 @@
 		<br /><br />
 		<h3>Finansowanie ze środków:</h3>
 		<a href="http://www.batory.org.pl" target="_blank" ><img src="img/fundacjabatorego.png" alt="Fundacja im. Stefana Batorego" /></a>
-		<?php $this->widget('bootstrap.widgets.BootMenu', array(
-		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
-		    'stacked'=>false, // whether this is a stacked menu
-		    'items'=>array(
-				array('label'=>'Logowanie', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-		        array('label'=>'Wyloguj ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-		    ),
-		)); ?>
 		</div>
 	    </div>
 		

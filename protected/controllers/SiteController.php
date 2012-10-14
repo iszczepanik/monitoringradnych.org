@@ -66,18 +66,18 @@ class SiteController extends Controller
 		$this->render('contact',array('model'=>$model));
 	}
 
-	public function actionRegister($group)
+	/*public function actionRegister($group)
 	{
 		$model=new User('register');
 
 		// uncomment the following code to enable ajax-based validation
-		/*
+		
 		if(isset($_POST['ajax']) && $_POST['ajax']==='user-register-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-		*/
+		
 		$uri = Yii::app()->request->baseUrl."/assets/3bb6b5ce/detailview/styles.css";
 		Yii::app()->clientScript->registerCssFile($uri);
 		
@@ -96,12 +96,12 @@ class SiteController extends Controller
 		}
 		$model->USR_GROUP = $group;
 		$this->render('register',array('model'=>$model));
-	}
+	}*/
 	
 	/**
 	 * Displays the login page
 	 */
-	public function actionLogin()
+	public function actionLogin0000183154()
 	{
 		$model=new LoginForm;
 
@@ -121,7 +121,7 @@ class SiteController extends Controller
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
-		$this->render('login',array('model'=>$model));
+		$this->render('login0000183154',array('model'=>$model));
 	}
 
 	/**

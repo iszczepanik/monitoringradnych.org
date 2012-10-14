@@ -4,14 +4,16 @@ class KomentarzUchwalyType
     const Dziennikarski = 1;
     const Ekspercki = 2;
 	const Radnego = 3;
+	const Mieszkanca = 4;
 	
-	const DziennikarskiLabel = "Komentarz Dziennikarski";
-    const EksperckiLabel = "Komentarz Ekspercki";
-	const RadnegoLabel = "Komentarz Radnego";
+	const DziennikarskiLabel = "Komentarz dziennikarski";
+    const EksperckiLabel = "Komentarz ekspercki";
+	const RadnegoLabel = "Komentarz radnego";
+	const MieszkancaLabel = "Komentarz mieszkańca";
 	
 	private static $enum = array
 	(
-		1 => "Komentarz Dziennikarski" , 2 => "Komentarz Ekspercki" , 3 => "Komentarz Radnego"
+		1 => "Komentarz dziennikarski" , 2 => "Komentarz ekspercki" , 3 => "Komentarz radnego" , 4 => "Komentarz mieszkańca"
 	);
 
 	public function GetOrdinal($name) 

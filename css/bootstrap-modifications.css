@@ -25,6 +25,8 @@ body
 .navbar .nav > li > a
 {
 	padding: 5px 12px;
+	font-size: 9pt;
+	color: #656565;
 }
 .nav-list > .active > a , .nav-list > .active > a:hover
 {

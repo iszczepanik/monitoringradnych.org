@@ -1,6 +1,6 @@
 <?php
 
-class AktualnosciController extends Controller
+class AkademiaMonitoringuController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -55,7 +55,7 @@ class AktualnosciController extends Controller
 					'order'=>'NWS_DATE desc',
 				));
 			
-		$criteria->condition = "NWS_NWS_CAT_ID = 1";
+		$criteria->condition = "NWS_NWS_CAT_ID = 2";
 			
 			$dataProvider=new CActiveDataProvider('News', array(
 					'criteria'=>$criteria,
@@ -81,16 +81,4 @@ class AktualnosciController extends Controller
 		return $model;
 	}
 
-	/**
-	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='uchwala-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
 }

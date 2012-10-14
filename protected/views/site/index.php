@@ -24,17 +24,17 @@
 					<div id="slider1">
 						<ul id="slider1Content">
 							<li class="slider1Image">
-								<a href=""><img src="img/aktualnosci.jpg" alt="1" /></a>
-								<span class="bottom"><h2>Aktualności</h2><a href="#">więcej...</a></span></li>
+								<a href="<?php echo $this->createUrl('/Aktualnosci/index'); ?>"><img src="img/aktualnosci.jpg" alt="1" /></a>
+								<span class="bottom"><h2>Aktualności</h2><a href="<?php echo $this->createUrl('/Aktualnosci/index'); ?>">więcej...</a></span></li>
 							<li class="slider1Image">
-								<a href=""><img src="img/wypowiedzi_ekspertow.jpg" alt="2" /></a>
-								<span class="bottom"><h2>Wypowiedzi ekspertów</h2><a href="#">zobacz...</a></span></li>
+								<a href="<?php echo $this->createUrl('/Ekspertyzy/index'); ?>"><img src="img/wypowiedzi_ekspertow.jpg" alt="2" /></a>
+								<span class="bottom"><h2>Wypowiedzi ekspertów</h2><a href="<?php echo $this->createUrl('/Ekspertyzy/index'); ?>">zobacz...</a></span></li>
 							<li class="slider1Image">
-								<a href=""><img src="img/komentarze.jpg" alt="3" /></a>
-								<span class="bottom"><h2>Komentarze do uchwał</h2><a href="#">zobacz...</a></span></li>
+								<a href="<?php echo $this->createUrl('/KomentarzUchwaly/index'); ?>"><img src="img/komentarze.jpg" alt="3" /></a>
+								<span class="bottom"><h2>Analiza wybranych uchwał</h2><a href="<?php echo $this->createUrl('/KomentarzUchwaly/index'); ?>">zobacz...</a></span></li>
 							<li class="slider1Image">
-								<a href=""><img src="img/mieszkancy_konsultuja.jpg" alt="4" /></a>
-								<span class="bottom"><h2>Mieszkańcy konsultują</h2><a href="#">przyłącz się...</a></span></li>
+								<a href="<?php echo $this->createUrl('/MieszkancyKonsultuja/index'); ?>"><img src="img/mieszkancy_konsultuja.jpg" alt="4" /></a>
+								<span class="bottom"><h2>Mieszkańcy konsultują</h2><a href="<?php echo $this->createUrl('/MieszkancyKonsultuja/index'); ?>">przyłącz się...</a></span></li>
 							<div class="clear slider1Image"></div>
 						</ul>
 					</div>

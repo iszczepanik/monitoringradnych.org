@@ -61,6 +61,14 @@ class Expertyza extends CActiveRecord
 			'Uchwala' => array(self::BELONGS_TO, 'Uchwala', 'EXP_UCH_ID'),
 		);
 	}
+	
+	public function GetBrief()
+	{
+		$pagebreak = "<!-- pagebreak -->";
+		$pieces = explode($pagebreak, $this->EXP_CONTENT);
+		
+		return strip_tags($pieces[0]);
+	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)

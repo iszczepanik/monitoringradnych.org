@@ -1,6 +1,6 @@
 <?php
 
-class AktualnosciController extends Controller
+class MieszkancyKonsultujaController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -52,17 +52,14 @@ class AktualnosciController extends Controller
 	public function actionIndex()
 	{
 		$criteria=new CDbCriteria(array(
-					'order'=>'NWS_DATE desc',
+					'order'=>'CMT_DATE desc',
 				));
-			
-		$criteria->condition = "NWS_NWS_CAT_ID = 1";
-			
-			$dataProvider=new CActiveDataProvider('News', array(
+		$criteria->condition='CMT_TYPE = '.KomentarzUchwalyType::Mieszkanca;
+
+			$dataProvider=new CActiveDataProvider('KomentarzUchwaly', array(
 					'criteria'=>$criteria,
 				));
 	
-	
-		//$dataProvider=new CActiveDataProvider('News');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -75,22 +72,9 @@ class AktualnosciController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=News::model()->findByPk($id);
+		$model=KomentarzUchwaly::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='uchwala-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
 	}
 }

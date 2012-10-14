@@ -57,7 +57,7 @@ class KomentarzUchwaly extends CActiveRecord
 	
 	public function requiredAuthor($attribute)
 	{
-		if ($this->CMT_TYPE == KomentarzUchwalyType::Dziennikarski || $this->CMT_TYPE == KomentarzUchwalyType::Ekspercki)
+		if ($this->CMT_TYPE != KomentarzUchwalyType::Radnego)
 			if ($this->$attribute == "" || $this->$attribute == null)
 				$this->addError($attribute, 'Pole Autor nie może być puste.');
 	}
@@ -66,7 +66,7 @@ class KomentarzUchwaly extends CActiveRecord
 	{
 		if ($this->CMT_TYPE == KomentarzUchwalyType::Radnego)
 			if ($this->$attribute == null)
-				$this->addError($attribute, 'Pole Radny nie może być puste.');
+				$this->addError($attribute, 'Pole Autor nie może być puste.');
 	}
 
 	/**
@@ -92,6 +92,14 @@ class KomentarzUchwaly extends CActiveRecord
 		return KomentarzUchwalyType::GetDescription($this->CMT_TYPE);
 	}
 
+	public function GetBrief()
+	{
+		$pagebreak = "<!-- pagebreak -->";
+		$pieces = explode($pagebreak, $this->CMT_CONTENT);
+		
+		return strip_tags($pieces[0]);
+	}
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
