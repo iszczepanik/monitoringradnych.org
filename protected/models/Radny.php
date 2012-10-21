@@ -81,6 +81,11 @@ class Radny extends CActiveRecord
 		return Uchwala::model()->find3LastByRadny($this->RDN_ID);
 	}
 	
+	public function Get3LastInterpelacje()
+	{
+		return Interpelacja::model()->find3LastByRadny($this->RDN_ID);
+	}
+	
 	/**
 	 * @return string the associated database table name
 	 */
@@ -120,7 +125,7 @@ class Radny extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'cmtUches' => array(self::HAS_MANY, 'CmtUch', 'CMT_RDN_ID'),
-			'ints' => array(self::HAS_MANY, 'Int', 'INT_RDN_ID'),
+			'Interpelacje' => array(self::HAS_MANY, 'Interpelacja', 'INT_RDN_ID'),
 			'Tenure' => array(self::BELONGS_TO, 'Tenure', 'RDN_TNR_ID'),
 			'Okreg' => array(self::BELONGS_TO, 'Okreg', 'RDN_OKR_ID'),
 			'Klub' => array(self::BELONGS_TO, 'Club', 'RDN_CLB_ID'),

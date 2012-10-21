@@ -104,6 +104,12 @@ padding-right: 4px;
 	background-color: white;
 }
 
+.modal
+{
+	width: 700px;
+	margin-left: -350px;
+}
+
 /*****************
  @font-face {font-family: 'Anivers-Regular';src: url('webfonts/241B12_0_0.eot');src: url('webfonts/241B12_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/241B12_0_0.woff') format('woff'),url('webfonts/241B12_0_0.ttf') format('truetype');}
  */

@@ -25,7 +25,14 @@
 
 	<?php echo $form->hiddenField($model,'UCH_TYPE',array('value'=>'2')); ?>
 
-
+	<div class='control-group<?php echo (CHtml::error($model,'UCH_INVITATION') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'UCH_INVITATION',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php //echo $form->textArea($model,'UCH_INVITATION',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.tinymce.ETinyMce', array('model'=>$model, 'attribute'=>'UCH_INVITATION', 'id'=>'UCH_INVITATION', )); ?>
+		<?php echo $form->error($model,'UCH_INVITATION',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
 	<div class='control-group<?php echo (CHtml::error($model,'UCH_KMS_ID') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'UCH_KMS_ID',array('class'=>'control-label')); ?>

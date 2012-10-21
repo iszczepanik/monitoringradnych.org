@@ -112,7 +112,7 @@ class KomentarzUchwaly extends CActiveRecord
 			'CMT_TYPE' => 'Typ',
 			'CMT_CONTENT' => 'Treść',
 			'CMT_RDN_ID' => 'Autor',
-			'CMT_UCH_ID' => 'Uchwała',
+			'CMT_UCH_ID' => 'Uchwała / Projekt',
 		);
 	}
 

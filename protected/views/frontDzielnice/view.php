@@ -87,7 +87,7 @@ if (isset($viewed))
 						//	echo $dzielnica['DZL_NAME']."<br />";
 						//}
 						?>
-						<td><a href="<? echo $this->createUrl('frontUchwala/view&id='.$uchwala['UCH_ID'])."&tab=clubs";?>" ><? echo $uchwala['UCH_NAME']; ?></td>
+						<td><a href="<? echo $this->createUrl('frontUchwala/view&id='.$uchwala['UCH_ID'].'&orig=dzl')."&tab=clubs";?>" ><? echo $uchwala['UCH_NAME']; ?></td>
 						</tr>
 						<?
 					}

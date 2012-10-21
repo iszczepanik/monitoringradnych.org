@@ -132,20 +132,31 @@ class Uchwala extends CActiveRecord
 				$condition .= " and 1=0";
 		}
 		
+		$params = array();
+		
 		if (isset($searchParams['DataOd']) && $searchParams['DataOd'] != "")
 		{
-			$condition .= " and UCH_DATE >= '".$searchParams['DataOd']."'";
+			$condition .= " and UCH_DATE >= :UCH_DATE_OD ";
+			$params[':UCH_DATE_OD'] = $searchParams['DataOd'];
 		}
 		
 		if (isset($searchParams['DataDo']) && $searchParams['DataDo'] != "")
 		{
-			$condition .= " and UCH_DATE <= '".$searchParams['DataDo']."'";
+			$condition .= " and UCH_DATE <= :UCH_DATE_DO ";
+			$params[':UCH_DATE_DO'] = $searchParams['DataDo'];
+		}
+		
+		if (isset($searchParams['Name']) && $searchParams['Name'] != "")
+		{
+			$condition .= " and UCH_NAME like :UCH_NAME ";
+			$params[':UCH_NAME'] = '%'.$searchParams['Name'].'%';
 		}
 		
 		$condition .= " and UCH_TYPE = ".UchwalaType::Uchwala;
 		
 		$criteria = new CDbCriteria(array(
 				'condition'=>$condition,
+				'params'=>$params
 			));
 
 		$dataProvider = new CActiveDataProvider('Uchwala', array(
@@ -258,6 +269,13 @@ class Uchwala extends CActiveRecord
 			'DzielniceUchwal' => array(self::MANY_MANY, 'Dzielnica', 'uch_in_dzl(UCH_IN_DZL_UCH_ID, UCH_IN_DZL_DZL_ID)'),
 			'KategorieUchwal' => array(self::MANY_MANY, 'Kategoria', 'uch_in_cat(UCH_IN_CAT_UCH_ID, UCH_IN_CAT_CAT_ID)'),
 		);
+	}
+	
+	public function GetBrief()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return substr($this->UCH_NAME, 0, 70)."(...)";
 	}
 
 	/**

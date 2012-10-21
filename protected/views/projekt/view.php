@@ -36,6 +36,7 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'UCH_ID',
 		'UCH_FILE',
 		'UCH_NAME',
+		'UCH_INVITATION',
 		array(
 			'name'=>'UCH_KMS_ID',
 			'value'=>$model->Komisja->KMS_NAME,

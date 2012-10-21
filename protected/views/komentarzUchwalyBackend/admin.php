@@ -29,7 +29,7 @@ array('label'=>'Nowy', 'icon'=>'plus-sign', 'url'=>array('create')),
 array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkOptions'=>array('class'=>'search-button')),
 ),
 ));
-?><h2>Komentarze do uchwał - Lista</h2>
+?><h2>Komentarze do uchwał / projektów - Lista</h2>
 </div>
 <div class='span6'>
 <div class="search-form" style="display:none">
@@ -60,7 +60,7 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		//'CMT_RDN_ID',
 		array(
 			'name'=>'CMT_UCH_ID',
-			'value'=>'$data->Uchwala->UCH_NUMBER',
+			'value'=>'$data->Uchwala->brief',
 		),
 		/*
 		'CMT_UCH_ID',

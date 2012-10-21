@@ -34,3 +34,22 @@ function DisplayAuthor(ob)
 		$('#CMT_AUTHOR').show();
 	}
 }
+function SetChosen(gridId, controlId, controlValue)
+{
+	var id = $('#'+gridId+' > table > tbody > tr.selected > td:first').text();
+	var value = $('#'+gridId+' > table > tbody > tr.selected > td:nth-child(2)').text();
+	//alert(value);
+	$('#'+controlId).val(id);
+	$('#'+controlValue).text(value);
+
+}
+function ClearGlosowanie()
+{
+	$('.glosowanie').removeAttr('checked');  
+	//$("select[@id='Uchwala_Radny'] option[@value='-1']").attr("selected","selected");
+	$("#Uchwala_Radny").val( "-1" ).attr('selected',true);
+}
+function ClearInput(inputId)
+{
+	$('#'+inputId).val("");
+}

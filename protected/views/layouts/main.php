@@ -84,7 +84,7 @@
 				array('label'=>'Artykuły', 'url'=>array('/NewsBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Artykuły - kategorie', 'url'=>array('/NewsCategoryBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('superadmin')),
 				array('label'=>'Ekspertyzy', 'url'=>array('/EkspertyzaBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
-				array('label'=>'Komentarze do uchwał', 'url'=>array('/KomentarzUchwalyBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
+				array('label'=>'Komentarze do uchwał / projektów', 'url'=>array('/KomentarzUchwalyBackend/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 		    ),
 		)); ?>
 	</div>
@@ -108,29 +108,29 @@
 					<h3>Komisje</h3>
 					<div class="photo-title muted" style="text-align: left;">tutaj znajdziecie skład komisji, listy obecności, plany pracy i protokoły z posiedzeń</div>
 					
-					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316724" >Budżetu</a>
-					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316788" >Edukacji</a>
-					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292317193" >Infrastruktury i środowiska</a>
-					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316878" >Kultury, Promocji i Sportu</a>
-					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316948" >Polityki społecznej</a>
-					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316610" >Organizacyjna</a>
-					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292317310" >Rozwoju miasta</a>
-					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316485" >Rewizyjna</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316724" target="_blank" >Budżetu</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316788" target="_blank" >Edukacji</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292317193" target="_blank" >Infrastruktury i środowiska</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316878" target="_blank" >Kultury, Promocji i Sportu</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316948" target="_blank" >Polityki społecznej</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316610" target="_blank" >Organizacyjna</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292317310" target="_blank" >Rozwoju miasta</a>
+					<a href="http://bip.um.katowice.pl/index.php?s=20&id=1292316485" target="_blank" >Rewizyjna</a>
 				</div>
 <div class="span4" >
 <h3>Warto odwiedzić</h3>
 <div class="photo-title muted" style="text-align: left;">tutaj znajdziecie informacje o radnych i ich pracach</div>
-<a href="http://bip.um.katowice.pl/index.php?s=15&r=1221779186" >Projekty uchwał</a>
+<a href="http://bip.um.katowice.pl/index.php?s=15&r=1221779186" target="_blank" >Projekty uchwał</a>
 
-<a href="http://bip.um.katowice.pl/index.php?s=189&rok=2012" >Akty prawa miejscowego</a>
+<a href="http://bip.um.katowice.pl/index.php?s=189&rok=2012" target="_blank" >Akty prawa miejscowego</a>
 
-<a href="http://bip.um.katowice.pl/index.php?s=102&r=1" >Oświadczenia majątkowe</a>
+<a href="http://bip.um.katowice.pl/index.php?s=102&r=1" target="_blank" >Oświadczenia majątkowe</a>
 
-<a href="http://bip.um.katowice.pl/index.php?s=15&r=1221734909" >Plan pracy rady</a>
+<a href="http://bip.um.katowice.pl/index.php?s=15&r=1221734909" target="_blank" >Plan pracy rady</a>
 
-<a href="http://bip.um.katowice.pl/index.php?s=16&r=1221751187&id=1227080613" >Regulamin Rady</a>
+<a href="http://bip.um.katowice.pl/index.php?s=16&r=1221751187&id=1227080613" target="_blank" >Regulamin Rady</a>
 
-<a href="http://www.katowice.eu/portalradnych" >Portal Radnych</a>
+<a href="http://www.katowice.eu/portalradnych" target="_blank" >Portal Radnych</a>
 </div>
 			
 		

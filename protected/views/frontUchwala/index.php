@@ -6,6 +6,7 @@
 	<li></li>
 </ul>
 <form action="<? echo $this->createUrl('/frontUchwala/index'); ?>" name="uchwala-search" method="POST" >
+<h3>Nazwa: <input class="span4" name="Uchwala[Name]" size="16" type="text" value="<? echo $searchParams['Name']; ?>"></h3>
 <div class="row">
 	<div class="span3">
 		<h3>Kategorie:</h3>
@@ -51,7 +52,7 @@
 	</div>
 	<div class="span3">
 		<h3>Radny:</h3>
-		<select name="Uchwala[Radny]" >
+		<select name="Uchwala[Radny]" id="Uchwala_Radny" >
 			<option value="-1"></option>
 		<?
 			$radni = Radny::model()->findAll();
@@ -63,28 +64,32 @@
 			}
 		?>
 		</select>
-		<input type="radio" name="Uchwala[Glosowanie]" value="1" 
+		<input type="radio" name="Uchwala[Glosowanie]" value="1" class="glosowanie"
 		<? if (isset($searchParams) && $searchParams['Glosowanie'] === '1' ) echo "checked='checked'"; ?> />
 		<? echo Vote::VoteLabelStatic(1); ?> <br />
-		<input type="radio" name="Uchwala[Glosowanie]" value="-1" 
+		<input type="radio" name="Uchwala[Glosowanie]" value="-1" class="glosowanie"
 		<? if (isset($searchParams) && $searchParams['Glosowanie'] === '-1' ) echo "checked='checked'"; ?> />
 		<? echo Vote::VoteLabelStatic(-1); ?><br />
-		<input type="radio" name="Uchwala[Glosowanie]" value="0" 
+		<input type="radio" name="Uchwala[Glosowanie]" value="0" class="glosowanie"
 		<? if (isset($searchParams) && $searchParams['Glosowanie'] === '0' ) echo "checked='checked'"; ?> />
 		<? echo Vote::VoteLabelStatic(0); ?><br />
+		<a href="javascript:ClearGlosowanie();" >wyczyść</a>
 	</div>
 	<div class="span3">
 		<h3>Data:</h3>
 		od:
 		<div class="input-append date" id="dp_od" data-date="2012-01-01" data-date-format="yyyy-mm-dd">
-		  <input class="span2" name="Uchwala[DataOd]" size="16" type="text" value="<? echo $searchParams['DataOd']; ?>">
+		  <input class="span2" name="Uchwala[DataOd]" id="Uchwala_DataOd" size="16" type="text" value="<? echo $searchParams['DataOd']; ?>">
 		  <span class="add-on"><i class="icon-calendar"></i></span>
 		</div>
+		<a href="javascript:ClearInput('Uchwala_DataOd');" >wyczyść</a>
+		<br />
 		do:
 		<div class="input-append date" id="dp_do" data-date="2012-12-31" data-date-format="yyyy-mm-dd">
-		  <input class="span2" name="Uchwala[DataDo]" size="16" type="text" value="<? echo $searchParams['DataDo']; ?>">
+		  <input class="span2" name="Uchwala[DataDo]" id="Uchwala_DataDo" size="16" type="text" value="<? echo $searchParams['DataDo']; ?>">
 		  <span class="add-on"><i class="icon-calendar"></i></span>
 		</div>
+		<a href="javascript:ClearInput('Uchwala_DataDo');" >wyczyść</a>
 	</div>
 </div>
 <div style="height: 15px;"></div>

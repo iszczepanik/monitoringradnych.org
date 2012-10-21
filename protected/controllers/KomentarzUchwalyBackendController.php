@@ -53,6 +53,17 @@ class KomentarzUchwalyBackendController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$uchwala = new Uchwala('search');
+		if (isset($_GET['Uchwala'])) {
+			$uchwala->attributes = $_GET['Uchwala'];
+		}
+		
+		$projekt = new Projekt('search');
+		if (isset($_GET['Projekt'])) {
+			$projekt->attributes = $_GET['Projekt'];
+		}
+	
+	
 		$model=new KomentarzUchwaly;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -69,6 +80,8 @@ class KomentarzUchwalyBackendController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'uchwala'=>$uchwala,
+			'projekt'=>$projekt,
 		));
 	}
 
@@ -79,6 +92,16 @@ class KomentarzUchwalyBackendController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$uchwala = new Uchwala('search');
+		if (isset($_GET['Uchwala'])) {
+			$uchwala->attributes = $_GET['Uchwala'];
+		}
+		
+		$projekt = new Projekt('search');
+		if (isset($_GET['Projekt'])) {
+			$projekt->attributes = $_GET['Projekt'];
+		}
+	
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -93,6 +116,8 @@ class KomentarzUchwalyBackendController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'uchwala'=>$uchwala,
+			'projekt'=>$projekt,
 		));
 	}
 

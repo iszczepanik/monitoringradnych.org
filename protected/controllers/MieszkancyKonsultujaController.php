@@ -52,11 +52,11 @@ class MieszkancyKonsultujaController extends Controller
 	public function actionIndex()
 	{
 		$criteria=new CDbCriteria(array(
-					'order'=>'CMT_DATE desc',
+					'order'=>'UCH_DATE desc',
 				));
-		$criteria->condition='CMT_TYPE = '.KomentarzUchwalyType::Mieszkanca;
+		$criteria->condition='UCH_TYPE = '.UchwalaType::Projekt;
 
-			$dataProvider=new CActiveDataProvider('KomentarzUchwaly', array(
+			$dataProvider=new CActiveDataProvider('Projekt', array(
 					'criteria'=>$criteria,
 				));
 	
@@ -72,7 +72,7 @@ class MieszkancyKonsultujaController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=KomentarzUchwaly::model()->findByPk($id);
+		$model=Projekt::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

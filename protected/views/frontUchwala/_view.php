@@ -1,6 +1,6 @@
 <tr><td>
 	<div><small class="muted photo-title" >Uchwała</small></div>
-	<div><a href="<? echo  $this->createUrl('/frontUchwala/view&id='.$data->UCH_ID); ?>" ><?php echo $data->UCH_NAME; ?></a></div>
+	<div><a href="<? echo  $this->createUrl('/frontUchwala/view&id='.$data->UCH_ID).'&orig=uch' ?>" ><?php echo $data->UCH_NAME; ?></a></div>
 	<div style="clear: both;"></div>
 	<div class="pull-left" style="padding-right: 40px;" > 
 	<strong><? echo $data->getAttributeLabel('UCH_DATE'); ?>:</strong> <? echo $data->UCH_DATE; ?>

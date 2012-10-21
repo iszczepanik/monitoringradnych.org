@@ -8,15 +8,14 @@
  * @property string $UCH_FILE
  * @property string $UCH_NAME
  * @property integer $UCH_TYPE
- * @property integer $UCH_CAT_ID
  * @property integer $UCH_KMS_ID
+ * @property string $UCH_DATE
+ * @property integer $UCH_NUMBER
+ * @property string $UCH_INVITATION
  *
  * The followings are the available model relations:
  * @property CmtUch[] $cmtUches
  * @property Exp[] $exps
- * @property Cat $uCHCAT
- * @property Kms $uCHKMS
- * @property UchInDzl[] $uchInDzls
  */
 class Projekt extends CActiveRecord
 {
@@ -42,11 +41,12 @@ class Projekt extends CActiveRecord
 		
 		}
 	}
-	
+
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Projekt the static model class
+	 * @return Prj the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -70,12 +70,13 @@ class Projekt extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('UCH_FILE, UCH_TYPE, UCH_KMS_ID', 'required'),
-			array('UCH_TYPE, UCH_KMS_ID', 'numerical', 'integerOnly'=>true),
+			array('UCH_TYPE, UCH_KMS_ID, UCH_NUMBER', 'numerical', 'integerOnly'=>true),
 			array('UCH_FILE', 'length', 'max'=>256),
 			array('UCH_NAME', 'length', 'max'=>512),
+			array('UCH_DATE, UCH_INVITATION', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('UCH_ID, UCH_FILE, UCH_NAME, UCH_TYPE, UCH_KMS_ID', 'safe', 'on'=>'search'),
+			array('UCH_ID, UCH_FILE, UCH_NAME, UCH_TYPE, UCH_KMS_ID, UCH_DATE, UCH_NUMBER, UCH_INVITATION', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -87,7 +88,7 @@ class Projekt extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'cmtUches' => array(self::HAS_MANY, 'CmtUch', 'CMT_UCH_ID'),
+			'Komentarze' => array(self::HAS_MANY, 'KomentarzUchwaly', 'CMT_UCH_ID'),
 			'exps' => array(self::HAS_MANY, 'Exp', 'EXP_UCH_ID'),
 			'Komisja' => array(self::BELONGS_TO, 'Komisja', 'UCH_KMS_ID'),
 			'DzielniceUchwal' => array(self::MANY_MANY, 'Dzielnica', 'uch_in_dzl(UCH_IN_DZL_UCH_ID, UCH_IN_DZL_DZL_ID)'),
@@ -106,9 +107,17 @@ class Projekt extends CActiveRecord
 			'UCH_NAME' => 'Nazwa',
 			'UCH_TYPE' => 'Typ',
 			'UCH_KMS_ID' => 'Komisja',
+			'UCH_INVITATION' => 'Zaproszenie',
 			'dzielniceUchwalIDs' => 'Dzielnice',
 			'kategorieUchwalIDs' => 'Kategorie',
 		);
+	}
+	
+	public function GetBrief()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return substr($this->UCH_NAME, 0, 70)."(...)";
 	}
 
 	/**
@@ -127,6 +136,9 @@ class Projekt extends CActiveRecord
 		$criteria->compare('UCH_NAME',$this->UCH_NAME,true);
 		$criteria->compare('UCH_TYPE',UchwalaType::Projekt);
 		$criteria->compare('UCH_KMS_ID',$this->UCH_KMS_ID);
+		$criteria->compare('UCH_DATE',$this->UCH_DATE,true);
+		$criteria->compare('UCH_NUMBER',$this->UCH_NUMBER);
+		$criteria->compare('UCH_INVITATION',$this->UCH_INVITATION,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -121,8 +121,41 @@ if (isset($viewed))
 			<? endif; ?>
 			</div>
 			<div>
+			<p><h4>Interpelacje</h4></p>
+			
+			<? $list = $viewed->Get3LastInterpelacje(); 
+			if (count($list) > 0) : ?>
+			
+			<table class="detail-view table table-striped table-condensed" >
+				<?
+					foreach($list as $item){
+						//process each item here
+						?>
+						<tr>
+						<th><? echo $item['INT_NAME']; ?></th>
+						<td>
+							<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/interpelacje/<? echo $item['INT_FILE']; ?>" 
+								target="_blank" style="font-weight: normal;" ><img src="img/pdf.png" /> zobacz dokument</a>
+							<? if ($item['INT_ANSWER_FILE'] != null ) : ?>
+								<br /><a href="<? echo Yii::app()->request->baseUrl; ?>materialy/interpelacje/<? echo $item['INT_ANSWER_FILE']; ?>" 
+								target="_blank" style="font-weight: normal;" ><img src="img/pdf.png" /> zobacz dokument odpowiedzi</a>
+							<? endif; ?>
+						</td>
+						</tr>
+						<?
+					}
+				?>
+			</table>
+			<? else: ?>
+			<p>Nie znaleziono</p>
+			<? endif; ?>
+			
+			
+			</div>
+			
+			<div>
 				<p><h4>Uchwały</h4></p>
-				<p>Głosowanie radnego nad trzema ostatnimi uchwałami <a href="#" >zobacz wszystkie</a></p>
+				<p>Głosowanie radnego nad trzema ostatnimi uchwałami. <br /><a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>" >zobacz wszystkie</a></p>
 				<table class="detail-view table table-striped table-condensed" >
 				<?
 					$list= $viewed->Get3Last();
@@ -133,7 +166,7 @@ if (isset($viewed))
 						<tr>
 						<th><? echo Vote::VoteLabelStatic($item['VOT_VOTE']); ?></th>
 						<td>
-							<a href="<? echo  $this->createUrl('/frontUchwala/view&id='.$item['UCH_ID']); ?>" ><?php echo $item['UCH_NAME']; ?></a>
+							<a href="<? echo  $this->createUrl('/frontUchwala/view&id='.$item['UCH_ID']."&orig=rdn"); ?>" ><?php echo $item['UCH_NAME']; ?></a>
 						</td>
 						</tr>
 						<?

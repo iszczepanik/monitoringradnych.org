@@ -53,6 +53,11 @@ class EkspertyzaBackendController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$uchwala = new Uchwala('search');
+		if (isset($_GET['Uchwala'])) {
+			$uchwala->attributes = $_GET['Uchwala'];
+		}
+	
 		$model=new Expertyza;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -69,6 +74,7 @@ class EkspertyzaBackendController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
+			'uchwala'=>$uchwala,
 		));
 	}
 
@@ -79,6 +85,11 @@ class EkspertyzaBackendController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$uchwala = new Uchwala('search');
+		if (isset($_GET['Uchwala'])) {
+			$uchwala->attributes = $_GET['Uchwala'];
+		}
+	
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -93,6 +104,7 @@ class EkspertyzaBackendController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+			'uchwala'=>$uchwala,
 		));
 	}
 

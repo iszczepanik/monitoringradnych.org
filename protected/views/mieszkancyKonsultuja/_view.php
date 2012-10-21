@@ -1,7 +1,7 @@
-<tr><td>
-	<div><small class="muted photo-title" ><? echo $data->CMT_DATE; ?> Autor: <? echo $data->author; ?></small></div>
-	<h3><?php echo $data->typeDescription; ?> do uchwały nr <? echo $data->Uchwala->UCH_NUMBER; ?></h3>
-	<div><?php echo $data->brief; ?></div>
-	<a href="<? echo  $this->createUrl('/KomentarzUchwaly/view&id='.$data->CMT_ID); ?>">czytaj więcej...</a>
+<tr>
+<td>
+	<div><? echo $data->UCH_INVITATION; ?></div>
+	<div><small class="muted photo-title" >Projekt</small></div>
+	<div><a href="<? echo  $this->createUrl('/MieszkancyKonsultuja/view&id='.$data->UCH_ID); ?>" ><?php echo $data->UCH_NAME; ?></a></div>
 </td>
 </tr>
