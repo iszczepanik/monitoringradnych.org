@@ -72,11 +72,13 @@ if (isset($viewed))
 		<div class="tab-pane active" id="lA" >
 			<img src="materialy/kluby/<?php echo $viewed->Klub->CLB_LOGO; ?>" alt="<?php echo $viewed->Klub->CLB_NAME; ?>" class="pull-right" />
 			<h3><?php echo $viewed->ImieNazwisko(); ?></h3>
-			<p><a href="mailto:<?php echo $viewed->RDN_EMAIL; ?>" ><?php echo $viewed->RDN_EMAIL; ?></a></p>
-			<p>Tel: <?php echo $viewed->RDN_PHONE; ?></p>
-			<p>Strona internetowa: <a href="<?php echo $viewed->RDN_WEBSITE; ?>" ><?php echo $viewed->RDN_WEBSITE; ?></a></p>
-			<p>Okręg: <a href="#" ><?php echo $viewed->Okreg->OKR_NAME; ?></a></p>
-			<p>Klub: <?php echo $viewed->Klub->CLB_NAME; ?></p>
+			<br />
+			<p><h4>Informacje kontaktowe</h4>
+			E-mail: <a href="mailto:<?php echo $viewed->RDN_EMAIL; ?>" ><?php echo $viewed->RDN_EMAIL; ?></a><br />
+			Tel: <?php echo $viewed->RDN_PHONE; ?><br />
+			Strona internetowa: <a href="<?php echo $viewed->RDN_WEBSITE; ?>" target="_blank" ><?php echo $viewed->RDN_WEBSITE; ?></a></p>
+			<p><h4>Okręg</h4><?php echo $viewed->Okreg->OKR_NAME; ?></p>
+			<p><h4>Klub</h4><?php echo $viewed->Klub->CLB_NAME; ?></p>
 			<p><h4>Dyżur</h4>
 			<?php echo $viewed->RDN_DUTY; ?>
 			</p>
@@ -147,7 +149,7 @@ if (isset($viewed))
 				?>
 			</table>
 			<? else: ?>
-			<p>Nie znaleziono</p>
+			<p style="font-style:italic " >Nie znaleziono</p>
 			<? endif; ?>
 			
 			
@@ -164,9 +166,13 @@ if (isset($viewed))
 						//process each item here
 						?>
 						<tr>
-						<th><? echo Vote::VoteLabelStatic($item['VOT_VOTE']); ?></th>
+						<!--<th><? echo Vote::VoteIconStatic($item['VOT_VOTE'])." ".Vote::VoteLabelStatic($item['VOT_VOTE']); ?></th>
 						<td>
 							<a href="<? echo  $this->createUrl('/frontUchwala/view&id='.$item['UCH_ID']."&orig=rdn"); ?>" ><?php echo $item['UCH_NAME']; ?></a>
+						</td>-->
+						<td><strong><? echo Vote::VoteIconStatic($item['VOT_VOTE'])." ".Vote::VoteLabelStatic($item['VOT_VOTE']); ?></strong>
+						<br />
+						<a href="<? echo  $this->createUrl('/frontUchwala/view&id='.$item['UCH_ID']."&orig=rdn"); ?>" ><?php echo $item['UCH_NAME']; ?></a>
 						</td>
 						</tr>
 						<?
@@ -178,22 +184,34 @@ if (isset($viewed))
 				<p><h4>Obietnice</h4></p>
 			<p><?php echo $viewed->RDN_PROMISE; ?></p>
 			</div>
+			
+			<? if ($viewed->RDN_PROMISE_CMT != null) : ?>
 			<div>
 				<p><h4>Komentarz do obietnicy</h4></p>
 			<p><?php echo $viewed->RDN_PROMISE_CMT; ?></p>
 			</div>
+			<? endif; ?>
+			
 			<div>
 				<p><h4>Oświadczenie majątkowe</h4></p>
+			<? if ($viewed->RDN_STATEMENT_FILE != null) : ?>
 			<p><a href="materialy/oswiadczenia_majatkowe/<?php echo $viewed->RDN_STATEMENT_FILE; ?>" target="_blank" ><img src="img/pdf.png" /> zobacz oświadczenie</a></p>
+			<? else: ?>
+			<p style="font-style:italic " >Nie znaleziono</p>
+			<? endif; ?>
 			</div>
+			
 			<div>
 				<p><h4>Wywiad</h4></p>
 			<p><?php echo $viewed->RDN_INTERVIEW; ?></p>
 			</div>
+			
+			<? if ($viewed->RDN_INTERVIEW_CMT != null) : ?>
 			<div>
 				<p><h4>Komentarz do wywiadu</h4></p>
 			<p><?php echo $viewed->RDN_INTERVIEW_CMT; ?></p>
 			</div>
+			<? endif; ?>
 		</div>
 	</div>
 	

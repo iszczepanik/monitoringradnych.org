@@ -82,30 +82,19 @@ class Vote extends CActiveRecord
 	public function VoteLabel()
 	{
 		return Vote::VoteLabelStatic($this->VOT_VOTE);
-		/*switch($this->VOT_VOTE)
-		{
-			case -1: return "przeciw"; break;
-			case 0: return "wstrzymał się"; break;
-			case 1: return "za"; break;
-			case 2: return "nieobecny za głosowaniu"; break;
-		}*/
+	}
+	
+	public function VoteLabelPlural()
+	{
+		return Vote::VoteLabelPluralStatic($this->VOT_VOTE);
 	}
 	
 	public function VoteIcon()
 	{
 		return Vote::VoteIconStatic($this->VOT_VOTE);
-	/*
-		switch($this->VOT_VOTE)
-		{
-			case -1: return "<span class='badge badge-important'><i class='icon-thumbs-down icon-white'></i></span>"; break;
-			case 0: return "<span class='badge'><i class='icon-minus icon-white'></i></span> "; break;
-			case 1: return "<span class='badge badge-success'><i class='icon-thumbs-up icon-white'></i></span>"; break;
-			case 2: return "<span class='badge badge-inverse'><i class='icon-remove icon-white'></i></span> "; break;
-		}
-		*/
 	}
 	
-	public static function VoteIconStatic($vote)
+	/*public static function VoteIconStatic($vote)
 	{
 		switch($vote)
 		{
@@ -113,6 +102,17 @@ class Vote extends CActiveRecord
 			case 0: return "<span class='badge'><i class='icon-minus icon-white'></i></span> "; break;
 			case 1: return "<span class='badge badge-success'><i class='icon-thumbs-up icon-white'></i></span>"; break;
 			case 2: return "<span class='badge badge-inverse'><i class='icon-remove icon-white'></i></span> "; break;
+		}
+	}*/
+	
+	public static function VoteIconStatic($vote)
+	{
+		switch($vote)
+		{
+			case -1: return "<i class='icon-thumbs-down'></i>"; break;
+			case 0: return "<i class='icon-minus-sign'></i>"; break;
+			case 1: return "<i class='icon-thumbs-up'></i>"; break;
+			case 2: return "<i class='icon-remove'></i>"; break;
 		}
 	}
 	
@@ -124,6 +124,17 @@ class Vote extends CActiveRecord
 			case 0: return "wstrzymał się"; break;
 			case 1: return "za"; break;
 			case 2: return "nieobecny na głosowaniu"; break;
+		}
+	}
+	
+	public static function VoteLabelPluralStatic($vote)
+	{
+		switch($vote)
+		{
+			case -1: return "przeciw"; break;
+			case 0: return "wstrzymało się"; break;
+			case 1: return "za"; break;
+			case 2: return "nieobecni na głosowaniu"; break;
 		}
 	}
 	

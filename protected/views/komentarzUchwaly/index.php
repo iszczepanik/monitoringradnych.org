@@ -9,9 +9,13 @@ W zakładce prezentowane jest omówienie najważniejszych, naszym zdaniem, uchwa
 Poza tekstem uchwały można się tu zapoznać z opiniami ekspertów, radnych i dziennikarzy dotyczących danego zagadnienia.
 </p>
 
+<? if ($dataProvider->totalItemCount > 0) : ?>
+
 <table class="detail-view table table-striped table-condensed" >
 <?php $this->widget('bootstrap.widgets.BootListView',array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
 </table>
+
+<? endif; ?>

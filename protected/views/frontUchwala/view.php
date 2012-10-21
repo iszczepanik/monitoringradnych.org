@@ -57,27 +57,27 @@ if(isset($votes))
 	?><tr><th>Głosowanie</th><td>
 	
 	<div style="clear: both;"></div>
-	<div class="pull-left" style="width: 25%" > 
+	<div class="pull-left" style="width: 24%" > 
 	<?
-	echo Vote::VoteIconStatic(1)." <strong>".Vote::VoteLabelStatic(1)." (".$votes['count_za'].")</strong><br />";
+	echo Vote::VoteIconStatic(1)." <strong>".Vote::VoteLabelPluralStatic(1)." (".$votes['count_za'].")</strong><br />";
 	echo "<ul class='unstyled'>".$votes['za']."</ul>";
 	?>
 	</div>
-	<div class="pull-left" style="width: 25%" > 
+	<div class="pull-left" style="width: 24%" > 
 	<?
-	echo Vote::VoteIconStatic(-1)." <strong>".Vote::VoteLabelStatic(-1)." (".$votes['count_przeciw'].")</strong><br />";
+	echo Vote::VoteIconStatic(-1)." <strong>".Vote::VoteLabelPluralStatic(-1)." (".$votes['count_przeciw'].")</strong><br />";
 	echo "<ul class='unstyled'>".$votes['przeciw']."</ul>";
 	?>
 	</div>
-		<div class="pull-left" style="width: 25%" > 
+		<div class="pull-left" style="width: 24%" > 
 	<?
-	echo Vote::VoteIconStatic(0)." <strong>".Vote::VoteLabelStatic(0)." (".$votes['count_wstrzymal'].")</strong><br />";
+	echo Vote::VoteIconStatic(0)." <strong>".Vote::VoteLabelPluralStatic(0)." (".$votes['count_wstrzymal'].")</strong><br />";
 	echo "<ul class='unstyled'>".$votes['wstrzymal']."</ul>";
 	?>
 	</div>
-	<div class="pull-left" style="width: 25%" > 
+	<div class="pull-left" style="width: 28%" > 
 	<?
-	echo Vote::VoteIconStatic(2)." <strong>".Vote::VoteLabelStatic(2)." (".$votes['count_nieobecny'].")</strong><br />";
+	echo Vote::VoteIconStatic(2)." <strong>".Vote::VoteLabelPluralStatic(2)." (".$votes['count_nieobecny'].")</strong><br />";
 	echo "<ul class='unstyled'>".$votes['nieobecny']."</ul>";
 	?>
 	</div>

@@ -43,7 +43,7 @@ if (isset($viewed))
 	<div class="tab-content" >
 		<div class="tab-pane active" id="lA" >
 			<h3><?php echo $viewed->DZL_NAME; ?></h3>
-			<p><a href="#"><?php echo $viewed->Okreg->OKR_NAME; ?></a></p>
+			<p><?php echo $viewed->Okreg->OKR_NAME; ?></p>
 			<p>Liczba mieszkańców: <?php echo $viewed->DZL_CITIZEN_COUNT; ?></p>
 			<p>Powierzchnia: <?php echo $viewed->DZL_AREA; ?> km<sup>2</sup></p>
 			<div><h4>Radni na dyżurach w dzielncy</h4>
@@ -67,26 +67,15 @@ if (isset($viewed))
 			</ul>
 			</div>
 			<div><h4>Uchwały dotyczące dzielnicy</h4>
-			<p>Trzy ostatnie uchwały dotyczące dzielnicy, bez uwzględnienia uchwał ogólnych - dotyczących całego miasta. <a href="#" >zobacz wszystkie</a></p>
+			<p>Trzy ostatnie uchwały dotyczące dzielnicy, bez uwzględnienia uchwał ogólnych - dotyczących całego miasta. 
+			<br /><a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>" >zobacz wszystkie</a></p>
 			<table class="detail-view table table-striped table-condensed" >
 							<?
 					$uchwaly = $viewed->Get3Last();
 
 					foreach($uchwaly as $uchwala){
-						//process each item here
-						//$dzielnice = Yii::app()->db->createCommand('select * from dzl d , uch_in_dzl u
-						//	where d.DZL_ID = u.UCH_IN_DZL_DZL_ID
-						//	and u.UCH_IN_DZL_UCH_ID = '.$uchwala['UCH_ID'])->queryAll();
-						//var_dump( $uchwala);
 						?>
 						<tr>
-						
-						<?  
-						//foreach ($dzielnice as $dzielnica)
-						//{
-						//	echo $dzielnica['DZL_NAME']."<br />";
-						//}
-						?>
 						<td><a href="<? echo $this->createUrl('frontUchwala/view&id='.$uchwala['UCH_ID'].'&orig=dzl')."&tab=clubs";?>" ><? echo $uchwala['UCH_NAME']; ?></td>
 						</tr>
 						<?
