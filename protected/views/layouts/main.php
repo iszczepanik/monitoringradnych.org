@@ -145,7 +145,7 @@
 	    </div>
 		
 			
-
+<div><small class="muted" >Monitoring Radnych - Wersja <? echo Yii::app()->params['version']; ?></small></div>
 		
 	</footer><!-- footer -->
 </div><!-- page -->
