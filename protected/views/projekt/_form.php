@@ -7,19 +7,21 @@
 
 	<?php echo $form->errorSummary($model,null,null,array('class'=>'alert alert-error')); ?>
 	
-	<div class='control-group<?php echo (CHtml::error($model,'UCH_FILE') == '' ? '' : ' error'); ?>'>
-		<?php echo $form->labelEx($model,'UCH_FILE',array('class'=>'control-label')); ?>
-		<div class="controls">
-		<?php echo $form->textField($model,'UCH_FILE',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'UCH_FILE',array('class'=>'help-inline')); ?>
-		</div>
-	</div>
-
 	<div class='control-group<?php echo (CHtml::error($model,'UCH_NAME') == '' ? '' : ' error'); ?>'>
 		<?php echo $form->labelEx($model,'UCH_NAME',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textField($model,'UCH_NAME',array('size'=>60,'maxlength'=>512)); ?>
+		<?php echo $form->textField($model,'UCH_NAME',array('size'=>60,'maxlength'=>512,'class'=>'input-xxlarge')); ?>
 		<?php echo $form->error($model,'UCH_NAME',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
+	
+	<div class='control-group<?php echo (CHtml::error($model,'UCH_FILE') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'UCH_FILE',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<div class="alert alert-info">Plik umieść na serwerze w folderze <strong>materialy/projekty</strong>. W tym polu wpisz nazwę pliku.
+		</div>
+		<?php echo $form->textField($model,'UCH_FILE',array('size'=>60,'maxlength'=>256,'class'=>'input-xxlarge')); ?>
+		<?php echo $form->error($model,'UCH_FILE',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
 

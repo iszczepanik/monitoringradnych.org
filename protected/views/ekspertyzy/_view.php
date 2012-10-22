@@ -1,7 +1,11 @@
 <tr><td>
-	<div><small class="muted photo-title" ><? echo $data->EXP_DATE; ?> Autor: <? echo $data->EXP_AUTHOR; ?></small></div>
-	<h3>Ekspertyza do uchwały nr <? echo $data->Uchwala->UCH_NUMBER; ?></h3>
-	<div><?php echo $data->brief; ?></div>
-	<a href="<? echo  $this->createUrl('/Ekspertyzy/view&id='.$data->EXP_ID); ?>">czytaj więcej...</a>
+	<h3><? echo $data->EXP_AUTHOR; ?></h3>
+	<div><?php echo $data->EXP_CONTENT; ?></div>
+	<? foreach ($data->files as $file): ?>
+	
+	<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/ekspertyzy/<? echo trim($file); ?>" 
+	target="_blank" style="font-weight: normal; display: block;" ><img src="img/pdf.png" /> <?php echo trim($file); ?></a>
+	
+	<? endforeach; ?>
 </td>
 </tr>

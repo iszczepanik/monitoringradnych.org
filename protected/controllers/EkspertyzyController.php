@@ -55,7 +55,7 @@ class EkspertyzyController extends Controller
 					'order'=>'EXP_DATE desc',
 				));
 
-			$dataProvider=new CActiveDataProvider('Expertyza', array(
+			$dataProvider=new CActiveDataProvider('Ekspertyza', array(
 					'criteria'=>$criteria,
 				));
 	
@@ -73,7 +73,7 @@ class EkspertyzyController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Expertyza::model()->findByPk($id);
+		$model=Ekspertyza::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

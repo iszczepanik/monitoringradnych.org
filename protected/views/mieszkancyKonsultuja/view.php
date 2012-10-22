@@ -42,7 +42,7 @@
 </th>
 <td>
 	<!--<iframe class="pdf_document" src="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $model->UCH_FILE?>" ></iframe>-->
-	<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $model->UCH_FILE; ?>" 
+	<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/projekty/<? echo $model->UCH_FILE; ?>" 
 	target="_blank" style="font-weight: normal;" ><img src="img/pdf.png" /> zobacz dokument</a>
 </td>
 </tr>
@@ -74,7 +74,6 @@
 <? else : ?>
 <p>Ten projekt nie ma jeszcze żadnych komentarzy.</p>
 <? endif; ?>
-
 
 
 

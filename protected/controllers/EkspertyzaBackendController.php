@@ -53,19 +53,14 @@ class EkspertyzaBackendController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$uchwala = new Uchwala('search');
-		if (isset($_GET['Uchwala'])) {
-			$uchwala->attributes = $_GET['Uchwala'];
-		}
-	
-		$model=new Expertyza;
+		$model=new Ekspertyza;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Expertyza']))
+		if(isset($_POST['Ekspertyza']))
 		{
-			$model->attributes=$_POST['Expertyza'];
+			$model->attributes=$_POST['Ekspertyza'];
 			$date = new DateTime(); 
 			$model->EXP_DATE = $date->format('Y-m-d H:i:s');
 			if($model->save())
@@ -74,7 +69,6 @@ class EkspertyzaBackendController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
-			'uchwala'=>$uchwala,
 		));
 	}
 
@@ -85,26 +79,20 @@ class EkspertyzaBackendController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$uchwala = new Uchwala('search');
-		if (isset($_GET['Uchwala'])) {
-			$uchwala->attributes = $_GET['Uchwala'];
-		}
-	
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Expertyza']))
+		if(isset($_POST['Ekspertyza']))
 		{
-			$model->attributes=$_POST['Expertyza'];
+			$model->attributes=$_POST['Ekspertyza'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->EXP_ID));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
-			'uchwala'=>$uchwala,
 		));
 	}
 
@@ -133,10 +121,10 @@ class EkspertyzaBackendController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Expertyza('search');
+		$model=new Ekspertyza('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Expertyza']))
-			$model->attributes=$_GET['Expertyza'];
+		if(isset($_GET['Ekspertyza']))
+			$model->attributes=$_GET['Ekspertyza'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -150,7 +138,7 @@ class EkspertyzaBackendController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Expertyza::model()->findByPk($id);
+		$model=Ekspertyza::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -162,7 +150,7 @@ class EkspertyzaBackendController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='expertyza-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='ekspertyza-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

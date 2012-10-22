@@ -33,11 +33,8 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 	'attributes'=>array(
 		'EXP_ID',
 		'EXP_AUTHOR',
-		'EXP_DATE',
-		array(
-			'name'=>'EXP_UCH_ID',
-			'value'=>$model->Uchwala->UCH_NAME,
-		),
+		//'EXP_DATE',
+		'EXP_FILE',
 		'EXP_CONTENT',
 	),
 )); ?>

@@ -8,17 +8,14 @@
  * @property string $EXP_AUTHOR
  * @property string $EXP_DATE
  * @property string $EXP_CONTENT
- * @property integer $EXP_UCH_ID
- *
- * The followings are the available model relations:
- * @property Uch $eXPUCH
+ * @property string $EXP_FILE
  */
-class Expertyza extends CActiveRecord
+class Ekspertyza extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Expertyza the static model class
+	 * @return Exp the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -41,13 +38,35 @@ class Expertyza extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('EXP_AUTHOR, EXP_DATE, EXP_CONTENT, EXP_UCH_ID', 'required'),
-			array('EXP_UCH_ID', 'numerical', 'integerOnly'=>true),
+			array('EXP_AUTHOR, EXP_DATE, EXP_FILE', 'required'),
 			array('EXP_AUTHOR', 'length', 'max'=>512),
+			array('EXP_FILE', 'length', 'max'=>256),
+			array('EXP_CONTENT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('EXP_ID, EXP_AUTHOR, EXP_DATE, EXP_CONTENT, EXP_UCH_ID', 'safe', 'on'=>'search'),
+			array('EXP_ID, EXP_AUTHOR, EXP_DATE, EXP_CONTENT, EXP_FILE', 'safe', 'on'=>'search'),
 		);
+	}
+	
+	public function GetBriefPageBreak()
+	{
+		$pagebreak = "<!-- pagebreak -->";
+		$pieces = explode($pagebreak, $this->EXP_CONTENT);
+		
+		return strip_tags($pieces[0]);
+	}
+	
+	public function GetBrief()
+	{
+		if (strlen($this->EXP_CONTENT) < 50)
+			return strip_tags($this->EXP_CONTENT);
+		else
+			return strip_tags(substr($this->EXP_CONTENT, 0, 50))."(...)";
+	}
+	
+	public function GetFiles()
+	{
+		return explode(";", $this->EXP_FILE);
 	}
 
 	/**
@@ -58,16 +77,7 @@ class Expertyza extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'Uchwala' => array(self::BELONGS_TO, 'Uchwala', 'EXP_UCH_ID'),
 		);
-	}
-	
-	public function GetBrief()
-	{
-		$pagebreak = "<!-- pagebreak -->";
-		$pieces = explode($pagebreak, $this->EXP_CONTENT);
-		
-		return strip_tags($pieces[0]);
 	}
 
 	/**
@@ -80,7 +90,7 @@ class Expertyza extends CActiveRecord
 			'EXP_AUTHOR' => 'Autor',
 			'EXP_DATE' => 'Data',
 			'EXP_CONTENT' => 'Treść',
-			'EXP_UCH_ID' => 'Uchwała',
+			'EXP_FILE' => 'Plik',
 		);
 	}
 
@@ -99,7 +109,7 @@ class Expertyza extends CActiveRecord
 		$criteria->compare('EXP_AUTHOR',$this->EXP_AUTHOR,true);
 		$criteria->compare('EXP_DATE',$this->EXP_DATE,true);
 		$criteria->compare('EXP_CONTENT',$this->EXP_CONTENT,true);
-		$criteria->compare('EXP_UCH_ID',$this->EXP_UCH_ID);
+		$criteria->compare('EXP_FILE',$this->EXP_FILE,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

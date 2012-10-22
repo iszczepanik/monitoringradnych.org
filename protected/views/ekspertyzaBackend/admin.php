@@ -47,11 +47,11 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 	'columns'=>array(
 		'EXP_ID',
 		'EXP_AUTHOR',
-		'EXP_DATE',
-		//'EXP_CONTENT',
+		//'EXP_DATE',
+		'EXP_FILE',
 		array(
-			'name'=>'EXP_UCH_ID',
-			'value'=>'$data->Uchwala->UCH_NUMBER',
+			'name'=>'EXP_CONTENT',
+			'value'=>'$data->brief',
 		),
 		array(
 			'class'=>'bootstrap.widgets.BootButtonColumn',

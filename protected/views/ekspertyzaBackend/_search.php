@@ -31,11 +31,11 @@
 		<?php echo $form->textArea($model,'EXP_CONTENT',array('rows'=>6, 'cols'=>50)); ?>
 		</div>
 	</div>
-
+	
 	<div class="control-group">
-		<?php echo $form->label($model,'EXP_UCH_ID',array('class'=>'control-label')); ?>
+		<?php echo $form->label($model,'EXP_FILE',array('class'=>'control-label')); ?>
 		<div class="controls">
-		<?php echo $form->textField($model,'EXP_UCH_ID'); ?>
+		<?php echo $form->textField($model,'EXP_FILE',array('size'=>60, 'cols'=>256)); ?>
 		</div>
 	</div>
 
