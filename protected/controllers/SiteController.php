@@ -29,7 +29,32 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		//$this->render('index');
+		
+		$dataProvider = News::Get3Latest();
+	
+	
+		//$dataProvider=new CActiveDataProvider('News');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+	
+	public function actionView($id)
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		//$this->render('index');
+		
+		$dataProvider = News::Get3Latest();
+	
+		$viewed = News::model()->findByPk($id);
+	
+		//$dataProvider=new CActiveDataProvider('News');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+			'viewed'=>$viewed,
+		));
 	}
 
 	/**

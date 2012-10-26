@@ -80,8 +80,23 @@ class News extends CActiveRecord
 	{
 		$pagebreak = "<!-- pagebreak -->";
 		$pieces = explode($pagebreak, $this->NWS_CONTENT);
-		
 		return strip_tags($pieces[0]);
+	}
+	
+	public static function Brief($content)
+	{
+		$pagebreak = "<!-- pagebreak -->";
+		$pieces = explode($pagebreak, $content);
+		return strip_tags($pieces[0]);
+	}
+	
+	public function Get3Latest()
+	{
+		return Yii::app()->db->createCommand('SELECT * 
+			FROM  `nws` 
+			WHERE NWS_NWS_CAT_ID = 1
+			order by NWS_DATE desc
+			LIMIT 0 , 3')->queryAll();
 	}
 	
 	/**

@@ -2,13 +2,13 @@
 	<ul class="nav nav-tabs" >
 		<li class="active" >
 			<div class="activetab"  style="width: 325px;" >
-				<p class="lead anivers">
+				<p class="lead lucida">
 				Nie wiesz jakiego radnego wybrać do przyszłej rady miasta?
 				</p>
-				<p class="lead anivers">
+				<p class="lead lucida">
 				Brakuje Ci informacji o tym, co radny robi dla Twojej dzielnicy?
 				</p>
-				<p class="lead anivers">
+				<p class="lead lucida">
 				Możesz to zmienić! <br />
 				<a href="<? echo $this->createUrl('site/page&view=akademia_monitoringu'); ?>" >Weź udział w naszym projekcie!</a>
 				</p>
@@ -45,6 +45,31 @@
 		&nbsp;
 	</div>
 </div>
+
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#" >
+	<h2>Aktualności</h2></a>
+	</li>
+	<li></li>
+</ul>
+
+<div class="row" >
+	<? foreach ($dataProvider as $item): ?>
+		<div class="span4">
+			<div><small class="muted photo-title" ><? echo $item['NWS_DATE']; ?></small></div>
+			<h3><? echo $item['NWS_TITLE']; ?></h3>
+			<div><?php echo News::Brief($item['NWS_CONTENT']); ?></div>
+			<a href="<? echo  $this->createUrl('/Site/view&id='.$item['NWS_ID'].'#viewed'); ?>">czytaj więcej...</a>
+		</div>
+	<? endforeach; ?>
+</div>
+
+<br /><br id="viewed" />
+
+<? if ($viewed != null): ?>
+	
+	<?php $this->renderPartial('//aktualnosci/view', array('model'=>$viewed))?>
+<? endif; ?>
 
 <!--
 <div class="tabbable tabs-left">

@@ -134,8 +134,8 @@ if (isset($viewed))
 						//process each item here
 						?>
 						<tr>
-						<th><? echo $item['INT_NAME']; ?></th>
 						<td>
+							<? echo $item['INT_NAME']; ?><br />
 							<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/interpelacje/<? echo $item['INT_FILE']; ?>" 
 								target="_blank" style="font-weight: normal;" ><img src="img/pdf.png" /> zobacz dokument</a>
 							<? if ($item['INT_ANSWER_FILE'] != null ) : ?>

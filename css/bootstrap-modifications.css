@@ -73,9 +73,13 @@ a
 {
 	padding-top: 3px;
 }
-h1, h2, h3, h4, h5, h6
+h1
 {
 font-family: Anivers-Regular;
+}
+h2, h3, h4, h5, h6
+{
+font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Arial, san-serif
 }
 h1 { font-size: 28pt; color: white; background-color:#9aca3c; margin: 5px 0; }
 h2 { font-size: 26px; line-height: 28px; margin: 3px 0;}
@@ -126,8 +130,9 @@ padding-right: 4px;
 }
  
  
-.anivers { font-family: Anivers-Regular; }
-.lead { font-size: 24px; line-height: 26px; }
+.anivers { font-family: 'Anivers-Regular' }
+.lucida { font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Arial, san-serif }
+.lead { font-size: 21px; line-height: 23px; }
 
 .shadow-box
 {
