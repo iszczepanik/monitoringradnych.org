@@ -27,14 +27,8 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		//$this->render('index');
-		
 		$dataProvider = News::Get3Latest();
 	
-	
-		//$dataProvider=new CActiveDataProvider('News');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -42,15 +36,9 @@ class SiteController extends Controller
 	
 	public function actionView($id)
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		//$this->render('index');
-		
 		$dataProvider = News::Get3Latest();
-	
 		$viewed = News::model()->findByPk($id);
 	
-		//$dataProvider=new CActiveDataProvider('News');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 			'viewed'=>$viewed,
@@ -76,52 +64,16 @@ class SiteController extends Controller
 	 */
 	public function actionContact()
 	{
-		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
-		{
-			$model->attributes=$_POST['ContactForm'];
-			if($model->validate())
-			{
-				$headers="From: {$model->email}\r\nReply-To: {$model->email}";
-				mail(Yii::app()->params['adminEmail'],$model->subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
-			}
-		}
 		$this->render('contact',array('model'=>$model));
 	}
-
-	/*public function actionRegister($group)
+	
+	public function actionPage($cat)
 	{
-		$model=new User('register');
-
-		// uncomment the following code to enable ajax-based validation
+		$this->render('page',array(
+			'content'=>News::GetContent($cat)
+		));
 		
-		if(isset($_POST['ajax']) && $_POST['ajax']==='user-register-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-		
-		$uri = Yii::app()->request->baseUrl."/assets/3bb6b5ce/detailview/styles.css";
-		Yii::app()->clientScript->registerCssFile($uri);
-		
-		if(isset($_POST['User']))
-		{
-			$model->attributes=$_POST['User'];
-			if($model->validate())
-			{
-				// form inputs are valid, do something here
-				$model->attributes=$_POST['User'];
-				if($model->save())
-					//$this->redirect('index');
-					$this->redirect(array('site/page','view'=>'registered'));//site/page&view=registered  //array('view','id'=>$model->USR_ID));
-				return;
-			}
-		}
-		$model->USR_GROUP = $group;
-		$this->render('register',array('model'=>$model));
-	}*/
+	}
 	
 	/**
 	 * Displays the login page

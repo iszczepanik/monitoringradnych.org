@@ -30,8 +30,8 @@
   <ul class="nav nav-tabs">
 	<li class="active"  ><a href="<?php echo $this->createUrl('/'); ?>" style="background-color:#9aca3c; cursor: pointer;" >
 	<h1 class="anivers" ><?php echo CHtml::encode(Yii::app()->name); ?></h1></a></li>
-	<li><a href="<?php echo $this->createUrl('site/page&view=about'); ?>">O projekcie</a></li>
-	<li><a href="<?php echo $this->createUrl('site/page&view=contact'); ?>">Kontakt</a></li>
+	<li><a href="<?php echo $this->createUrl('site/page&cat=4'); ?>">O projekcie</a></li>
+	<li><a href="<?php echo $this->createUrl('site/page&cat=3'); ?>">Kontakt</a></li>
 	<li><a href="<?php echo $this->createUrl('/AkademiaMonitoringu/index'); ?>">Akademia Monitoringu</a></li>
 	<? if (!Yii::app()->user->isGuest) : ?><li><a href="<?php echo $this->createUrl('/site/logout'); ?>">Wyloguj (<? echo Yii::app()->user->name; ?>)</a></li><? endif; ?>
   </ul>

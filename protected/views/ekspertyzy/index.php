@@ -1,12 +1,4 @@
-<ul class="nav nav-tabs">
-	<li class="active"><a href="#" >
-	<h2>Wypowiedzi ekspertów</h2></a>
-	</li>
-	<li></li>
-</ul>
-<p>
-W tym miejscu przedstawiane są analizy ekspertów dotyczące różnych obszarów funkcjonowania samorządu oraz porównanie uchwał i programów funkcjonujących w Katowicach z ich odpowiednikami z innych miast. Liczymy, że część dobrych praktyk i rekomendacji przedstawionych przez ekspertów uda się zaimplementować w Katowicach.
-</p>
+<?php $this->renderPartial('//site/page', array('content'=>$content))?>
 
 <? if ($dataProvider->totalItemCount > 0) : ?>
 

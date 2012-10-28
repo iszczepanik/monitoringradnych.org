@@ -43,6 +43,7 @@ class EkspertyzyController extends Controller
 
 		$this->render('view',array(
 			'model'=>$model,
+			'content'=>News::GetContent(5),
 		));
 	}
 
@@ -55,14 +56,13 @@ class EkspertyzyController extends Controller
 					'order'=>'EXP_DATE desc',
 				));
 
-			$dataProvider=new CActiveDataProvider('Ekspertyza', array(
-					'criteria'=>$criteria,
-				));
+		$dataProvider=new CActiveDataProvider('Ekspertyza', array(
+				'criteria'=>$criteria,
+			));
 	
-	
-		//$dataProvider=new CActiveDataProvider('News');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'content'=>News::GetContent(5),
 		));
 	}
 	

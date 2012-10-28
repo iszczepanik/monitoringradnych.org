@@ -18,7 +18,7 @@ array('label'=>'Nowy', 'icon'=>'plus-sign', 'url'=>array('create')),
 array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkOptions'=>array('class'=>'search-button')),
 ),
 ));
-?><h2>Aktualności - kategoria - Widok</h2>
+?><h2>Artykuły - kategoria - Widok</h2>
 </div>
 <div class='span6'>
 <div class="search-form" style="display:none">

@@ -43,6 +43,7 @@ class KomentarzUchwalyController extends Controller
 
 		$this->render('view',array(
 			'model'=>$model,
+			'content'=>News::GetContent(6),
 		));
 	}
 
@@ -62,6 +63,7 @@ class KomentarzUchwalyController extends Controller
 	
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'content'=>News::GetContent(6),
 		));
 	}
 	

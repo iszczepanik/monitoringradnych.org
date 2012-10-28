@@ -99,6 +99,15 @@ class News extends CActiveRecord
 			LIMIT 0 , 3')->queryAll();
 	}
 	
+	public function GetContent($cat)
+	{
+		$params = array();	
+		$condition = "NWS_NWS_CAT_ID = :NWS_NWS_CAT_ID";
+		$params[':NWS_NWS_CAT_ID'] = $cat;
+		
+		return News::model()->findAll(array('order'=>'NWS_DATE desc', 'condition'=>$condition, 'params'=>$params));
+	}
+	
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.

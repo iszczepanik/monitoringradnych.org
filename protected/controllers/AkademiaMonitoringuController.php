@@ -43,6 +43,7 @@ class AkademiaMonitoringuController extends Controller
 
 		$this->render('view',array(
 			'model'=>$model,
+			'content'=>News::GetContent(8),
 		));
 	}
 
@@ -65,6 +66,7 @@ class AkademiaMonitoringuController extends Controller
 		//$dataProvider=new CActiveDataProvider('News');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'content'=>News::GetContent(8),
 		));
 	}
 	
