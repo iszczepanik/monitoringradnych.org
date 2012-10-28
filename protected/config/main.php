@@ -120,6 +120,6 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
 		'debug'=>false,
-		'version'=>'1.0.1',
+		'version'=>'1.0.2',
 	),
 );
