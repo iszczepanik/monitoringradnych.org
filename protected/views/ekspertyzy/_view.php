@@ -1,5 +1,6 @@
 <tr><td>
 	<h3><? echo $data->EXP_AUTHOR; ?></h3>
+	<div><?php echo $data->EXP_NAME; ?></div>
 	<div><?php echo $data->EXP_CONTENT; ?></div>
 	<? foreach ($data->files as $file): ?>
 	

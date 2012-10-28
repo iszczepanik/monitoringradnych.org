@@ -68,7 +68,7 @@ if (isset($viewed))
 			</div>
 			<div><h4>Uchwały dotyczące dzielnicy</h4>
 			<p>Trzy ostatnie uchwały dotyczące dzielnicy, bez uwzględnienia uchwał ogólnych - dotyczących całego miasta. 
-			<br /><a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>" >zobacz wszystkie</a></p>
+			<br /><a href="<?php echo $this->createUrl('/FrontUchwala/definedSearch&attrName=dzl&value='.$viewed->DZL_ID); ?>" >zobacz wszystkie</a></p>
 			<table class="detail-view table table-striped table-condensed" >
 							<?
 					$uchwaly = $viewed->Get3Last();

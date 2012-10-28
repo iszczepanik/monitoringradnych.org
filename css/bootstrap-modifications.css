@@ -79,7 +79,8 @@ font-family: Anivers-Regular;
 }
 h2, h3, h4, h5, h6
 {
-font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Arial, san-serif
+font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Arial, san-serif;
+font-weight: normal;
 }
 h1 { font-size: 28pt; color: white; background-color:#9aca3c; margin: 5px 0; }
 h2 { font-size: 26px; line-height: 28px; margin: 3px 0;}

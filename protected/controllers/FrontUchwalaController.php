@@ -100,6 +100,25 @@ class FrontUchwalaController extends Controller
 		}
 	}
 	
+	public function actionDefinedSearch($attrName, $value)
+	{
+		if ($attrName == "dzl")
+		{
+			$searchParams = array(
+				'Name' => '',
+				'Dzielnice' => array (0 => $value),
+				'Radny' => '-1',
+				'DataOd' => '',
+				'DataDo' => '',
+			);
+		}
+
+		$session = Yii::app()->getComponent('session');	
+		$session->add('searchParams', $searchParams);
+		
+		$this->redirect(array('FrontUchwala/index'));
+	}
+	
 	public function actionSearch()
 	{
 		if (isset($_POST['search']))

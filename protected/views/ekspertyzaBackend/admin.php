@@ -48,6 +48,7 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'EXP_ID',
 		'EXP_AUTHOR',
 		//'EXP_DATE',
+		'EXP_NAME',
 		'EXP_FILE',
 		array(
 			'name'=>'EXP_CONTENT',

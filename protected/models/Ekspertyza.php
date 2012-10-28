@@ -9,6 +9,7 @@
  * @property string $EXP_DATE
  * @property string $EXP_CONTENT
  * @property string $EXP_FILE
+ * @property string $EXP_NAME
  */
 class Ekspertyza extends CActiveRecord
 {
@@ -39,16 +40,27 @@ class Ekspertyza extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('EXP_AUTHOR, EXP_DATE, EXP_FILE', 'required'),
-			array('EXP_AUTHOR', 'length', 'max'=>512),
+			array('EXP_AUTHOR, EXP_NAME', 'length', 'max'=>512),
 			array('EXP_FILE', 'length', 'max'=>256),
 			array('EXP_CONTENT', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('EXP_ID, EXP_AUTHOR, EXP_DATE, EXP_CONTENT, EXP_FILE', 'safe', 'on'=>'search'),
+			array('EXP_ID, EXP_AUTHOR, EXP_DATE, EXP_CONTENT, EXP_FILE, EXP_NAME', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
 		);
 	}
 	
-	public function GetBriefPageBreak()
+		public function GetBriefPageBreak()
 	{
 		$pagebreak = "<!-- pagebreak -->";
 		$pieces = explode($pagebreak, $this->EXP_CONTENT);
@@ -70,17 +82,6 @@ class Ekspertyza extends CActiveRecord
 	}
 
 	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
-
-	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels()
@@ -91,6 +92,7 @@ class Ekspertyza extends CActiveRecord
 			'EXP_DATE' => 'Data',
 			'EXP_CONTENT' => 'Treść',
 			'EXP_FILE' => 'Plik',
+			'EXP_NAME' => 'Nazwa',
 		);
 	}
 
@@ -110,6 +112,7 @@ class Ekspertyza extends CActiveRecord
 		$criteria->compare('EXP_DATE',$this->EXP_DATE,true);
 		$criteria->compare('EXP_CONTENT',$this->EXP_CONTENT,true);
 		$criteria->compare('EXP_FILE',$this->EXP_FILE,true);
+		$criteria->compare('EXP_NAME',$this->EXP_NAME,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

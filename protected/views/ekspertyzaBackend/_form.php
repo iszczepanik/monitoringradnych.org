@@ -17,7 +17,15 @@
 		
 	</div>
 	
-	
+	<div class='control-group<?php echo (CHtml::error($model,'EXP_NAME') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'EXP_NAME',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->textField($model,'EXP_NAME',array('size'=>60,'maxlength'=>512)); ?>
+		<?php echo $form->error($model,'EXP_NAME',array('class'=>'help-inline')); ?>
+		
+		</div>
+		
+	</div>
 	
 	<div class='control-group<?php echo (CHtml::error($model,'EXP_FILE') == '' ? '' : ' error'); ?>'>
 		
