@@ -9,7 +9,9 @@
 	<h3><? echo $uchwala->UCH_NAME; ?></h3>
 	<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $model->UCH_FILE; ?>" 
 	target="_blank" style="font-weight: normal; display: block;" ><img src="img/pdf.png" /> zobacz dokument</a>
+	<br />
 	<? echo $uchwala->UCH_INVITATION; ?>
+	<br />
 
 	<? 
 	$komentarze = $uchwala->GetComments(); 
