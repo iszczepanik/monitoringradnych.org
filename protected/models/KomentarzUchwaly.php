@@ -84,6 +84,11 @@ class KomentarzUchwaly extends CActiveRecord
 	
 	public function GetAuthor()
 	{
+		return $this->CMT_TYPE == KomentarzUchwalyType::Radnego ? $this->Radny->ImieNazwisko() : $this->CMT_AUTHOR;
+	}
+	
+	public function GetAuthorLink()
+	{
 		return $this->CMT_TYPE == KomentarzUchwalyType::Radnego ? 
 		"<a href='".Yii::app()->createUrl('frontRadny/view&id='.$this->Radny->RDN_ID.'&tab=clubs')."' >".$this->Radny->ImieNazwisko()."</a>" 
 		: 
