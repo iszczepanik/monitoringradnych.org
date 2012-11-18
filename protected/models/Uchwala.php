@@ -247,12 +247,49 @@ class Uchwala extends CActiveRecord
 			array('UCH_FILE, UCH_TYPE, UCH_KMS_ID', 'required'),
 			array('UCH_TYPE, UCH_KMS_ID, UCH_NUMBER', 'numerical', 'integerOnly'=>true),
 			array('UCH_FILE', 'length', 'max'=>256),
-			array('UCH_NAME', 'length', 'max'=>512),
+			array('UCH_NAME, UCH_INVITATION', 'length', 'max'=>512),
 			array('UCH_DATE', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('UCH_ID, UCH_FILE, UCH_NAME, UCH_TYPE, UCH_KMS_ID, UCH_DATE, UCH_NUMBER', 'safe', 'on'=>'search'),
+			array('UCH_ID, UCH_FILE, UCH_NAME, UCH_TYPE, UCH_KMS_ID, UCH_DATE, UCH_NUMBER, UCH_INVITATION', 'safe', 'on'=>'search'),
 		);
+	}
+	
+	public function GetComments()
+	{
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'CMT_UCH_ID = '.$this->UCH_ID.' and CMT_TYPE in ('.KomentarzUchwalyType::Dziennikarski.','.KomentarzUchwalyType::Ekspercki.','.KomentarzUchwalyType::Radnego.')';
+
+		$dataProvider = new CActiveDataProvider('KomentarzUchwaly', array(
+			'criteria'=>$criteria,
+		));
+		
+		
+		return $dataProvider;
+	}
+	
+	public function GetAllComented()
+	{
+		$query = 'select distinct CMT_UCH_ID from cmt_uch where CMT_TYPE in ('.KomentarzUchwalyType::Dziennikarski.','.KomentarzUchwalyType::Ekspercki.','.KomentarzUchwalyType::Radnego.')';
+		$list = Yii::app()->db->createCommand($query)->queryAll();
+		foreach ($list as $id)
+			$ids[] = $id['CMT_UCH_ID'];
+		//$ids = implode(", ", $ids);
+		
+		//$query = 'select * from uch where UCH_ID in ('.implode(", ", $ids).')';
+		
+		//var_dump($query);
+		
+		//$dataProvider = Yii::app()->db->createCommand($query)->queryAll();
+		$criteria = new CDbCriteria();
+		$criteria->condition='UCH_ID in ('.implode(", ", $ids).')';
+
+		$dataProvider = new CActiveDataProvider('Uchwala', array(
+			'criteria'=>$criteria,
+		));
+		
+		
+		return $dataProvider;
 	}
 
 	/**
@@ -263,7 +300,7 @@ class Uchwala extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'cmtUches' => array(self::HAS_MANY, 'CmtUch', 'CMT_UCH_ID'),
+			'Komentarze' => array(self::HAS_MANY, 'KomentarzUchwaly', 'CMT_UCH_ID'),
 			'exps' => array(self::HAS_MANY, 'Exp', 'EXP_UCH_ID'),
 			'Komisja' => array(self::BELONGS_TO, 'Komisja', 'UCH_KMS_ID'),
 			'DzielniceUchwal' => array(self::MANY_MANY, 'Dzielnica', 'uch_in_dzl(UCH_IN_DZL_UCH_ID, UCH_IN_DZL_DZL_ID)'),
@@ -294,6 +331,7 @@ class Uchwala extends CActiveRecord
 			'glosowanie' => 'Głosowanie',
 			'UCH_DATE' => 'Data',
 			'UCH_NUMBER' => 'Numer',
+			'UCH_INVITATION' => 'Dodatkowy opis',
 		);
 	}
 
@@ -315,6 +353,7 @@ class Uchwala extends CActiveRecord
 		$criteria->compare('UCH_KMS_ID',$this->UCH_KMS_ID);
 		$criteria->compare('UCH_DATE',$this->UCH_DATE,true);
 		$criteria->compare('UCH_NUMBER',$this->UCH_NUMBER);
+		$criteria->compare('UCH_INVITATION',$this->UCH_INVITATION);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

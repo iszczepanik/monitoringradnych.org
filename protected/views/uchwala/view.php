@@ -41,6 +41,7 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'UCH_FILE',
 		'UCH_NAME',
 		'UCH_NUMBER',
+		'UCH_INVITATION',
 		'UCH_DATE',
 		array(
 			'name'=>'UCH_KMS_ID',

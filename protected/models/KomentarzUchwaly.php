@@ -100,6 +100,24 @@ class KomentarzUchwaly extends CActiveRecord
 		return strip_tags($pieces[0]);
 	}
 	
+	public function GetByUchwala($id)
+	{
+		$query = 'select * from cmt_uch where CMT_UCH_ID = '.$id.' and CMT_TYPE in ('.KomentarzUchwalyType::Dziennikarski.','.KomentarzUchwalyType::Ekspercki.','.KomentarzUchwalyType::Radnego.')';
+		
+		//var_dump($query);
+		
+		$dataProvider = Yii::app()->db->createCommand($query)->queryAll();
+		//$criteria = new CDbCriteria();
+		//$criteria->condition='UCH_ID in ('.$list.')';
+
+		//$dataProvider = new CActiveDataProvider('Uchwala', array(
+		//	'criteria'=>$criteria,
+		//));
+		
+		
+		return $dataProvider;
+	}
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
