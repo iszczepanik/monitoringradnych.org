@@ -272,22 +272,19 @@ class Uchwala extends CActiveRecord
 	{
 		$query = 'select distinct CMT_UCH_ID from cmt_uch where CMT_TYPE in ('.KomentarzUchwalyType::Dziennikarski.','.KomentarzUchwalyType::Ekspercki.','.KomentarzUchwalyType::Radnego.')';
 		$list = Yii::app()->db->createCommand($query)->queryAll();
+		
+		if (count($list) == 0)
+			return null;
+		
 		foreach ($list as $id)
 			$ids[] = $id['CMT_UCH_ID'];
-		//$ids = implode(", ", $ids);
-		
-		//$query = 'select * from uch where UCH_ID in ('.implode(", ", $ids).')';
-		
-		//var_dump($query);
-		
-		//$dataProvider = Yii::app()->db->createCommand($query)->queryAll();
+
 		$criteria = new CDbCriteria();
 		$criteria->condition='UCH_ID in ('.implode(", ", $ids).')';
 
 		$dataProvider = new CActiveDataProvider('Uchwala', array(
 			'criteria'=>$criteria,
 		));
-		
 		
 		return $dataProvider;
 	}

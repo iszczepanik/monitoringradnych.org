@@ -6,7 +6,7 @@
 </ul>
 
 <? if ($orig == 'uch') : ?>
-<a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>" >wróc do wyszukiwarki</a>
+<a href="<?php echo $this->createUrl('/FrontUchwala/index'); ?>" >wróć do wyszukiwarki</a>
 <? endif; ?>
 
 <?

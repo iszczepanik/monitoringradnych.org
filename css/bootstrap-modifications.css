@@ -61,6 +61,10 @@ a
 	color: #77b912; /*#6ba610;*/ /*#729f1b;*/ /*#9aca3c;*/
 	
 }
+.popover
+{
+	width: 800px;
+}
 .badge-success
 {
 	background-color: #9aca3c;

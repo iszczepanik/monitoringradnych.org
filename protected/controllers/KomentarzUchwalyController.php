@@ -52,20 +52,10 @@ class KomentarzUchwalyController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*$criteria=new CDbCriteria(array(
-					'order'=>'CMT_DATE desc',
-				));
-		$criteria->condition='CMT_TYPE in ('.KomentarzUchwalyType::Dziennikarski.','.KomentarzUchwalyType::Ekspercki.','.KomentarzUchwalyType::Radnego.')';
-
-			$dataProvider=new CActiveDataProvider('KomentarzUchwaly', array(
-					'criteria'=>$criteria,
-				));
-	*/
 		$this->render('index',array(
 			'dataProvider'=>Uchwala::GetAllComented(),
 			'content'=>News::GetContent(6),
 		));
-		//Uchwala::GetAllComented();
 	}
 	
 	/**

@@ -2,12 +2,12 @@
 
 <br />
 
-<? foreach ($dataProvider->getData() as $uchwala) : ?>
-	
-	<? //var_dump($uchwala); ?>
+<? 
+if ($dataProvider != null)
+foreach ($dataProvider->getData() as $uchwala) : ?>
 	
 	<h3><? echo $uchwala->UCH_NAME; ?></h3>
-	<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $model->UCH_FILE; ?>" 
+	<a href="<? echo Yii::app()->request->baseUrl; ?>materialy/uchwaly/<? echo $uchwala->UCH_FILE; ?>" 
 	target="_blank" style="font-weight: normal; display: block;" ><img src="img/pdf.png" /> zobacz dokument</a>
 	<br />
 	<? echo $uchwala->UCH_INVITATION; ?>
@@ -20,16 +20,3 @@
 	?>
 
 <? endforeach; ?>
-
-<!--
-<? //if ($dataProvider->totalItemCount > 0) : ?>
-
-<table class="detail-view table table-striped table-condensed" >
-<?php //$this->widget('bootstrap.widgets.BootListView',array(
-	//'dataProvider'=>$dataProvider,
-	//'itemView'=>'_view',
-//)); ?>
-</table>
-
-<? //endif; ?>
--->

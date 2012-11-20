@@ -160,6 +160,17 @@ class Radny extends CActiveRecord
 		return $listData;
 	}
 	
+	public function GetBrief($text)
+	{
+		$pagebreak = "<!-- pagebreak -->";
+		$pos = strpos($text, $pagebreak);
+		if ($pos === false) 
+			return false;
+	
+		$pieces = explode($pagebreak, $text);
+		return strip_tags($pieces[0]);
+	}
+	
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */

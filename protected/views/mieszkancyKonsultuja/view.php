@@ -51,26 +51,15 @@
 
 <h3>Komentarze</h3>
 <? if (count($model->Komentarze) > 0 ) : ?>
-<div id="accordion" class="accordion">
 
 <? foreach ($model->Komentarze as $komentarz) : ?>
 	
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" href="#collapse<? echo $komentarz->CMT_ID; ?>" data-toggle="collapse" data-parent="#accordion">
-			<? echo $komentarz->CMT_DATE; ?> Autor: <? echo $komentarz->author; ?>
-			</a>
-		</div>
-		<div style="height: 0px;" id="collapse<? echo $komentarz->CMT_ID; ?>" class="accordion-body collapse">
-			<div class="accordion-inner">
-			<? echo $komentarz->CMT_CONTENT; ?>
-			</div>
-		</div>
-	</div>
+	<h4><? echo $komentarz->TypeDescription; ?></h4>
+	<div><span class="muted" ><? echo $komentarz->CMT_DATE; ?> Autor: <? echo $komentarz->AuthorLink; ?></span></div>
+	<div><?php echo $komentarz['CMT_CONTENT']; ?></div>
 	
 <? endforeach; ?>
 
-</div>
 <? else : ?>
 <p>Ten projekt nie ma jeszcze żadnych komentarzy.</p>
 <? endif; ?>
