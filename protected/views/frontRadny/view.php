@@ -180,15 +180,108 @@ if (isset($viewed))
 				?>
 				</table>
 			</div>
+			
+			<? if ($viewed->RDN_PROMISE != null) : ?>
 			<div>
 				<p><h4>Obietnice</h4></p>
-			<p><?php echo $viewed->RDN_PROMISE; ?></p>
+				<p>
+				<?
+					$brief = $viewed->GetBrief($viewed->RDN_PROMISE);
+					if ($brief === false)
+						echo $viewed->RDN_PROMISE;
+					else
+					{
+						echo "<div id='ObietniceBrief' >".$brief."</div>";
+						echo "<div id='ObietniceAll' style='display: none;' >".$viewed->RDN_PROMISE."</div>";
+						?>
+						<div style="clear:both;" ></div>
+						<a id="ObietniceReadAll" href="javascript:ReadAll('Obietnice');" 
+						style="padding-left: 10px;" class="pull-right" >czytaj całość...</a>
+						<a id="ObietniceCollapse" href="javascript:ReadAll('Obietnice');" 
+						style="padding-left: 10px; display: none;" class="pull-right" >zwiń...</a>
+						<div style="clear:both;" ></div>
+						<?
+					}
+				?>
+				</p>
 			</div>
+			<? endif; ?>
 			
 			<? if ($viewed->RDN_PROMISE_CMT != null) : ?>
 			<div>
 				<p><h4>Komentarz do obietnicy</h4></p>
-			<p><?php echo $viewed->RDN_PROMISE_CMT; ?></p>
+				<p>
+				<?
+					$brief = $viewed->GetBrief($viewed->RDN_PROMISE_CMT);
+					if ($brief === false)
+						echo $viewed->RDN_PROMISE_CMT;
+					else
+					{
+						echo "<div id='ObietniceKomBrief' >".$brief."</div>";
+						echo "<div id='ObietniceKomAll' style='display: none;' >".$viewed->RDN_PROMISE_CMT."</div>";
+						?>
+						<div style="clear:both;" ></div>
+						<a id="ObietniceKomReadAll" href="javascript:ReadAll('ObietniceKom');" 
+						style="padding-left: 10px;" class="pull-right" >czytaj całość...</a>
+						<a id="ObietniceKomCollapse" href="javascript:ReadAll('ObietniceKom');" 
+						style="padding-left: 10px; display: none;" class="pull-right" >zwiń...</a>
+						<div style="clear:both;" ></div>
+						<?
+					}
+				?>
+				</p>
+			</div>
+			<? endif; ?>
+			
+			<? if ($viewed->RDN_INTERVIEW != null) : ?>
+			<div>
+				<p><h4>Wywiad</h4></p>
+				<p>
+				<?
+					$brief = $viewed->GetBrief($viewed->RDN_INTERVIEW);
+					if ($brief === false)
+						echo $viewed->RDN_INTERVIEW;
+					else
+					{
+						echo "<div id='InterviewBrief' >".$brief."</div>";
+						echo "<div id='InterviewAll' style='display: none;' >".$viewed->RDN_INTERVIEW."</div>";
+						?>
+						<div style="clear:both;" ></div>
+						<a id="InterviewReadAll" href="javascript:ReadAll('Interview');" 
+						style="padding-left: 10px;" class="pull-right" >czytaj całość...</a>
+						<a id="InterviewCollapse" href="javascript:ReadAll('Interview');" 
+						style="padding-left: 10px; display: none;" class="pull-right" >zwiń...</a>
+						<div style="clear:both;" ></div>
+						<?
+					}
+				?>
+				</p>
+			</div>
+			<? endif; ?>
+			
+			<? if ($viewed->RDN_INTERVIEW_CMT != null) : ?>
+			<div>
+				<p><h4>Komentarz do wywiadu</h4></p>
+				<p>
+				<?
+					$brief = $viewed->GetBrief($viewed->RDN_INTERVIEW_CMT);
+					if ($brief === false)
+						echo $viewed->RDN_INTERVIEW_CMT;
+					else
+					{
+						echo "<div id='InterviewKomBrief' >".$brief."</div>";
+						echo "<div id='InterviewKomAll' style='display: none;' >".$viewed->RDN_INTERVIEW_CMT."</div>";
+						?>
+						<div style="clear:both;" ></div>
+						<a id="InterviewKomReadAll" href="javascript:ReadAll('InterviewKom');" 
+						style="padding-left: 10px;" class="pull-right" >czytaj całość...</a>
+						<a id="InterviewKomCollapse" href="javascript:ReadAll('InterviewKom');" 
+						style="padding-left: 10px; display: none;" class="pull-right" >zwiń...</a>
+						<div style="clear:both;" ></div>
+						<?
+					}
+				?>
+				</p>
 			</div>
 			<? endif; ?>
 			
@@ -201,17 +294,6 @@ if (isset($viewed))
 			<? endif; ?>
 			</div>
 			
-			<div>
-				<p><h4>Wywiad</h4></p>
-			<p><?php echo $viewed->RDN_INTERVIEW; ?></p>
-			</div>
-			
-			<? if ($viewed->RDN_INTERVIEW_CMT != null) : ?>
-			<div>
-				<p><h4>Komentarz do wywiadu</h4></p>
-			<p><?php echo $viewed->RDN_INTERVIEW_CMT; ?></p>
-			</div>
-			<? endif; ?>
 		</div>
 	</div>
 	

@@ -22,7 +22,6 @@ function jqEnableAll(id, name, flag)
 }
 function DisplayAuthor(ob)
 {
-	//alert(ob.options[ob.selectedIndex].value);
 	if ( ob.options[ob.selectedIndex].value == 3 )
 	{
 		$('#CMT_AUTHOR').hide();
@@ -38,7 +37,6 @@ function SetChosen(gridId, controlId, controlValue)
 {
 	var id = $('#'+gridId+' > table > tbody > tr.selected > td:first').text();
 	var value = $('#'+gridId+' > table > tbody > tr.selected > td:nth-child(2)').text();
-	//alert(value);
 	$('#'+controlId).val(id);
 	$('#'+controlValue).text(value);
 
@@ -46,10 +44,16 @@ function SetChosen(gridId, controlId, controlValue)
 function ClearGlosowanie()
 {
 	$('.glosowanie').removeAttr('checked');  
-	//$("select[@id='Uchwala_Radny'] option[@value='-1']").attr("selected","selected");
 	$("#Uchwala_Radny").val( "-1" ).attr('selected',true);
 }
 function ClearInput(inputId)
 {
 	$('#'+inputId).val("");
+}
+function ReadAll(Id)
+{
+	$('#'+Id+'Brief').toggle();
+	$('#'+Id+'All').toggle();
+	$('#'+Id+'ReadAll').toggle();
+	$('#'+Id+'Collapse').toggle();
 }
