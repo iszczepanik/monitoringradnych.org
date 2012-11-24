@@ -57,6 +57,10 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'USR_LASTNAME',
 		'USR_EMAIL',
 		array(
+			'name'=>'USR_RDN_ID',
+			'value'=>'$data->Radny->ImieNazwisko',
+		),
+		array(
 			'class'=>'bootstrap.widgets.BootButtonColumn',
 		),
 	),

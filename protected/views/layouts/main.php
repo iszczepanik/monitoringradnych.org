@@ -64,11 +64,23 @@
 	</ul>
 	<? endif; ?>
 	
+	<? if (Yii::app()->user->checkAccess('radny')): ?>
+	<ul class="nav nav-tabs">
+	<li class="active"><a href="#" >
+	<h2>Strefa Radnego</h2></a>
+	</li>
+	<li></li>
+	</ul>
+	<? //var_dump(Yii::app()->user); ?>
+	<? //echo Yii::app()->user->name." ".Yii::app()->user->id." ".Yii::app()->user->USR_ID ; ?>
+	<? endif; ?>
+	
 	<div class="main-menu" >
 		<?php $this->widget('bootstrap.widgets.BootMenu', array(
 		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
 		    'stacked'=>false, // whether this is a stacked menu
 		    'items'=>array(
+				array('label'=>'Komentarz do obietnic i wywiadu', 'url'=>array('/strefaRadnego/update','id'=>Yii::app()->user->id), 'visible'=>Yii::app()->user->checkAccess('radny')),
 				array('label'=>'Użytkownicy', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('superadmin')),
 				array('label'=>'Radni', 'url'=>array('/radny/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Kluby', 'url'=>array('/club/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),

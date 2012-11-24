@@ -10,6 +10,10 @@
  * @property string $USR_FIRSTNAME
  * @property string $USR_LASTNAME
  * @property string $USR_EMAIL
+ * @property integer $USR_RDN_ID
+ *
+ * The followings are the available model relations:
+ * @property Rdn $uSRRDN
  */
 class User extends CActiveRecord
 {
@@ -39,12 +43,12 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('USR_RDN_ID', 'numerical', 'integerOnly'=>true),
 			array('USR_NAME, USR_PASS', 'length', 'max'=>16),
 			array('USR_FIRSTNAME, USR_LASTNAME, USR_EMAIL', 'length', 'max'=>100),
-			array('USR_NAME, USR_PASS, USR_FIRSTNAME, USR_LASTNAME, USR_EMAIL', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('USR_ID, USR_NAME, USR_PASS, USR_FIRSTNAME, USR_LASTNAME, USR_EMAIL', 'safe', 'on'=>'search'),
+			array('USR_ID, USR_NAME, USR_PASS, USR_FIRSTNAME, USR_LASTNAME, USR_EMAIL, USR_RDN_ID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +60,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'Radny' => array(self::BELONGS_TO, 'Radny', 'USR_RDN_ID'),
 		);
 	}
 
@@ -76,7 +81,8 @@ class User extends CActiveRecord
 			'USR_FIRSTNAME' => 'Imię',
 			'USR_LASTNAME' => 'Nazwisko',
 			'USR_EMAIL' => 'Email',
-			'USR_WHOLENAME' => 'Imię i nazwisko'
+			'USR_WHOLENAME' => 'Imię i nazwisko',
+			'USR_RDN_ID' => 'Radny'
 		);
 	}
 
@@ -97,6 +103,7 @@ class User extends CActiveRecord
 		$criteria->compare('USR_FIRSTNAME',$this->USR_FIRSTNAME,true);
 		$criteria->compare('USR_LASTNAME',$this->USR_LASTNAME,true);
 		$criteria->compare('USR_EMAIL',$this->USR_EMAIL,true);
+		$criteria->compare('USR_RDN_ID',$this->USR_RDN_ID);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

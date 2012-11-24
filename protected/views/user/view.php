@@ -39,5 +39,9 @@ array('label'=>'Wyszukiwanie zaawansowane', 'icon'=>'search', 'url'=>'#', 'linkO
 		'USR_FIRSTNAME',
 		'USR_LASTNAME',
 		'USR_EMAIL',
+		array(
+			'name'=>'USR_RDN_ID',
+			'value'=>$model->Radny->ImieNazwisko,
+		),
 	),
 )); ?>

@@ -46,6 +46,17 @@
 		<?php echo $form->error($model,'USR_EMAIL',array('class'=>'help-inline')); ?>
 		</div>
 	</div>
+	
+	<div class='control-group<?php echo (CHtml::error($model,'USR_RDN_ID') == '' ? '' : ' error'); ?>'>
+		<?php echo $form->labelEx($model,'USR_RDN_ID',array('class'=>'control-label')); ?>
+		<div class="controls">
+		<?php echo $form->dropDownList($model, 'USR_RDN_ID', CHtml::listData(
+			Radny::model()->findAll(), 'RDN_ID', 'ImieNazwisko'),
+			array('prompt' => '')
+			);?>
+		<?php echo $form->error($model,'USR_RDN_ID',array('class'=>'help-inline')); ?>
+		</div>
+	</div>
 
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.BootButton', array(
