@@ -36,26 +36,12 @@ class StrefaRadnegoController extends Controller
 		);
 	}
 
-	public function actionView($id)
+	public function actionView()
 	{
-		$user = $this->loadModel($id);
+		$user = $this->loadModel(Yii::app()->user->id);
+		$model = $this->loadRadnyModel($user->USR_RDN_ID);
 
-		if(isset($_POST['Radny']) && $user->USR_RDN_ID == $_POST['Radny']['RDN_ID'])
-		{
-			$model = $this->loadRadnyModel($_POST['Radny']['RDN_ID']);
-			$model->RDN_PROMISE_CMT = $_POST['Radny']['RDN_PROMISE_CMT'];
-			$model->RDN_INTERVIEW_CMT = $_POST['Radny']['RDN_INTERVIEW_CMT'];
-			//$model->attributes = $_POST['Radny'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->RDN_ID));
-		}
-		
-		if (!isset($model))
-		{
-			$model = $this->loadRadnyModel($user->USR_RDN_ID);
-		}
-		
-		$this->render('update',array(
+		$this->render('view',array(
 			'model'=>$model,
 		));
 	}
@@ -64,16 +50,18 @@ class StrefaRadnegoController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate()
 	{
-		$user = $this->loadModel($id);
+		$user = $this->loadModel(Yii::app()->user->id);
 
 		if(isset($_POST['Radny']) && $user->USR_RDN_ID == $_POST['Radny']['RDN_ID'])
 		{
 			$model = $this->loadRadnyModel($_POST['Radny']['RDN_ID']);
 			$model->RDN_PROMISE_CMT = $_POST['Radny']['RDN_PROMISE_CMT'];
 			$model->RDN_INTERVIEW_CMT = $_POST['Radny']['RDN_INTERVIEW_CMT'];
-			//$model->attributes = $_POST['Radny'];
+			$model->KomisjeRadnych = $model->komisjeRadnychIDs;
+			$model->DzielniceDyzurow = $model->dzielniceDyzurowIDs;
+
 			if($model->save())
 				$this->render('view',array(
 					'model'=>$model,

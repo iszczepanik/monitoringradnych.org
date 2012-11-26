@@ -80,7 +80,7 @@
 		    'type'=>'pills', // '', 'tabs', 'pills' (or 'list')
 		    'stacked'=>false, // whether this is a stacked menu
 		    'items'=>array(
-				array('label'=>'Komentarz do obietnic i wywiadu', 'url'=>array('/strefaRadnego/update','id'=>Yii::app()->user->id), 'visible'=>Yii::app()->user->checkAccess('radny')),
+				array('label'=>'Komentarz do obietnic i wywiadu', 'url'=>array('/strefaRadnego/view'), 'visible'=>Yii::app()->user->checkAccess('radny')),
 				array('label'=>'Użytkownicy', 'url'=>array('/user/admin'), 'visible'=>Yii::app()->user->checkAccess('superadmin')),
 				array('label'=>'Radni', 'url'=>array('/radny/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
 				array('label'=>'Kluby', 'url'=>array('/club/admin'), 'visible'=>Yii::app()->user->checkAccess('admin')),
