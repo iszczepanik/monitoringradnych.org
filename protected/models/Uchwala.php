@@ -281,6 +281,7 @@ class Uchwala extends CActiveRecord
 
 		$criteria = new CDbCriteria();
 		$criteria->condition='UCH_ID in ('.implode(", ", $ids).')';
+		$criteria->order='UCH_ID desc';
 
 		$dataProvider = new CActiveDataProvider('Uchwala', array(
 			'criteria'=>$criteria,
