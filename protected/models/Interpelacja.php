@@ -34,13 +34,13 @@ class Interpelacja extends CActiveRecord
 		return 'int';
 	}
 	
-	public function find3LastByRadny($radnyID)
+	public function findLastByRadny($radnyID)
 	{
 		return Yii::app()->db->createCommand('SELECT * 
 			FROM  `int` 
 			WHERE INT_RDN_ID = '.$radnyID.'
 			order by INT_ID desc
-			LIMIT 0 , 3')->queryAll();
+			LIMIT 0 , 5')->queryAll();
 	}
 
 	/**

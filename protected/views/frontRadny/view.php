@@ -125,7 +125,7 @@ if (isset($viewed))
 			<div>
 			<p><h4>Interpelacje</h4></p>
 			
-			<? $list = $viewed->Get3LastInterpelacje(); 
+			<? $list = $viewed->GetLastInterpelacje(); 
 			if (count($list) > 0) : ?>
 			
 			<table class="detail-view table table-striped table-condensed" >

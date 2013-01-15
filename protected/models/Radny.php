@@ -81,9 +81,9 @@ class Radny extends CActiveRecord
 		return Uchwala::model()->find3LastByRadny($this->RDN_ID);
 	}
 	
-	public function Get3LastInterpelacje()
+	public function GetLastInterpelacje()
 	{
-		return Interpelacja::model()->find3LastByRadny($this->RDN_ID);
+		return Interpelacja::model()->findLastByRadny($this->RDN_ID);
 	}
 	
 	/**
