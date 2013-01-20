@@ -52,9 +52,16 @@ class KomentarzUchwalyController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->redirect(array('indexed','i'=>0));
+	}
+	
+	public function actionIndexed($i)
+	{
 		$this->render('index',array(
-			'dataProvider'=>Uchwala::GetAllComented(),
+			'dataProvider'=>Uchwala::GetComented($i),
 			'content'=>News::GetContent(6),
+			'index'=>$i,
+			'total'=>Uchwala::GetComentedCount(),
 		));
 	}
 	

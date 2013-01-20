@@ -268,7 +268,13 @@ class Uchwala extends CActiveRecord
 		return $dataProvider;
 	}
 	
-	public function GetAllComented()
+	public function GetComentedCount()
+	{
+		$ids = Uchwala::GetAllComentedIds();
+		return 	count($ids);
+	}
+	
+	public function GetAllComentedIds()
 	{
 		$query = 'select distinct CMT_UCH_ID from cmt_uch where CMT_TYPE in ('.KomentarzUchwalyType::Dziennikarski.','.KomentarzUchwalyType::Ekspercki.','.KomentarzUchwalyType::Radnego.')';
 		$list = Yii::app()->db->createCommand($query)->queryAll();
@@ -278,13 +284,23 @@ class Uchwala extends CActiveRecord
 		
 		foreach ($list as $id)
 			$ids[] = $id['CMT_UCH_ID'];
+		
+		return $ids;
+	}
+	
+	public function GetComented($index)
+	{
+		$ids = Uchwala::GetAllComentedIds();
 
 		$criteria = new CDbCriteria();
 		$criteria->condition='UCH_ID in ('.implode(", ", $ids).')';
 		$criteria->order='UCH_ID desc';
+		$criteria->limit=1;
+        $criteria->offset=$index;
 
 		$dataProvider = new CActiveDataProvider('Uchwala', array(
 			'criteria'=>$criteria,
+			'pagination'=>false,
 		));
 		
 		return $dataProvider;
