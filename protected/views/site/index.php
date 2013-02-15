@@ -9,8 +9,8 @@
 				Brakuje Ci informacji o tym, co radny robi dla Twojej dzielnicy?
 				</p>
 				<p class="lead lucida">
-				Możesz to zmienić! <br />
-				<a href="<?php echo $this->createUrl('/AkademiaMonitoringu/index'); ?>" >Weź udział w naszym projekcie!</a>
+				Możesz to zmienić! <!--<br />
+				<a href="<?php echo $this->createUrl('/AkademiaMonitoringu/index'); ?>" >Weź udział w naszym projekcie!</a>-->
 				</p>
 			</div>
 			<p style="width: 325px; text-align: right; padding: 2px 2px 2px 16px;" class="muted" >Tutaj znajdziecie m.in. informacje o pracy Rady Miasta i poszczególnych radnych, uchwały Rady Miasta wraz z wynikami głosowań imiennych radnych oraz projekty prawa miejscowego.</p>
