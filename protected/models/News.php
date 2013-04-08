@@ -90,7 +90,7 @@ class News extends CActiveRecord
 		return strip_tags($pieces[0]);
 	}
 	
-	public function Get3Latest()
+	public static function Get3Latest()
 	{
 		return Yii::app()->db->createCommand('SELECT * 
 			FROM  `nws` 

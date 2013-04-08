@@ -12,6 +12,18 @@
 				Możesz to zmienić! <!--<br />
 				<a href="<?php echo $this->createUrl('/AkademiaMonitoringu/index'); ?>" >Weź udział w naszym projekcie!</a>-->
 				</p>
+				<iframe width="340" height="300" scrolling="no" frameborder="no" src="https://www.google.com/fusiontables/embedviz?viz=MAP&amp;q=select+col1+from+1ign4YzbXWHAZPu6Yxh0tiHykPxwPmMqyF94DLs8&amp;h=false&amp;lat=50.25158682655465&amp;lng=19.0281167844239&amp;z=11&amp;t=1&amp;l=col1&amp;y=2&amp;tmplt=2"></iframe>
+				<p style="color: #000;">
+				Sprawdź który radny dyżuruje najbliżej Twojego domu! <br />
+Kolorami zaznaczyliśmy kluby: </p>
+<ul style="color: #000;">
+<li>żółty - Forum Samorządowe Piotr Uszok, </li>
+<li>czerwony - Platforma Obywatelska, </li>
+<li>zielony - bez przynależności klubowej. </li>
+</ul>
+<p style="color: #000;">
+Więcej informacji o radnych z zakładce <a href="<?php echo $this->createUrl('/frontRadny/view&id=1&tab=clubs'); ?>">Radni</a>.
+				</p>
 			</div>
 			<p style="width: 325px; text-align: right; padding: 2px 2px 2px 16px;" class="muted" >Tutaj znajdziecie m.in. informacje o pracy Rady Miasta i poszczególnych radnych, uchwały Rady Miasta wraz z wynikami głosowań imiennych radnych oraz projekty prawa miejscowego.</p>
 		</li>
