@@ -2,16 +2,6 @@
 	<ul class="nav nav-tabs" >
 		<li class="active" >
 			<div class="activetab"  style="width: 325px;" >
-				<p class="lead lucida">
-				Nie wiesz jakiego radnego wybrać do przyszłej rady miasta?
-				</p>
-				<p class="lead lucida">
-				Brakuje Ci informacji o tym, co radny robi dla Twojej dzielnicy?
-				</p>
-				<p class="lead lucida">
-				Możesz to zmienić! <!--<br />
-				<a href="<?php echo $this->createUrl('/AkademiaMonitoringu/index'); ?>" >Weź udział w naszym projekcie!</a>-->
-				</p>
 				<iframe width="340" height="300" scrolling="no" frameborder="no" src="https://www.google.com/fusiontables/embedviz?viz=MAP&amp;q=select+col1+from+1ign4YzbXWHAZPu6Yxh0tiHykPxwPmMqyF94DLs8&amp;h=false&amp;lat=50.25158682655465&amp;lng=19.0281167844239&amp;z=11&amp;t=1&amp;l=col1&amp;y=2&amp;tmplt=2"></iframe>
 				<p style="color: #000;">
 				Sprawdź który radny dyżuruje najbliżej Twojego domu! <br />
@@ -56,7 +46,21 @@ Więcej informacji o radnych z zakładce <a href="<?php echo $this->createUrl('/
 		</div>
 		&nbsp;
 	</div>
+	<div style="padding-left: 470px; padding-top: 20px;">
+		<p class="lead lucida">
+		Nie wiesz jakiego radnego wybrać do przyszłej rady miasta?
+		</p>
+		<p class="lead lucida">
+		Brakuje Ci informacji o tym, co radny robi dla Twojej dzielnicy?
+		</p>
+		<p class="lead lucida">
+		Możesz to zmienić! <!--<br />
+		<a href="<?php echo $this->createUrl('/AkademiaMonitoringu/index'); ?>" >Weź udział w naszym projekcie!</a>-->
+		</p>
+	</div>
 </div>
+
+				
 
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#" >
