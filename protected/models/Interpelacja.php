@@ -43,6 +43,35 @@ class Interpelacja extends CActiveRecord
 			LIMIT 0 , 5')->queryAll();
 	}
 
+	public static function countByRadny($radnyID)
+	{
+		return Yii::app()->db->createCommand('
+			SELECT COUNT(*) FROM `int` 
+			WHERE INT_RDN_ID = '.$radnyID)->queryScalar();
+	}
+	
+	public static function findByRadny($radnyID)
+	{
+		$condition = "INT_RDN_ID = :INT_RDN_ID";
+		$params[':INT_RDN_ID'] = $radnyID;
+
+		$criteria = new CDbCriteria(array(
+				'condition'=>$condition,
+				'params'=>$params,
+				'order'=>'INT_ID desc'
+			));
+
+		$dataProvider = new CActiveDataProvider('Interpelacja', array(
+				'criteria'=>$criteria,
+				'pagination'=>false,
+				// 'pagination'=>array(
+					// 'pageSize'=>20,
+				// ),
+			));
+			
+		return $dataProvider;
+	}
+	
 	/**
 	 * @return array validation rules for model attributes.
 	 */

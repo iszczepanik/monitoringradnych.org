@@ -128,6 +128,13 @@ if (isset($viewed))
 			<? $list = $viewed->GetLastInterpelacje(); 
 			if (count($list) > 0) : ?>
 			
+			<?
+			if ($viewed->CountInterpelacje > 5) : ?>
+			<p>
+			<a href="<?php echo $this->createUrl('/Interpelacja/index', array('radnyID'=>$viewed->RDN_ID)); ?>" >zobacz wszystkie</a>
+			</p>
+			<? endif; ?>
+			
 			<table class="detail-view table table-striped table-condensed" >
 				<?
 					foreach($list as $item){

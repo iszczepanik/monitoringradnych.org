@@ -30,6 +30,10 @@ class InterpelacjaController extends Controller
 				'actions'=>array('admin','delete','view','create','update'),
 				'roles'=>array('admin'),
 			),
+			array('allow',
+				'actions'=>array('index'),
+				'users'=>array('*'),
+			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -44,6 +48,14 @@ class InterpelacjaController extends Controller
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+		));
+	}
+	
+	public function actionIndex($radnyID)
+	{
+		$this->render('index',array(
+			'dataProvider'=>Interpelacja::findByRadny($radnyID),
+			'radny'=>Radny::model()->findByPk($radnyID)
 		));
 	}
 

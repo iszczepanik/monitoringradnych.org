@@ -86,6 +86,11 @@ class Radny extends CActiveRecord
 		return Interpelacja::model()->findLastByRadny($this->RDN_ID);
 	}
 	
+	public function GetCountInterpelacje()
+	{
+		return Interpelacja::countByRadny($this->RDN_ID);
+	}
+	
 	/**
 	 * @return string the associated database table name
 	 */
