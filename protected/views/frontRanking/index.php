@@ -36,7 +36,7 @@
 				<th>Sesje</th>
 				<th>Dyżury</th>
 				<th>E-maile</th>
-				<th>Strona internetowa</th>
+				<th>Www</th>
 				<th>Suma</th>
 			</tr>
 			<? 
