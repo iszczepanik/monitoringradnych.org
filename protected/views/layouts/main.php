@@ -37,6 +37,17 @@
   </ul>
 </div>
 
+<? $getCookies = isset(Yii::app()->request->cookies['getCookies']) ? Yii::app()->request->cookies['getCookies']->value : '0'; ?>
+<? if ($getCookies != '1'): ?>
+<div class="alert alert-info" >
+<h4>Informacja o plikach cookies</h4>
+Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki.
+<div style="text-align: center" >
+<a href="<?php echo $this->createUrl('/site/getCookies'); ?>" class="btn btn-info btn-mini" style="margin-top: 10px" >Rozumiem, nie pokazuj więcej.</a>
+</div>
+</div>
+<? endif; ?>
+
 <div class="navbar">
 	<div class="navbar-inner" >
 		<div style="padding: 0; width: auto;" class="container">

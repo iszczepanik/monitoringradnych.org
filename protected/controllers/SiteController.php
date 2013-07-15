@@ -20,6 +20,17 @@ class SiteController extends Controller
 			),
 		);
 	}
+	
+	private $getCookies = "getCookies";
+	
+	public function actionGetCookies()
+	{
+		$value = isset(Yii::app()->request->cookies[$this->getCookies]) ? Yii::app()->request->cookies[$this->getCookies]->value : '0';
+		if ($value != '1')
+			Yii::app()->request->cookies[$this->getCookies] = new CHttpCookie($this->getCookies, '1', null);
+		
+		$this->redirect(array('/Site/index'));
+	}
 
 	/**
 	 * This is the default 'index' action that is invoked
