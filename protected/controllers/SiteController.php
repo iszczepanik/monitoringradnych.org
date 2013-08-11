@@ -27,7 +27,11 @@ class SiteController extends Controller
 	{
 		$value = isset(Yii::app()->request->cookies[$this->getCookies]) ? Yii::app()->request->cookies[$this->getCookies]->value : '0';
 		if ($value != '1')
-			Yii::app()->request->cookies[$this->getCookies] = new CHttpCookie($this->getCookies, '1', null);
+		{
+			$cookie = new CHttpCookie($this->getCookies, '1');
+			$cookie->expire = time()+60*60*24*365*5; 
+			Yii::app()->request->cookies[$this->getCookies] = $cookie;
+		}
 		
 		$this->redirect(array('/Site/index'));
 	}
