@@ -27,12 +27,21 @@ class FrontRankingController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','externalView'),
 				'users'=>array('*'),
 			),
 		);
 	}
 
+	public function actionExternalView($mode)
+	{
+		$model=Ranking::model()->findAll(array('order'=>'RNK_LP'));
+		
+		$this->renderPartial('_externalView',array(
+			'model'=>$model,
+			'mode'=>$mode,
+		));
+	}
 
 
 	/**
